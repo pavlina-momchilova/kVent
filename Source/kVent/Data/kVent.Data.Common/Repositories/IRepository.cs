@@ -1,4 +1,4 @@
-﻿namespace kVent.Data.Repositories
+﻿namespace kVent.Data.Common.Repositories
 {
     using System;
     using System.Linq;
