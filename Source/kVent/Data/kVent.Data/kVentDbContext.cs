@@ -4,10 +4,10 @@
 
     using kVent.Data.Models;
 
-    public class kVentDbContext : IdentityDbContext<User>
+    public class kVentDbContext : IdentityDbContext<User>, IkVentDbContext
     {
         public kVentDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("name=kVent", throwIfV1Schema: false)
         {
         }
 
