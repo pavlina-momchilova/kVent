@@ -1,13 +1,12 @@
-﻿using System.Threading.Tasks;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
-using Microsoft.AspNet.Identity.Owin;
-using Microsoft.Owin;
-using kVent.Sever.Api.Models;
-
-namespace kVent.Sever.Api
+﻿namespace kVent.Sever.Api
 {
-    // Configure the application user manager used in this application. UserManager is defined in ASP.NET Identity and is used by the application.
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
+    using Microsoft.AspNet.Identity.Owin;
+    using Microsoft.Owin;
+
+    using kVent.Data.Models;
+    using kVent.Sever.Api.Models;
 
     public class ApplicationUserManager : UserManager<User>
     {
@@ -18,7 +17,7 @@ namespace kVent.Sever.Api
 
         public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context)
         {
-            var manager = new ApplicationUserManager(new UserStore<User>(context.Get<ApplicationDbContext>()));
+            var manager = new ApplicationUserManager(new UserStore<User>(context.Get<kVentDbContext>()));
             // Configure validation logic for usernames
             manager.UserValidator = new UserValidator<User>(manager)
             {

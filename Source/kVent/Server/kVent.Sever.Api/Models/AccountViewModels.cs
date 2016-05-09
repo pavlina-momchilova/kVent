@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace kVent.Sever.Api.Models
+﻿namespace kVent.Sever.Api.Models
 {
+    using System.Collections.Generic;
+
     // Models returned by AccountController actions.
 
     public class ExternalLoginViewModel

@@ -77,6 +77,14 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="StyleCop, Version=4.7.1000.0, Culture=neutral, PublicKeyToken=f904653c63bc2738, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\StyleCop.4.7.49.0\lib\net35\StyleCop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="StyleCop.CSharp, Version=4.7.1000.0, Culture=neutral, PublicKeyToken=f904653c63bc2738, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\StyleCop.4.7.49.0\lib\net35\StyleCop.CSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -203,7 +211,6 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -226,7 +233,16 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\Data\kVent.Data.Models\kVent.Data.Models.csproj">
+      <Project>{aacd57e5-6259-49f6-9898-7868fc688686}</Project>
+      <Name>kVent.Data.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Data\kVent.Data\kVent.Data.csproj">
+      <Project>{92adf171-2d06-4ff6-bb0c-8082e2f7a98f}</Project>
+      <Name>kVent.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>

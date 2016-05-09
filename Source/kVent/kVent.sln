@@ -1,11 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{CE730171-44CA-4AAF-B9AF-724FB16A4AF3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kVent.Sever.Api", "Server\kVent.Sever.Api\kVent.Sever.Api.csproj", "{6083835B-26CC-459B-8B80-E6135CFBD277}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{52675400-075F-4F45-AE23-CE2D86069766}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kVent.Data", "Data\kVent.Data\kVent.Data.csproj", "{92ADF171-2D06-4FF6-BB0C-8082E2F7A98F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kVent.Data.Models", "Data\kVent.Data.Models\kVent.Data.Models.csproj", "{AACD57E5-6259-49F6-9898-7868FC688686}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,11 +23,21 @@ Global
 		{6083835B-26CC-459B-8B80-E6135CFBD277}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6083835B-26CC-459B-8B80-E6135CFBD277}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6083835B-26CC-459B-8B80-E6135CFBD277}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92ADF171-2D06-4FF6-BB0C-8082E2F7A98F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92ADF171-2D06-4FF6-BB0C-8082E2F7A98F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92ADF171-2D06-4FF6-BB0C-8082E2F7A98F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92ADF171-2D06-4FF6-BB0C-8082E2F7A98F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AACD57E5-6259-49F6-9898-7868FC688686}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AACD57E5-6259-49F6-9898-7868FC688686}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AACD57E5-6259-49F6-9898-7868FC688686}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AACD57E5-6259-49F6-9898-7868FC688686}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{6083835B-26CC-459B-8B80-E6135CFBD277} = {CE730171-44CA-4AAF-B9AF-724FB16A4AF3}
+		{92ADF171-2D06-4FF6-BB0C-8082E2F7A98F} = {52675400-075F-4F45-AE23-CE2D86069766}
+		{AACD57E5-6259-49F6-9898-7868FC688686} = {52675400-075F-4F45-AE23-CE2D86069766}
 	EndGlobalSection
 EndGlobal
