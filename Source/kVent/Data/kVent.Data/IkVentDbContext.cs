@@ -7,7 +7,7 @@
 
     public interface IkVentDbContext
     {
-        IDbSet<User> Users { get; set; }
+        //IDbSet<User> Users { get; set; }
 
         DbSet<TEntity> Set<TEntity>() where TEntity : class;
 

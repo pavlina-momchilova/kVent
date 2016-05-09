@@ -7,7 +7,7 @@
     public class kVentDbContext : IdentityDbContext<User>, IkVentDbContext
     {
         public kVentDbContext()
-            : base("name=kVent", throwIfV1Schema: false)
+            : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
 

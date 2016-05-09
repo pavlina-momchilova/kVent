@@ -5,15 +5,15 @@ namespace kVent.Data.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    public sealed class Configuration : DbMigrationsConfiguration<kVent.Data.kVentDbContext>
+    public sealed class Configuration : DbMigrationsConfiguration<kVentDbContext>
     {
         public Configuration()
         {
-            this.AutomaticMigrationsEnabled = true;
-            this.AutomaticMigrationDataLossAllowed = true;
+            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
         }
 
-        protected override void Seed(kVent.Data.kVentDbContext context)
+        protected override void Seed(kVentDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 
