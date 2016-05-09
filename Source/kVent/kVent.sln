@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kVent.Data.Models", "Data\k
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kVent.Data.Common", "Data\kVent.Data.Common\kVent.Data.Common.csproj", "{1208AD03-81DB-4611-A1A2-455458CCD7A9}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{E09E4518-FB87-47AD-BD4E-522E55EE3165}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kVent.Client.App", "Client\kVent.Client.App\kVent.Client.App.csproj", "{3FC1B3DC-C7D3-45EA-862B-C878065AA1E6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +41,10 @@ Global
 		{1208AD03-81DB-4611-A1A2-455458CCD7A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1208AD03-81DB-4611-A1A2-455458CCD7A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1208AD03-81DB-4611-A1A2-455458CCD7A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FC1B3DC-C7D3-45EA-862B-C878065AA1E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FC1B3DC-C7D3-45EA-862B-C878065AA1E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FC1B3DC-C7D3-45EA-862B-C878065AA1E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FC1B3DC-C7D3-45EA-862B-C878065AA1E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,5 +54,6 @@ Global
 		{92ADF171-2D06-4FF6-BB0C-8082E2F7A98F} = {52675400-075F-4F45-AE23-CE2D86069766}
 		{AACD57E5-6259-49F6-9898-7868FC688686} = {52675400-075F-4F45-AE23-CE2D86069766}
 		{1208AD03-81DB-4611-A1A2-455458CCD7A9} = {52675400-075F-4F45-AE23-CE2D86069766}
+		{3FC1B3DC-C7D3-45EA-862B-C878065AA1E6} = {E09E4518-FB87-47AD-BD4E-522E55EE3165}
 	EndGlobalSection
 EndGlobal

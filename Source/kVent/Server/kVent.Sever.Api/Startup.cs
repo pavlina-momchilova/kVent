@@ -1,7 +1,7 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartup(typeof(kVent.Sever.Api.Startup))]
+//[assembly: OwinStartup(typeof(kVent.Sever.Api.Startup))]
 
 namespace kVent.Sever.Api
 {

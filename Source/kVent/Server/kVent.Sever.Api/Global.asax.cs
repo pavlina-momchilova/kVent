@@ -1,10 +1,16 @@
 ﻿namespace kVent.Sever.Api
 {
+    using Owin;
     using System.Web.Http;
 
     public class WebApiApplication : System.Web.HttpApplication
     {
-        protected void Application_Start()
+        public static void StartWebApi(IAppBuilder app)
+        {
+            Application_Start();
+        }
+
+        protected static void Application_Start()
         {
             DatabaseConfig.Initialize();
             //AreaRegistration.RegisterAllAreas();
