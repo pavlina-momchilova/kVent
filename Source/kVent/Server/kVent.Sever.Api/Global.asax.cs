@@ -5,12 +5,7 @@
 
     public class WebApiApplication : System.Web.HttpApplication
     {
-        public static void StartWebApi(IAppBuilder app)
-        {
-            Application_Start();
-        }
-
-        protected static void Application_Start()
+        protected void Application_Start()
         {
             DatabaseConfig.Initialize();
             //AreaRegistration.RegisterAllAreas();

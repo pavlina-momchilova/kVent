@@ -245,6 +245,10 @@
       <Project>{92adf171-2d06-4ff6-bb0c-8082e2f7a98f}</Project>
       <Name>kVent.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\kVent.Server.Infrastructure\kVent.Server.Infrastructure.csproj">
+      <Project>{d67044d8-cf46-4f75-9fb6-0897103973b7}</Project>
+      <Name>kVent.Server.Infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{CE730171-44CA-4AAF-B9AF-724FB16A4AF3}"
 EndProject
@@ -18,6 +18,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{E09E4518-FB87-47AD-BD4E-522E55EE3165}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kVent.Client.App", "Client\kVent.Client.App\kVent.Client.App.csproj", "{3FC1B3DC-C7D3-45EA-862B-C878065AA1E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kVent.Server.Infrastructure", "Server\kVent.Server.Infrastructure\kVent.Server.Infrastructure.csproj", "{D67044D8-CF46-4F75-9FB6-0897103973B7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{3FC1B3DC-C7D3-45EA-862B-C878065AA1E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3FC1B3DC-C7D3-45EA-862B-C878065AA1E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3FC1B3DC-C7D3-45EA-862B-C878065AA1E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D67044D8-CF46-4F75-9FB6-0897103973B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D67044D8-CF46-4F75-9FB6-0897103973B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D67044D8-CF46-4F75-9FB6-0897103973B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D67044D8-CF46-4F75-9FB6-0897103973B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,5 +61,6 @@ Global
 		{AACD57E5-6259-49F6-9898-7868FC688686} = {52675400-075F-4F45-AE23-CE2D86069766}
 		{1208AD03-81DB-4611-A1A2-455458CCD7A9} = {52675400-075F-4F45-AE23-CE2D86069766}
 		{3FC1B3DC-C7D3-45EA-862B-C878065AA1E6} = {E09E4518-FB87-47AD-BD4E-522E55EE3165}
+		{D67044D8-CF46-4F75-9FB6-0897103973B7} = {CE730171-44CA-4AAF-B9AF-724FB16A4AF3}
 	EndGlobalSection
 EndGlobal
