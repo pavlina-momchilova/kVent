@@ -11,6 +11,7 @@ namespace kVent.Client.App
         {
             //ConfigureAuth(app);
             //WebApiApplication.StartWebApi(app);
+            WebApiStartup.StartWebApi(app);
         }
     }
 }
