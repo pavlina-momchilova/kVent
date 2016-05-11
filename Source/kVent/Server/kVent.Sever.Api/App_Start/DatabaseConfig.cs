@@ -10,7 +10,7 @@
         public static void Initialize()
         {
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<kVentDbContext, Configuration>());
-            //kVentDbContext.Create().Database.Initialize(true);
+            kVentDbContext.Create().Database.Initialize(true);
         }
     }
 }
