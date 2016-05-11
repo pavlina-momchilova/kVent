@@ -7,14 +7,14 @@
     using Microsoft.Owin.Security.Cookies;
     using Microsoft.Owin.Security.OAuth;
 
-    using Showcase.Data.Models;
-    using Showcase.Services.Data.Contracts;
-    using Showcase.Services.Logic;
+    using kVent.Data.Models;
+    //using Showcase.Services.Data.Contracts;
+    //using Showcase.Services.Logic;
 
     public class ApplicationOAuthProvider : OAuthAuthorizationServerProvider
     {
         private readonly string publicClientId;
-        private readonly IUsersService usersService;
+        //private readonly IUsersService usersService;
 
         public ApplicationOAuthProvider(string publicClientId)
         {
@@ -26,36 +26,36 @@
             this.publicClientId = publicClientId;
         }
 
-        public ApplicationOAuthProvider(string publicClientId, IUsersService usersService)
-            : this(publicClientId)
-        {
-            this.usersService = usersService;
-        }
+        //public ApplicationOAuthProvider(string publicClientId, IUsersService usersService)
+        //    : this(publicClientId)
+        //{
+        //    this.usersService = usersService;
+        //}
 
-        protected IUsersService UsersService
-        {
-            get { return this.usersService ?? ObjectFactory.Get<IUsersService>(); }
-        }
+        //protected IUsersService UsersService
+        //{
+        //    get { return this.usersService ?? ObjectFactory.Get<IUsersService>(); }
+        //}
 
         public static AuthenticationProperties CreateProperties()
         {
             return new AuthenticationProperties();
         }
 
-        public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
-        {
-            var user = await this.GetUserFromContext(context);
-            if (user != null)
-            {
-                var oauthIdentity = ClaimsIdentityFactory.Create(user, OAuthDefaults.AuthenticationType);
-                var cookiesIdentity = ClaimsIdentityFactory.Create(user, CookieAuthenticationDefaults.AuthenticationType);
+        //public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
+        //{
+        //    var user = await this.GetUserFromContext(context);
+        //    if (user != null)
+        //    {
+        //        var oauthIdentity = ClaimsIdentityFactory.Create(user, OAuthDefaults.AuthenticationType);
+        //        var cookiesIdentity = ClaimsIdentityFactory.Create(user, CookieAuthenticationDefaults.AuthenticationType);
 
-                AuthenticationProperties properties = CreateProperties();
-                var ticket = new AuthenticationTicket(oauthIdentity, properties);
-                context.Validated(ticket);
-                context.Request.Context.Authentication.SignIn(cookiesIdentity);
-            }
-        }
+        //        AuthenticationProperties properties = CreateProperties();
+        //        var ticket = new AuthenticationTicket(oauthIdentity, properties);
+        //        context.Validated(ticket);
+        //        context.Request.Context.Authentication.SignIn(cookiesIdentity);
+        //    }
+        //}
 
         public override Task TokenEndpoint(OAuthTokenEndpointContext context)
         {
@@ -92,17 +92,17 @@
             return Task.FromResult<object>(null);
         }
 
-        private async Task<User> GetUserFromContext(OAuthGrantResourceOwnerCredentialsContext context)
-        {
-            User user = null;
+        //private async Task<User> GetUserFromContext(OAuthGrantResourceOwnerCredentialsContext context)
+        //{
+        //    User user = null;
 
-            if (this.IsValidContext(context))
-            {
-                user = await this.LoginUser(context);
-            }
+        //    if (this.IsValidContext(context))
+        //    {
+        //        user = await this.LoginUser(context);
+        //    }
 
-            return user;
-        }
+        //    return user;
+        //}
 
         private bool IsValidContext(OAuthGrantResourceOwnerCredentialsContext context)
         {
@@ -126,18 +126,18 @@
             return isValid;
         }
 
-        private async Task<User> LoginUser(OAuthGrantResourceOwnerCredentialsContext context)
-        {
-            var user = await this.UsersService.Account(context.UserName, context.Password);
+        //private async Task<User> LoginUser(OAuthGrantResourceOwnerCredentialsContext context)
+        //{
+        //    var user = await this.UsersService.Account(context.UserName, context.Password);
 
-            // Check if remote login credentials are correct
-            if (user == null)
-            {
-                context.SetError("invalid_grant", "Information is not valid");
-                return null;
-            }
+        //    // Check if remote login credentials are correct
+        //    if (user == null)
+        //    {
+        //        context.SetError("invalid_grant", "Information is not valid");
+        //        return null;
+        //    }
 
-            return user;
-        }
+        //    return user;
+        //}
     }
 }

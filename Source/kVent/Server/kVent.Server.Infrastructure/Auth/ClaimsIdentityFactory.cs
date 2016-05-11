@@ -3,7 +3,7 @@
     using System;
     using System.Security.Claims;
 
-    using Showcase.Data.Models;
+    using kVent.Data.Models;
 
     public static class ClaimsIdentityFactory
     {

@@ -1,5 +1,6 @@
 ﻿namespace kVent.Server.Infrastructure.Auth
 {
+    using Microsoft.Owin.Security.OAuth;
     using System.Threading.Tasks;
 
     public class ApplicationOAuthBearerAuthenticationProvider : OAuthBearerAuthenticationProvider
