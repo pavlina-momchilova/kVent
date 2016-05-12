@@ -1,11 +1,9 @@
 ﻿namespace kVent.Sever.Api
 {
     using Owin;
-    using System.Data.Entity;
     using System.Web.Http;
-
-    using kVent.Data;
-    using kVent.Data.Migrations;
+    using Ninject.Web.Common.OwinHost;
+    using Ninject.Web.WebApi.OwinHost;
 
     public class WebApiStartup
     {
