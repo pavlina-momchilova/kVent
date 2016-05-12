@@ -267,6 +267,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Server\kVent.Server.Infrastructure\kVent.Server.Infrastructure.csproj">
+      <Project>{d67044d8-cf46-4f75-9fb6-0897103973b7}</Project>
+      <Name>kVent.Server.Infrastructure</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Server\kVent.Sever.Api\kVent.Sever.Api.csproj">
       <Project>{6083835b-26cc-459b-8b80-e6135cfbd277}</Project>
       <Name>kVent.Sever.Api</Name>

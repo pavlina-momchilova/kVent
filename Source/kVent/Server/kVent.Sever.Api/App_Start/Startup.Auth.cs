@@ -10,14 +10,14 @@
     using kVent.Sever.Api.Models;
     using kVent.Sever.Api.Providers;
 
-    public partial class Startup
+    public static class AuthStartup
     {
         public static OAuthAuthorizationServerOptions OAuthOptions { get; private set; }
 
         public static string PublicClientId { get; private set; }
 
         // For more information on configuring authentication, please visit http://go.microsoft.com/fwlink/?LinkId=301864
-        public void ConfigureAuth(IAppBuilder app)
+        public static void ConfigureAuth(IAppBuilder app)
         {
             // Configure the db context and user manager to use a single instance per request
             app.CreatePerOwinContext(kVentDbContext.Create);

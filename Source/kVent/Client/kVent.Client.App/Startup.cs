@@ -9,8 +9,7 @@ namespace kVent.Client.App
     {
         public void Configuration(IAppBuilder app)
         {
-            //ConfigureAuth(app);
-            //WebApiApplication.StartWebApi(app);
+            AuthStartup.ConfigureAuth(app);
             WebApiStartup.StartWebApi(app);
         }
     }
