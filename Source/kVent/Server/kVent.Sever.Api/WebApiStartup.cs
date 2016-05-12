@@ -21,6 +21,10 @@
             WebApiConfig.Register(httpConfig);
 
             httpConfig.EnsureInitialized();
+
+            app
+                .UseNinjectMiddleware(NinjectConfig.CreateKernel)
+                .UseNinjectWebApi(httpConfig);
         }
     }
 }

@@ -78,6 +78,34 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Ninject.3.2.0.0\lib\net45-full\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Extensions.ContextPreservation, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Ninject.Extensions.ContextPreservation.3.2.0.0\lib\net45-full\Ninject.Extensions.ContextPreservation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Extensions.Conventions, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Ninject.Extensions.Conventions.3.2.0.0\lib\net45-full\Ninject.Extensions.Conventions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Extensions.NamedScope, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Ninject.Extensions.NamedScope.3.2.0.0\lib\net45-full\Ninject.Extensions.NamedScope.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Web.Common, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Ninject.Web.Common.3.2.0.0\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Web.WebApi, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Ninject.Web.WebApi.3.2.0.0\lib\net45-full\Ninject.Web.WebApi.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Web.WebApi.OwinHost, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Ninject.Web.WebApi.OwinHost.3.2.0.0\lib\net45-full\Ninject.Web.WebApi.OwinHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="StyleCop, Version=4.7.1000.0, Culture=neutral, PublicKeyToken=f904653c63bc2738, processorArchitecture=MSIL">
       <HintPath>..\..\packages\StyleCop.4.7.49.0\lib\net35\StyleCop.dll</HintPath>
       <Private>True</Private>
@@ -211,6 +239,7 @@
   <ItemGroup>
     <Compile Include="App_Start\DatabaseConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\NinjectConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -224,7 +253,9 @@
     <Compile Include="WebApiStartup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -233,6 +264,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Data\kVent.Data.Common\kVent.Data.Common.csproj">
+      <Project>{1208ad03-81db-4611-a1a2-455458ccd7a9}</Project>
+      <Name>kVent.Data.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Data\kVent.Data.Models\kVent.Data.Models.csproj">
       <Project>{aacd57e5-6259-49f6-9898-7868fc688686}</Project>
       <Name>kVent.Data.Models</Name>
@@ -241,13 +276,27 @@
       <Project>{92adf171-2d06-4ff6-bb0c-8082e2f7a98f}</Project>
       <Name>kVent.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Services\kVent.Services.Common\kVent.Services.Common.csproj">
+      <Project>{78f02bc1-9031-40d7-a530-059a403463b2}</Project>
+      <Name>kVent.Services.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\kVent.Services.Logic\kVent.Services.Logic.csproj">
+      <Project>{75e66c39-3adc-4da0-b1cc-5029b19cc369}</Project>
+      <Name>kVent.Services.Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\kVent.Server.Common\kVent.Server.Common.csproj">
+      <Project>{b8e9aaf7-0fb7-4497-99ca-a353b652443c}</Project>
+      <Name>kVent.Server.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\kVent.Server.Infrastructure\kVent.Server.Infrastructure.csproj">
       <Project>{d67044d8-cf46-4f75-9fb6-0897103973b7}</Project>
       <Name>kVent.Server.Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
