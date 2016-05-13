@@ -238,6 +238,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\app.js" />
     <Content Include="content\css\bootstrap.css" />
     <Content Include="content\css\bootstrap.min.css" />
     <Content Include="content\css\landing-page.css" />
@@ -249,9 +250,11 @@
     <Content Include="content\img\phones.png" />
     <Content Include="favicon.ico" />
     <Content Include="index.html" />
+    <Content Include="scripts\angular-mocks.js" />
+    <None Include="scripts\angular.intellisense.js" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
-    <Content Include="scripts\jquery.js" />
+    <None Include="scripts\_references.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -276,7 +279,6 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="app\" />
     <Folder Include="content\font-awesome\" />
   </ItemGroup>
   <ItemGroup>
@@ -284,6 +286,9 @@
     <Content Include="content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="content\fonts\glyphicons-halflings-regular.woff2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="scripts\angular.min.js.map" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
