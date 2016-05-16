@@ -251,6 +251,7 @@
     <Content Include="favicon.ico" />
     <Content Include="index.html" />
     <Content Include="scripts\angular-mocks.js" />
+    <Content Include="content\css\bootstrap.min.css.map" />
     <None Include="scripts\angular.intellisense.js" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
@@ -279,6 +280,7 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="app\landing-page\" />
     <Folder Include="content\font-awesome\" />
   </ItemGroup>
   <ItemGroup>
