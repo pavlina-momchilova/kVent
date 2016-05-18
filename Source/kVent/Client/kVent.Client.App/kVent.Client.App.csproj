@@ -239,6 +239,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.js" />
+    <Content Include="app\identity\auth-service.js" />
+    <Content Include="app\identity\identity-service.js" />
+    <Content Include="app\landing-page\main-landingpage-controller.js" />
     <Content Include="content\css\bootstrap.css" />
     <Content Include="content\css\bootstrap.min.css" />
     <Content Include="content\css\landing-page.css" />
@@ -280,7 +283,6 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="app\landing-page\" />
     <Folder Include="content\font-awesome\" />
   </ItemGroup>
   <ItemGroup>
