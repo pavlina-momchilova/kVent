@@ -5,7 +5,7 @@
     function MainLandingPageController() {
         var vm = this;
 
-        vm.helloWorld = "Hello World!";
+        vm.helloWorld = "Hello World! :)";
     }
 
     angular.module('kVent.controllers')
