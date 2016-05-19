@@ -2,7 +2,7 @@
 
     'use strict';
 
-    var identityService = function identityService($q) {
+    var identityService = function identityService($q, $rootScope, $location) {
 
         var currentUser = {};
         var deferred = $q.defer();
@@ -12,7 +12,9 @@
         };
 
         var isAuthenticated = function isAthenticated() {
-
+            var isCurrentUserPresent = Object.getOwnPropertyNames(currentUser).length !== 0;
+            
+            return isCurrentUserPresent;
         };
 
         var isAdmin = function isAdmin() {
@@ -40,5 +42,5 @@
 
     angular
         .module('kVent.services')
-        .factory('identity', ['$q', identityService]);
+        .factory('identity', ['$q', '$rootScope', '$location', identityService]);
 }());

@@ -7,21 +7,39 @@
 
         $locationProvider.html5Mode(true);
 
-        var rotueResolvers = {
+        var routeResolvers = {
             authenticationRequired: {
                 authenticate: ['$q', 'auth', function ($q, auth) {
-                    if (auth.isAuthehticated()) {
+                    if (auth.isAuthenticated()) {
                         return true;
                     }
 
                     return $q.reject('not authorized');
+                }]
+            },
+            isUserAuthenticated: {
+                isUserAuthenticated: ['$rootScope', '$location', 'auth', function ($rootScope, $location, auth) {
+                    if (!auth.isAuthenticated()) {
+                        //$rootScope.previousState = $location.path(prevUrl);
+                        $rootScope.previousState = $location.path($rootScope.prevUrl);
+                        $location.path('/login');
+                    }
                 }]
             }
         }
 
         $routeProvider
             .when('/', {
-
+                templateUrl: 'partials/landing-page/landing-page.html',
+                controller: 'LandingPageController',
+                constollerAs: CONTROLLER_VIEW_MODEL_NAME
+            })
+            .when('/dashboard', {
+                templateUrl: '<div> Dashboard </div>',
+                resolve: routeResolvers.isUserAuthenticated
+            })
+            .when('/login', {
+                template: '<div> you must be logged in </div>'
             })
             .otherwise({ redirectTo: '/' });
     };
@@ -40,6 +58,16 @@
                 console.log('... User is loged  on application start... '); // TODO. Change it later to some UI 'hello' message.
             });
         }
+
+        var history = [];
+
+        $rootScope.$on('$routeChangeSuccess', function () {
+            history.push($location.$$path);
+        });
+
+        $rootScope.prevUrl = function () {
+            return history.length > 1 ? history[history.length - 2] : "/";
+        };
     }
 
     angular.module('kVent.services', []);
