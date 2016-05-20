@@ -16,15 +16,6 @@
 
                     return $q.reject('not authorized');
                 }]
-            },
-            isUserAuthenticated: {
-                isUserAuthenticated: ['$rootScope', '$location', 'auth', function ($rootScope, $location, auth) {
-                    if (!auth.isAuthenticated()) {
-                        //$rootScope.previousState = $location.path(prevUrl);
-                        $rootScope.previousState = $location.path($rootScope.prevUrl);
-                        $location.path('/login');
-                    }
-                }]
             }
         }
 
@@ -35,8 +26,8 @@
                 constollerAs: CONTROLLER_VIEW_MODEL_NAME
             })
             .when('/dashboard', {
-                templateUrl: '<div> Dashboard </div>',
-                resolve: routeResolvers.isUserAuthenticated
+                template: '<div> Dashboard </div>',
+                resolve: routeResolvers.authenticationRequired
             })
             .when('/login', {
                 template: '<div> you must be logged in </div>'
@@ -47,8 +38,10 @@
     function run($http, $cookies, $rootScope, $location, auth) {
         $rootScope.$on('$routeChangeError', function (ev, current, previous, rejection) {
             if (rejection === 'not authorized') {
-                $location.path('/'); // if user is not authorized redirect to '/'. TODO change it later to some error page
+                $location.path('/login'); // if user is not authorized redirect to '/'. TODO change it later to some error page
             }
+
+            console.log(previous);
         });
 
         if (auth.isAuthenticated()) {
@@ -58,16 +51,13 @@
                 console.log('... User is loged  on application start... '); // TODO. Change it later to some UI 'hello' message.
             });
         }
-
-        var history = [];
-
-        $rootScope.$on('$routeChangeSuccess', function () {
-            history.push($location.$$path);
+        
+        $rootScope.$on('$locationChangeStart', function (ev, newUrl, oldUrl, newState, oldState) {
+            console.log(newUrl);
+            console.log(oldUrl);
+            console.log(newState);
+            console.log(oldState);
         });
-
-        $rootScope.prevUrl = function () {
-            return history.length > 1 ? history[history.length - 2] : "/";
-        };
     }
 
     angular.module('kVent.services', []);
