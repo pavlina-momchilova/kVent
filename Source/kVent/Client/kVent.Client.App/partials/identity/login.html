@@ -1,0 +1,26 @@
+﻿<div class="row container">
+    <div class="col-md-6 col-md-offset-4">
+        <form class="form-horizontal" name="loginForm">
+            <fieldset>
+                <legend>Login User</legend>
+                <div class="form-group">
+                    <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+                    <div class="col-lg-8">
+                        <input type="email" ng-model="user.username" class="form-control" id="inputEmail" required="required" placeholder="Email">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+                    <div class="col-lg-8">
+                        <input type="password" ng-model="user.password" class="form-control" id="inputPassword" required="required" placeholder="Password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <button class="btn btn-primary" ng-click="vm.login(user, loginForm)">Submit</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>

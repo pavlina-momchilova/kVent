@@ -241,10 +241,12 @@
     <Content Include="app\app.js" />
     <Content Include="app\identity\auth-service.js" />
     <Content Include="app\identity\identity-service.js" />
+    <Content Include="app\identity\login-controller.js" />
     <Content Include="app\landing-page\landing-page-controller.js" />
     <Content Include="content\css\bootstrap.css" />
     <Content Include="content\css\bootstrap.min.css" />
     <Content Include="content\css\landing-page.css" />
+    <Content Include="content\css\site.css" />
     <Content Include="content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="content\img\1%402x.jpg" />
     <Content Include="content\img\1.jpg" />
@@ -255,6 +257,7 @@
     <Content Include="content\img\phones.png" />
     <Content Include="favicon.ico" />
     <Content Include="index.html" />
+    <Content Include="partials\identity\login.html" />
     <Content Include="partials\landing-page\landing-page.html" />
     <Content Include="scripts\angular-mocks.js" />
     <Content Include="content\css\bootstrap.min.css.map" />
@@ -287,7 +290,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="content\font-awesome\" />
-    <Folder Include="partials\identity\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="content\fonts\glyphicons-halflings-regular.eot" />

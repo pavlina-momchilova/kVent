@@ -29,8 +29,10 @@
                 template: '<div> Dashboard </div>',
                 resolve: routeResolvers.authenticationRequired
             })
-            .when('/login', {
-                template: '<div> you must be logged in </div>'
+            .when('/identity/login', {
+                templateUrl: 'partials/identity/login.html',
+                controller: 'LogInController',
+                controllerAs: CONTROLLER_VIEW_MODEL_NAME
             })
             .otherwise({ redirectTo: '/' });
     };
@@ -39,14 +41,14 @@
         $rootScope.$on('$routeChangeError', function (ev, current, previous, rejection) {
             if (rejection === 'not authorized') {
                 window.history.pushState({}, '/', '/');
-                $location.path('/login'); // if user is not authorized redirect to '/'. TODO change it later to some error page
+                $location.path('/identity/login'); // if user is not authorized redirect to '/'. TODO change it later to some error page
             }
 
             console.log(previous);
         });
 
         if (auth.isAuthenticated()) {
-            $http.defaults.headers.common.Authorization = 'Bearer' + $cookies.get('authentication');
+            $http.defaults.headers.common.Authorization = 'Bearer ' + $cookies.get('authentication');
             debugger;
             auth.getIdentity().then(function () {
                 console.log('... User is loged  on application start... '); // TODO. Change it later to some UI 'hello' message.
@@ -67,6 +69,5 @@
 
     angular.module('kVent', ['ngRoute', 'ngCookies', 'kVent.controllers', 'kVent.directives'])
         .config(['$routeProvider', '$locationProvider', config])
-        .run(['$http', '$cookies', '$rootScope', '$location', 'auth', run])
-        .constant('baserUrl', 'http://paovs.com/');
+        .run(['$http', '$cookies', '$rootScope', '$location', 'auth', run]);
 }());

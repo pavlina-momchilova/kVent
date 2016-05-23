@@ -21,8 +21,9 @@
 
         };
 
-        var setUser = function setUser() {
-
+        var setUser = function setUser(user) {
+            currentUser = user;
+            deferred.resolve(user);
         };
 
         var removeUser = function removeUser() {

@@ -341,6 +341,13 @@
             return Ok();
         }
 
+        [HttpGet]
+        [Authorize] 
+        public IHttpActionResult Identity()
+        {
+           return this.Json("{username: 'asds'");
+        }
+
         // POST api/Account/RegisterExternal
         [OverrideAuthentication]
         [HostAuthentication(DefaultAuthenticationTypes.ExternalBearer)]
