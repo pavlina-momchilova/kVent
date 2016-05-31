@@ -38,6 +38,7 @@
     function run($http, $cookies, $rootScope, $location, auth) {
         $rootScope.$on('$routeChangeError', function (ev, current, previous, rejection) {
             if (rejection === 'not authorized') {
+                window.history.pushState({}, '/', '/');
                 $location.path('/login'); // if user is not authorized redirect to '/'. TODO change it later to some error page
             }
 
