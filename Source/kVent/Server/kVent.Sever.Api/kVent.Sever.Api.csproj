@@ -45,6 +45,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AutoMapper.Net4, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.0.1011, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -242,12 +250,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\AutomapperConfig.cs" />
     <Compile Include="App_Start\DatabaseConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\NinjectConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Base\BaseAuthorizationController.cs" />
+    <Compile Include="Controllers\Base\BaseController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -285,6 +296,10 @@
       <Project>{78f02bc1-9031-40d7-a530-059a403463b2}</Project>
       <Name>kVent.Services.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Services\kVent.Services.Data\kVent.Services.Data.csproj">
+      <Project>{354e3517-ab57-4a5f-ad51-1ed44cbeca3e}</Project>
+      <Name>kVent.Services.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Services\kVent.Services.Logic\kVent.Services.Logic.csproj">
       <Project>{75e66c39-3adc-4da0-b1cc-5029b19cc369}</Project>
       <Name>kVent.Services.Logic</Name>
@@ -292,6 +307,10 @@
     <ProjectReference Include="..\kVent.Server.Common\kVent.Server.Common.csproj">
       <Project>{b8e9aaf7-0fb7-4497-99ca-a353b652443c}</Project>
       <Name>kVent.Server.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\kVent.Server.DataTransferModels\kVent.Server.DataTransferModels.csproj">
+      <Project>{32821a8d-1463-4030-8bc2-5836bcf1cf11}</Project>
+      <Name>kVent.Server.DataTransferModels</Name>
     </ProjectReference>
     <ProjectReference Include="..\kVent.Server.Infrastructure\kVent.Server.Infrastructure.csproj">
       <Project>{d67044d8-cf46-4f75-9fb6-0897103973b7}</Project>
@@ -338,6 +357,7 @@
     <Error Condition="!Exists('..\..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
     <Error Condition="!Exists('..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
   </Target>
+  <Import Project="..\..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets" Condition="Exists('..\..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
