@@ -9,44 +9,30 @@
     using System;
     using System.Collections.Generic;
     using System.Net.Http;
-    using System.Linq;
     using System.Security.Claims;
     using System.Security.Cryptography;
     using System.Threading.Tasks;
     using System.Web;
     using System.Web.Http;
-    using AutoMapper.QueryableExtensions;
 
-    using Base;
     using kVent.Sever.Api.Models;
     using kVent.Sever.Api.Providers;
     using kVent.Sever.Api.Results;
     using kVent.Data.Models;
-    using Server.DataTransferModels;
-    using Services.Data.Contracts;
 
     [Authorize]
     [RoutePrefix("api/Account")]
-    public class AccountController : BaseAuthorizationController
+    public class AccountController : ApiController
     {
         private const string LocalLoginProvider = "Local";
         private ApplicationUserManager _userManager;
 
         public AccountController()
-            : this(null, null)
         {
         }
 
         public AccountController(ApplicationUserManager userManager,
             ISecureDataFormat<AuthenticationTicket> accessTokenFormat)
-            : this(userManager, accessTokenFormat, null)
-        {
-        }
-
-        public AccountController(ApplicationUserManager userManager,
-            ISecureDataFormat<AuthenticationTicket> accessTokenFormat, 
-            IUsersService userService)
-            : base(userService)
         {
             UserManager = userManager;
             AccessTokenFormat = accessTokenFormat;
@@ -140,7 +126,7 @@
 
             IdentityResult result = await UserManager.ChangePasswordAsync(User.Identity.GetUserId(), model.OldPassword,
                 model.NewPassword);
-
+            
             if (!result.Succeeded)
             {
                 return GetErrorResult(result);
@@ -273,9 +259,9 @@
             if (hasRegistered)
             {
                 Authentication.SignOut(DefaultAuthenticationTypes.ExternalCookie);
-
-                ClaimsIdentity oAuthIdentity = await user.GenerateUserIdentityAsync(UserManager,
-                   OAuthDefaults.AuthenticationType);
+                
+                 ClaimsIdentity oAuthIdentity = await user.GenerateUserIdentityAsync(UserManager,
+                    OAuthDefaults.AuthenticationType);
                 ClaimsIdentity cookieIdentity = await user.GenerateUserIdentityAsync(UserManager,
                     CookieAuthenticationDefaults.AuthenticationType);
 
@@ -356,20 +342,10 @@
         }
 
         [HttpGet]
-        [Authorize]
+        [Authorize] 
         public IHttpActionResult Identity()
         {
-            var model = this.UsersService
-                .ByUsername(this.CurrentUser.UserName)
-                .Project()
-                .To<IdentityResponseModel>()
-                .FirstOrDefault();
-
-            return this.Data(model);
-
-
-
-            return this.Json("{username: 'asds' }");
+           return this.Json("{username: 'asds'");
         }
 
         // POST api/Account/RegisterExternal
@@ -400,7 +376,7 @@
             result = await UserManager.AddLoginAsync(user.Id, info.Login);
             if (!result.Succeeded)
             {
-                return GetErrorResult(result);
+                return GetErrorResult(result); 
             }
             return Ok();
         }
