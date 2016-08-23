@@ -24,11 +24,12 @@
 
                     $cookies.put(TOKEN_KEY, tokenValue, { expires: theBigDay });
 
-                    $http.defaults.headers.common.Authorization = 'Bearer' + tokenValue;
+                    $http.defaults.headers.common.Authorization = 'Bearer ' + tokenValue;
 
                     getIdentity().then(function () {
                         deferred.resolve(response);
                     });
+
                 })
                 .error(function (err) {
                     deferred.reject(err);
@@ -39,7 +40,7 @@
 
         var getIdentity = function getIdentity() {
             var deferred = $q.defer();
-
+            
             $http.get('/api/account/identity')
                 .success(function (identityResponse) {
                     identity.setUser(identityResponse);

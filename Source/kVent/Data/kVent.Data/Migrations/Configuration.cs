@@ -4,6 +4,8 @@ namespace kVent.Data.Migrations
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    
+    using Models;
 
     public sealed class Configuration : DbMigrationsConfiguration<kVentDbContext>
     {

@@ -19,7 +19,8 @@
     using kVent.Sever.Api.Providers;
     using kVent.Sever.Api.Results;
     using kVent.Data.Models;
-
+    using System.Linq;
+    using System.Data.Entity;
     [Authorize]
     [RoutePrefix("api/Account")]
     public class AccountController : ApiController
@@ -342,10 +343,26 @@
         }
 
         [HttpGet]
-        [Authorize] 
-        public IHttpActionResult Identity()
+        [Authorize]
+        public async Task<IHttpActionResult> Identity()
         {
-           return this.Json("{username: 'asds'");
+            var userId = this.User.Identity.GetUserId();
+
+            var db = new kVentDbContext();
+
+            var user = await db.Users.Where(u => u.Id == userId)
+                 .Select(u => new
+                 {
+                     u.Email
+                 })
+                 .FirstOrDefaultAsync();
+
+            if (user == null)
+            {
+                return InternalServerError(new Exception("Something bad :( !"));
+            }
+
+            return this.Json(user);
         }
 
         // POST api/Account/RegisterExternal

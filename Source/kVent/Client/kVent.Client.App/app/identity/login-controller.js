@@ -11,7 +11,7 @@
                     .then(function () {
                         // use some notification (toaster);
                         console.log('user is loged in');
-                        $location.path('/dasboard');
+                        $location.path('/dashboard');
                     });
             }
         }
