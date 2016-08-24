@@ -4,9 +4,10 @@ namespace kVent.Data.Migrations
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
-    
-    using Models;
 
+    using Models;
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
     public sealed class Configuration : DbMigrationsConfiguration<kVentDbContext>
     {
         public Configuration()
@@ -29,6 +30,28 @@ namespace kVent.Data.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
+            var userManager = new UserManager<User>(new UserStore<User>(new kVentDbContext()));
+
+            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(new kVentDbContext()));
+
+            var user = new User()
+            {
+                UserName = "Admin",
+                Email = "admin@admin.admin",
+                EmailConfirmed = true
+            };
+
+            userManager.Create(user, "admin12345");
+
+            if (roleManager.Roles.Count() == 0)
+            {
+                roleManager.Create(new IdentityRole { Name = "Admin" });
+                roleManager.Create(new IdentityRole { Name = "User" });
+            }
+
+            var admin = userManager.FindByName("Admin");
+            userManager.AddToRoles(admin.Id, new string[] { "Admin" });
         }
     }
 }

@@ -290,6 +290,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="content\font-awesome\" />
+    <Folder Include="partials\dashboard\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="content\fonts\glyphicons-halflings-regular.eot" />
