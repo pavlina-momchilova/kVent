@@ -5,8 +5,10 @@
     using Ninject.Web.Common.OwinHost;
     using Ninject.Web.WebApi.OwinHost;
     using System.Data.Entity;
+
     using Data;
     using Data.Migrations;
+    using Server.Common;
 
     public class WebApiStartup
     {
@@ -15,6 +17,7 @@
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<kVentDbContext, Configuration>());
             DatabaseConfig.Initialize();
             // Automapper register mappings
+            AutoMapperConfig.RegisterMappings(Constants.DataTransferModelsAssembly);
 
             var httpConfig = new HttpConfiguration();
 

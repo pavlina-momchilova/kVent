@@ -45,6 +45,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=4.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AutoMapper.4.1.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.0.1011, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -242,6 +246,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\AutoMapperConfig.cs" />
     <Compile Include="App_Start\DatabaseConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\NinjectConfig.cs" />
@@ -284,6 +289,10 @@
       <Project>{78f02bc1-9031-40d7-a530-059a403463b2}</Project>
       <Name>kVent.Services.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Services\kVent.Services.Data\kVent.Services.Data.csproj">
+      <Project>{00e32aa8-1393-4c94-ba12-d6da5833a538}</Project>
+      <Name>kVent.Services.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Services\kVent.Services.Logic\kVent.Services.Logic.csproj">
       <Project>{75e66c39-3adc-4da0-b1cc-5029b19cc369}</Project>
       <Name>kVent.Services.Logic</Name>
@@ -291,6 +300,10 @@
     <ProjectReference Include="..\kVent.Server.Common\kVent.Server.Common.csproj">
       <Project>{b8e9aaf7-0fb7-4497-99ca-a353b652443c}</Project>
       <Name>kVent.Server.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\kVent.Server.DataTransferModels\kVent.Server.DataTransferModels.csproj">
+      <Project>{6bb6b6cc-e92a-47b6-887c-0c100727fb56}</Project>
+      <Name>kVent.Server.DataTransferModels</Name>
     </ProjectReference>
     <ProjectReference Include="..\kVent.Server.Infrastructure\kVent.Server.Infrastructure.csproj">
       <Project>{d67044d8-cf46-4f75-9fb6-0897103973b7}</Project>
