@@ -255,16 +255,22 @@
     <Content Include="content\img\intro-bg.jpg" />
     <Content Include="content\img\ipad.png" />
     <Content Include="content\img\phones.png" />
+    <Content Include="content\toastr.css" />
+    <Content Include="content\toastr.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="index.html" />
     <Content Include="partials\identity\login.html" />
     <Content Include="partials\landing-page\landing-page.html" />
     <Content Include="scripts\angular-mocks.js" />
     <Content Include="content\css\bootstrap.min.css.map" />
+    <Content Include="content\toastr.scss" />
+    <Content Include="content\toastr.less" />
     <None Include="scripts\angular.intellisense.js" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
     <None Include="scripts\_references.js" />
+    <Content Include="scripts\toastr.js" />
+    <Content Include="scripts\toastr.min.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

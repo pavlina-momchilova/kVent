@@ -45,9 +45,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User\IdentityResponseModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Data\kVent.Data.Models\kVent.Data.Models.csproj">
+      <Project>{aacd57e5-6259-49f6-9898-7868fc688686}</Project>
+      <Name>kVent.Data.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\kVent.Server.Common\kVent.Server.Common.csproj">
+      <Project>{b8e9aaf7-0fb7-4497-99ca-a353b652443c}</Project>
+      <Name>kVent.Server.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

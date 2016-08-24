@@ -7,3 +7,4 @@
 /// <reference path="angular.js" />
 /// <reference path="angular-mocks.js" />
 /// <reference path="bootstrap.js" />
+/// <reference path="toastr.min.js" />
