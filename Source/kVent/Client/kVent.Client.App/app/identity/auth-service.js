@@ -43,6 +43,7 @@
             
             $http.get('/api/account/identity')
                 .success(function (identityResponse) {
+                    console.log(identityResponse);
                     identity.setUser(identityResponse);
                     deferred.resolve(identityResponse);
                 });
