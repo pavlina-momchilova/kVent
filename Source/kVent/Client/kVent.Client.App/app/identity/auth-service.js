@@ -41,9 +41,8 @@
         var getIdentity = function getIdentity() {
             var deferred = $q.defer();
             
-            $http.get('/api/account/identity')
+            $http.get('/api/users/identity')
                 .success(function (identityResponse) {
-                    console.log(identityResponse);
                     identity.setUser(identityResponse);
                     deferred.resolve(identityResponse);
                 });

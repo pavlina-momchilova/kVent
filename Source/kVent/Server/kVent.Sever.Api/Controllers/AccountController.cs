@@ -342,28 +342,28 @@
             return Ok();
         }
 
-        [HttpGet]
-        [Authorize]
-        public async Task<IHttpActionResult> Identity()
-        {
-            var userId = this.User.Identity.GetUserId();
+        //[HttpGet]
+        //[Authorize]
+        //public async Task<IHttpActionResult> Identity()
+        //{
+        //    var userId = this.User.Identity.GetUserId();
 
-            var db = new kVentDbContext();
+        //    var db = new kVentDbContext();
 
-            var user = await db.Users.Where(u => u.Id == userId)
-                 .Select(u => new
-                 {
-                     u.Email
-                 })
-                 .FirstOrDefaultAsync();
+        //    var user = await db.Users.Where(u => u.Id == userId)
+        //         .Select(u => new
+        //         {
+        //             u.Email
+        //         })
+        //         .FirstOrDefaultAsync();
 
-            if (user == null)
-            {
-                return InternalServerError(new Exception("Something bad :( !"));
-            }
+        //    if (user == null)
+        //    {
+        //        return InternalServerError(new Exception("Something bad :( !"));
+        //    }
 
-            return this.Json(user);
-        }
+        //    return this.Json(user);
+        //}
 
         // POST api/Account/RegisterExternal
         [OverrideAuthentication]

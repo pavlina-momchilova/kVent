@@ -18,7 +18,7 @@
         };
 
         var isAdmin = function isAdmin() {
-
+            return currentUser.data.isAdmin;
         };
 
         var setUser = function setUser(user) {

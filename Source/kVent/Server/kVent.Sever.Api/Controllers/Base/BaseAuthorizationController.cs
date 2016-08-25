@@ -1,6 +1,7 @@
 ﻿namespace kVent.Sever.Api.Controllers.Base
 {
     using System.Linq;
+    using Microsoft.AspNet.Identity;
 
     using kVent.Data.Models;
     using kVent.Services.Data.Contracts;
@@ -17,9 +18,9 @@
 
         protected User CurrentUser { get; private set; }
 
-        private void SetCurrentUser()
+        protected void SetCurrentUser()
         {
-            var username = this.User.Identity.Name;
+            var username = this.User.Identity.GetUserName();
             if (username != null)
             {
                 this.CurrentUser = this.UsersService

@@ -39,15 +39,16 @@ namespace kVent.Data.Migrations
             {
                 UserName = "Admin",
                 Email = "admin@admin.admin",
-                EmailConfirmed = true
+                EmailConfirmed = true,
+                IsAdmin = true // TODO refactoring of user roles tables and IsAdmin
             };
 
             userManager.Create(user, "admin12345");
 
             if (roleManager.Roles.Count() == 0)
             {
-                roleManager.Create(new IdentityRole { Name = "Admin" });
-                roleManager.Create(new IdentityRole { Name = "User" });
+                roleManager.Create(new IdentityRole { Name = kVent.Server.Common.Constants.AdminRole });
+                roleManager.Create(new IdentityRole { Name = kVent.Server.Common.Constants.UserRole });
             }
 
             var admin = userManager.FindByName("Admin");

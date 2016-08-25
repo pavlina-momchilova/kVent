@@ -239,6 +239,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.js" />
+    <Content Include="app\common\notifier-service.js" />
     <Content Include="app\identity\auth-service.js" />
     <Content Include="app\identity\identity-service.js" />
     <Content Include="app\identity\login-controller.js" />

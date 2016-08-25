@@ -1,5 +1,6 @@
 ﻿/// <autosync enabled="true" />
 /// <reference path="../app/app.js" />
+/// <reference path="../app/common/notifier-service.js" />
 /// <reference path="../app/identity/auth-service.js" />
 /// <reference path="../app/identity/identity-service.js" />
 /// <reference path="../app/identity/login-controller.js" />

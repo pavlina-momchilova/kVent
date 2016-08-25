@@ -37,7 +37,7 @@
             .otherwise({ redirectTo: '/' });
     };
 
-    function run($http, $cookies, $rootScope, $location, auth) {
+    function run($http, $cookies, $rootScope, $location, auth, notifier) {
         $rootScope.$on('$routeChangeError', function (ev, current, previous, rejection) {
             if (rejection === 'not authorized') {
                 window.history.pushState({}, '/', '/');
@@ -49,9 +49,8 @@
 
         if (auth.isAuthenticated()) {
             $http.defaults.headers.common.Authorization = 'Bearer ' + $cookies.get('authentication');
-            debugger;
-            auth.getIdentity().then(function () {
-                console.log('... User is loged  on application start... '); // TODO. Change it later to some UI 'hello' message.
+            auth.getIdentity().then(function (identity) {
+                notifier.success('Welcome back, ' + identity.data.userName + '!');
             });
         }
         
@@ -60,6 +59,8 @@
             console.log(oldUrl);
             console.log(newState);
             console.log(oldState);
+
+            //window.location.href = newUrl;
         });
     }
 
@@ -69,5 +70,6 @@
 
     angular.module('kVent', ['ngRoute', 'ngCookies', 'kVent.controllers', 'kVent.directives'])
         .config(['$routeProvider', '$locationProvider', config])
-        .run(['$http', '$cookies', '$rootScope', '$location', 'auth', run]);
+        .run(['$http', '$cookies', '$rootScope', '$location', 'auth', 'notifier', run])
+        .value('toastr', toastr);
 }());
