@@ -239,26 +239,39 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.js" />
+    <Content Include="app\common\notifier-service.js" />
     <Content Include="app\identity\auth-service.js" />
     <Content Include="app\identity\identity-service.js" />
-    <Content Include="app\landing-page\main-landingpage-controller.js" />
+    <Content Include="app\identity\login-controller.js" />
+    <Content Include="app\landing-page\landing-page-controller.js" />
     <Content Include="content\css\bootstrap.css" />
     <Content Include="content\css\bootstrap.min.css" />
     <Content Include="content\css\landing-page.css" />
+    <Content Include="content\css\site.css" />
     <Content Include="content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="content\img\1%402x.jpg" />
+    <Content Include="content\img\1.jpg" />
     <Content Include="content\img\banner-bg.jpg" />
     <Content Include="content\img\dog.png" />
     <Content Include="content\img\intro-bg.jpg" />
     <Content Include="content\img\ipad.png" />
     <Content Include="content\img\phones.png" />
+    <Content Include="content\toastr.css" />
+    <Content Include="content\toastr.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="index.html" />
+    <Content Include="partials\identity\login.html" />
+    <Content Include="partials\landing-page\landing-page.html" />
     <Content Include="scripts\angular-mocks.js" />
     <Content Include="content\css\bootstrap.min.css.map" />
+    <Content Include="content\toastr.scss" />
+    <Content Include="content\toastr.less" />
     <None Include="scripts\angular.intellisense.js" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
     <None Include="scripts\_references.js" />
+    <Content Include="scripts\toastr.js" />
+    <Content Include="scripts\toastr.min.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -284,6 +297,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="content\font-awesome\" />
+    <Folder Include="partials\dashboard\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="content\fonts\glyphicons-halflings-regular.eot" />

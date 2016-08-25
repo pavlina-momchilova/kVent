@@ -18,6 +18,9 @@
         public const string NotAuthorized = "You are not authorized for this operation";
         public const string InvalidPageNumber = "Invalid page number";
 
+        public const string AdminRole = "Admin";
+        public const string UserRole = "User";
+
         //public const string CommentTextDisplayName = "Comment";
         //public const string RepositoryUrlDisplayName = "Repository URL";
         //public const string LiveDemoUrlDisplayName = "Live Demo URL";

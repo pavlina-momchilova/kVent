@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=4.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AutoMapper.4.1.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -106,6 +110,13 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Http">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -118,16 +129,43 @@
     <Compile Include="Auth\ApplicationOAuthProvider.cs" />
     <Compile Include="Auth\AuthStartup.cs" />
     <Compile Include="Auth\ClaimsIdentityFactory.cs" />
+    <Compile Include="Extensions\ApiControllerExtensions.cs" />
+    <Compile Include="Formatters\BrowserJsonFormatter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResultObject.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Data\kVent.Data.Common\kVent.Data.Common.csproj">
+      <Project>{1208ad03-81db-4611-a1a2-455458ccd7a9}</Project>
+      <Name>kVent.Data.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Data\kVent.Data.Models\kVent.Data.Models.csproj">
       <Project>{aacd57e5-6259-49f6-9898-7868fc688686}</Project>
       <Name>kVent.Data.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\kVent.Services.Common\kVent.Services.Common.csproj">
+      <Project>{78f02bc1-9031-40d7-a530-059a403463b2}</Project>
+      <Name>kVent.Services.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\kVent.Services.Data\kVent.Services.Data.csproj">
+      <Project>{00e32aa8-1393-4c94-ba12-d6da5833a538}</Project>
+      <Name>kVent.Services.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\kVent.Services.Logic\kVent.Services.Logic.csproj">
+      <Project>{75e66c39-3adc-4da0-b1cc-5029b19cc369}</Project>
+      <Name>kVent.Services.Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\kVent.Server.Common\kVent.Server.Common.csproj">
+      <Project>{b8e9aaf7-0fb7-4497-99ca-a353b652443c}</Project>
+      <Name>kVent.Server.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\kVent.Server.DataTransferModels\kVent.Server.DataTransferModels.csproj">
+      <Project>{6bb6b6cc-e92a-47b6-887c-0c100727fb56}</Project>
+      <Name>kVent.Server.DataTransferModels</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

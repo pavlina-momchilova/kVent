@@ -75,6 +75,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Server\kVent.Server.Common\kVent.Server.Common.csproj">
+      <Project>{b8e9aaf7-0fb7-4497-99ca-a353b652443c}</Project>
+      <Name>kVent.Server.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\kVent.Data.Models\kVent.Data.Models.csproj">
       <Project>{aacd57e5-6259-49f6-9898-7868fc688686}</Project>
       <Name>kVent.Data.Models</Name>
