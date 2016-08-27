@@ -23,10 +23,12 @@
             .when('/', {
                 templateUrl: 'partials/landing-page/landing-page.html',
                 controller: 'LandingPageController',
-                constollerAs: CONTROLLER_VIEW_MODEL_NAME
+                controllerAs: CONTROLLER_VIEW_MODEL_NAME
             })
             .when('/dashboard', {
-                template: '<div> Dashboard </div>',
+                templateUrl: 'partials/dashboard/views/dashboard/main.html',
+                controller: 'MainDashboardController',
+                controllerAs: CONTROLLER_VIEW_MODEL_NAME,
                 resolve: routeResolvers.authenticationRequired
             })
             .when('/identity/login', {
@@ -65,8 +67,8 @@
     }
 
     angular.module('kVent.services', []);
-    angular.module('kVent.directives', []);
     angular.module('kVent.controllers', ['kVent.services']);
+    angular.module('kVent.directives', []);
 
     angular.module('kVent', ['ngRoute', 'ngCookies', 'kVent.controllers', 'kVent.directives'])
         .config(['$routeProvider', '$locationProvider', config])

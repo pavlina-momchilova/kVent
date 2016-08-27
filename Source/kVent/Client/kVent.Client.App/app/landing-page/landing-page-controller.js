@@ -8,6 +8,7 @@
         vm.title = "kVent";
     }
 
-    angular.module('kVent.controllers')
+    angular
+        .module('kVent.controllers')
         .controller('LandingPageController', [LandingPageController]);
 }());

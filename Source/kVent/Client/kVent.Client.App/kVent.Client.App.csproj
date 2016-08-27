@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="..\..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -25,6 +26,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>1.7</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -239,7 +241,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.js" />
+    <Content Include="app\common\main-controller.js" />
     <Content Include="app\common\notifier-service.js" />
+    <Content Include="app\dashboard\main-dashboard-controller.js" />
     <Content Include="app\identity\auth-service.js" />
     <Content Include="app\identity\identity-service.js" />
     <Content Include="app\identity\login-controller.js" />
@@ -260,12 +264,54 @@
     <Content Include="content\toastr.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="index.html" />
+    <Content Include="partials\dashboard\404.html" />
+    <Content Include="partials\dashboard\favicon.ico" />
+    <Content Include="partials\dashboard\js\sb-admin-2.js" />
+    <Content Include="partials\dashboard\robots.txt" />
+    <Content Include="partials\dashboard\scripts\app.js" />
+    <Content Include="partials\dashboard\scripts\controllers\chartContoller.js" />
+    <Content Include="partials\dashboard\scripts\controllers\form.js" />
+    <Content Include="partials\dashboard\scripts\controllers\main.js" />
+    <Content Include="partials\dashboard\scripts\directives\chat\chat.html" />
+    <Content Include="partials\dashboard\scripts\directives\chat\chat.js" />
+    <Content Include="partials\dashboard\scripts\directives\dashboard\stats\stats.html" />
+    <Content Include="partials\dashboard\scripts\directives\dashboard\stats\stats.js" />
+    <Content Include="partials\dashboard\scripts\directives\header\header-notification\header-notification.html" />
+    <Content Include="partials\dashboard\scripts\directives\header\header-notification\header-notification.js" />
+    <Content Include="partials\dashboard\scripts\directives\header\header.html" />
+    <Content Include="partials\dashboard\scripts\directives\header\header.js" />
+    <Content Include="partials\dashboard\scripts\directives\notifications\notifications.html" />
+    <Content Include="partials\dashboard\scripts\directives\notifications\notifications.js" />
+    <Content Include="partials\dashboard\scripts\directives\sidebar\sidebar-search\sidebar-search.html" />
+    <Content Include="partials\dashboard\scripts\directives\sidebar\sidebar-search\sidebar-search.js" />
+    <Content Include="partials\dashboard\scripts\directives\sidebar\sidebar.html" />
+    <Content Include="partials\dashboard\scripts\directives\sidebar\sidebar.js" />
+    <Content Include="partials\dashboard\scripts\directives\timeline\timeline.html" />
+    <Content Include="partials\dashboard\scripts\directives\timeline\timeline.js" />
+    <Content Include="partials\dashboard\styles\main.css" />
+    <Content Include="partials\dashboard\styles\sb-admin-2.css" />
+    <Content Include="partials\dashboard\styles\timeline.css" />
+    <Content Include="partials\dashboard\views\chart.html" />
+    <Content Include="partials\dashboard\views\dashboard\home.html" />
+    <Content Include="partials\dashboard\views\dashboard\main.html" />
+    <Content Include="partials\dashboard\views\form.html" />
+    <Content Include="partials\dashboard\views\pages\blank.html" />
+    <Content Include="partials\dashboard\views\pages\login.html" />
+    <Content Include="partials\dashboard\views\table.html" />
+    <Content Include="partials\dashboard\views\ui-elements\buttons.html" />
+    <Content Include="partials\dashboard\views\ui-elements\grid.html" />
+    <Content Include="partials\dashboard\views\ui-elements\icons.html" />
+    <Content Include="partials\dashboard\views\ui-elements\notifications.html" />
+    <Content Include="partials\dashboard\views\ui-elements\panels-wells.html" />
+    <Content Include="partials\dashboard\views\ui-elements\typography.html" />
     <Content Include="partials\identity\login.html" />
     <Content Include="partials\landing-page\landing-page.html" />
     <Content Include="scripts\angular-mocks.js" />
     <Content Include="content\css\bootstrap.min.css.map" />
     <Content Include="content\toastr.scss" />
     <Content Include="content\toastr.less" />
+    <Content Include="partials\dashboard\.buildignore" />
+    <Content Include="partials\dashboard\.htaccess" />
     <None Include="scripts\angular.intellisense.js" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
@@ -297,7 +343,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="content\font-awesome\" />
-    <Folder Include="partials\dashboard\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="content\fonts\glyphicons-halflings-regular.eot" />
@@ -308,11 +353,15 @@
   <ItemGroup>
     <Content Include="scripts\angular.min.js.map" />
   </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
