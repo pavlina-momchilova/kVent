@@ -18,7 +18,7 @@
         {
         }
 
-        [Authorize(Roles = Server.Common.Constants.AdminRole)]
+        [Authorize]
         [HttpGet]
         public async Task<IHttpActionResult> Identity()
         {

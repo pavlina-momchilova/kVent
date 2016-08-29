@@ -13,7 +13,7 @@ namespace kVent.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
-            AutomaticMigrationDataLossAllowed = true;
+            AutomaticMigrationDataLossAllowed = true; // TODO set false in production
         }
 
         protected override void Seed(kVentDbContext context)

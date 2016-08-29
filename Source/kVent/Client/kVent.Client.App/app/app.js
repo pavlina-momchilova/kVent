@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    function config($routeProvider, $locationProvider) {
+    function config($stateProvider, $urlRouterProvider, $locationProvider) {
 
         var CONTROLLER_VIEW_MODEL_NAME = 'vm';
 
@@ -19,34 +19,60 @@
             }
         }
 
-        $routeProvider
-            .when('/', {
+        $urlRouterProvider.otherwise('/');
+
+        $stateProvider
+            .state('landingPage', {
+                url: '/',
                 templateUrl: 'partials/landing-page/landing-page.html',
                 controller: 'LandingPageController',
                 controllerAs: CONTROLLER_VIEW_MODEL_NAME
             })
-            .when('/dashboard', {
+            .state('dashboard', {
+                url: '/dashboard',
                 templateUrl: 'partials/dashboard/views/dashboard/main.html',
                 controller: 'MainDashboardController',
                 controllerAs: CONTROLLER_VIEW_MODEL_NAME,
                 resolve: routeResolvers.authenticationRequired
             })
-            .when('/identity/login', {
+            .state('login', {
+                url: '/identity/login',
                 templateUrl: 'partials/identity/login.html',
                 controller: 'LogInController',
                 controllerAs: CONTROLLER_VIEW_MODEL_NAME
-            })
-            .otherwise({ redirectTo: '/' });
+            });
+
+        //$routeProvider
+        //    .when('/', {
+        //        templateUrl: 'partials/landing-page/landing-page.html',
+        //        controller: 'LandingPageController',
+        //        controllerAs: CONTROLLER_VIEW_MODEL_NAME
+        //    })
+        //    .when('/dashboard', {
+        //        templateUrl: 'partials/dashboard/views/dashboard/main.html',
+        //        controller: 'MainDashboardController',
+        //        controllerAs: CONTROLLER_VIEW_MODEL_NAME,
+        //        resolve: routeResolvers.authenticationRequired
+        //    })
+        //    .when('/identity/login', {
+        //        templateUrl: 'partials/identity/login.html',
+        //        controller: 'LogInController',
+        //        controllerAs: CONTROLLER_VIEW_MODEL_NAME
+        //    })
+        //    .otherwise({ redirectTo: '/' });
     };
 
-    function run($http, $cookies, $rootScope, $location, auth, notifier) {
-        $rootScope.$on('$routeChangeError', function (ev, current, previous, rejection) {
-            if (rejection === 'not authorized') {
-                window.history.pushState({}, '/', '/');
-                $location.path('/identity/login'); // if user is not authorized redirect to '/'. TODO change it later to some error page
+    function run($http, $cookies, $rootScope, $state, $location, auth, notifier) {
+        $rootScope.$on('$stateChangeError', function (event, toState, toParams, fromState, fromParams, error) {
+            if (error === 'not authorized') {
+                // TODO. if prev 'login' then no 'login' !
+                //event.preventDefault();
+                if (fromState.name != 'login') {
+                    $state.go('login');                    
+                } else {
+                    $state.go('landingPage');
+                }
             }
-
-            console.log(previous);
         });
 
         if (auth.isAuthenticated()) {
@@ -62,7 +88,7 @@
             console.log(newState);
             console.log(oldState);
 
-            //window.location.href = newUrl;
+            //window.location.href = oldUrl;
         });
     }
 
@@ -70,8 +96,8 @@
     angular.module('kVent.controllers', ['kVent.services']);
     angular.module('kVent.directives', []);
 
-    angular.module('kVent', ['ngRoute', 'ngCookies', 'kVent.controllers', 'kVent.directives'])
-        .config(['$routeProvider', '$locationProvider', config])
-        .run(['$http', '$cookies', '$rootScope', '$location', 'auth', 'notifier', run])
+    angular.module('kVent', ['ui.router', 'ngCookies', 'kVent.controllers', 'kVent.directives'])
+        .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', config])
+        .run(['$http', '$cookies', '$rootScope', '$state', '$location', 'auth', 'notifier', run])
         .value('toastr', toastr);
 }());

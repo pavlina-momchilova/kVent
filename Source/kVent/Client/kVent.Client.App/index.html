@@ -36,9 +36,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-route.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-cookies.js"></script>
+    <script src="scripts/angular-ui-router.min.js"></script>
 </head>
-<body ng-app="kVent" ng-cloak>
-    <div ng-view>
+<body ng-app="kVent" ng-cloak ng-controller="MainController as vm">
+    <p>
+        {{vm.text}}
+    </p>
+    <div ui-view>
     </div>
     <!--<footer>
         <div class="container">
@@ -92,10 +96,11 @@
     
     <!--Common-->
     <script src="app/common/notifier-service.js"></script>
+    <script src="app/common/main-controller.js"></script>
     <!--<script src="app/common/main-controller.js"></script>-->
     
     <!--Dashboard-->
-    <script src="app/dashboard/main-dashboard-controller.js"></script>
+    <script src="app/dashboard/main/main-dashboard-controller.js"></script>
 
     <script>
        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

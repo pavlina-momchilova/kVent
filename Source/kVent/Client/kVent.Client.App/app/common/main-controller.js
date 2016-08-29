@@ -3,7 +3,6 @@
 
     var mainController = function mainController($location, auth, identity) {
         var vm = this;
-
         //waitForLogin();
 
         vm.logout = function logout() {
