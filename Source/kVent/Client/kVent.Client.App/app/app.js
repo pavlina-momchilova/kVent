@@ -35,6 +35,13 @@
                 controllerAs: CONTROLLER_VIEW_MODEL_NAME,
                 resolve: routeResolvers.authenticationRequired
             })
+            .state('dashboard.home', {
+                url: '/home',
+                templateUrl: 'partials/dashboard/views/dashboard/home.html',
+                controller: 'MainDashboardController',
+                controllerAs: CONTROLLER_VIEW_MODEL_NAME,
+                resolve: routeResolvers.authenticationRequired
+            })
             .state('login', {
                 url: '/identity/login',
                 templateUrl: 'partials/identity/login.html',

@@ -9,7 +9,7 @@
             if (loginForm.$valid) {
                 auth.login(user)
                     .then(function () {
-                        $location.path('/dashboard');
+                        $location.path('/dashboard/home');
                         auth.getIdentity().then(function (identity) {
                             notifier.success('Welcome back, ' + identity.data.userName + '!');
                         });

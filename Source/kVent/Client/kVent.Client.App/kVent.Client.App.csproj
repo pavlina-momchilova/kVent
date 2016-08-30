@@ -246,6 +246,8 @@
     <Content Include="app\dashboard\dashboard-header-directive.js" />
     <Content Include="app\dashboard\dashboard-header-notification-directive.js" />
     <Content Include="app\dashboard\dashboard-sidebar-directive.js" />
+    <Content Include="app\dashboard\dashboard-stats-directive.js" />
+    <Content Include="app\dashboard\dashboard-timeline-directive.js" />
     <Content Include="app\dashboard\main-dashboard-controller.js" />
     <Content Include="app\identity\auth-service.js" />
     <Content Include="app\identity\identity-service.js" />
