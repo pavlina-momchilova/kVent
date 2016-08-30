@@ -42,6 +42,11 @@
                 controllerAs: CONTROLLER_VIEW_MODEL_NAME,
                 resolve: routeResolvers.authenticationRequired
             })
+            .state('dashboard.users', {
+                url: '/users',
+                templateUrl: 'partials/dashboard/users-list.html',
+                resolve: routeResolvers.authenticationRequired
+            })
             .state('login', {
                 url: '/identity/login',
                 templateUrl: 'partials/identity/login.html',

@@ -296,6 +296,7 @@
     <Content Include="partials\dashboard\styles\main.css" />
     <Content Include="partials\dashboard\styles\sb-admin-2.css" />
     <Content Include="partials\dashboard\styles\timeline.css" />
+    <Content Include="partials\dashboard\users-list.html" />
     <Content Include="partials\dashboard\views\chart.html" />
     <Content Include="partials\dashboard\views\dashboard\home.html" />
     <Content Include="partials\dashboard\views\dashboard\main.html" />
