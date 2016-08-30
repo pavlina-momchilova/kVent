@@ -5,7 +5,9 @@
         return {
             restrict: 'E',
             templateUrl: 'partials/dashboard/scripts/directives/header/header-notification/header-notification.html',
-            replace: true
+            replace: true,
+            controller: 'MainController',
+            controllerAs: 'vm'
         };
     }
 

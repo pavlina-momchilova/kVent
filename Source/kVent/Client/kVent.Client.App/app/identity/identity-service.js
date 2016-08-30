@@ -8,7 +8,11 @@
         var deferred = $q.defer();
 
         var getUser = function getUser() {
+            if (this.isAuthenticated()) {
+                return $q.resolve(currentUser); // creates promise and returns it. Useful when someone is expecting promisse and we need to return result.
+            }
 
+            return deferred.promise;
         };
 
         var isAuthenticated = function isAthenticated() {

@@ -59,7 +59,7 @@
             },
             logout: function () {
                 $cookies.remove(TOKEN_KEY);
-                $http.defaults.header.common.Authorization = null;
+                $http.defaults.headers.common.Authorization = null;
                 identity.removeUser();
             }
         };

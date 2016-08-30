@@ -89,13 +89,11 @@
             });
         }
         
-        $rootScope.$on('$locationChangeStart', function (ev, newUrl, oldUrl, newState, oldState) {
-            //console.log(newUrl);
-            //console.log(oldUrl);
-            //console.log(newState);
-            //console.log(oldState);
-
-            //window.location.href = oldUrl;
+        $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams, options) {
+            if (toState.url === '/dashboard') {
+                event.preventDefault();
+                $state.go('dashboard.home'); // TODO arrange better state routing.!s
+            }
         });
     }
 

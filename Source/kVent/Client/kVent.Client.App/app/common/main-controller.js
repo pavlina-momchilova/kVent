@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    var mainController = function mainController($location, auth, identity) {
+    var mainController = function mainController($state, auth, identity) {
         var vm = this;
         //waitForLogin();
 
@@ -9,7 +9,7 @@
             auth.logout();
             vm.currentUser = undefined;
             waitForLogin();
-            $location.path('/');
+            $state.go('landingPage');
         };
 
         //vm.search = function (searchTerm) {
@@ -25,5 +25,5 @@
 
     angular
         .module('kVent.controllers')
-        .controller('MainController', ['$location', 'auth', 'identity', mainController]);
+        .controller('MainController', ['$state', 'auth', 'identity', mainController]);
 }());
