@@ -243,7 +243,10 @@
     <Content Include="app\app.js" />
     <Content Include="app\common\main-controller.js" />
     <Content Include="app\common\notifier-service.js" />
-    <Content Include="app\dashboard\main\main-dashboard-controller.js" />
+    <Content Include="app\dashboard\dashboard-header-directive.js" />
+    <Content Include="app\dashboard\dashboard-header-notification-directive.js" />
+    <Content Include="app\dashboard\dashboard-sidebar-directive.js" />
+    <Content Include="app\dashboard\main-dashboard-controller.js" />
     <Content Include="app\identity\auth-service.js" />
     <Content Include="app\identity\identity-service.js" />
     <Content Include="app\identity\login-controller.js" />
@@ -344,7 +347,6 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="app\dashboard\header\" />
     <Folder Include="content\font-awesome\" />
   </ItemGroup>
   <ItemGroup>

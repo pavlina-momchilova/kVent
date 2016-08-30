@@ -70,7 +70,7 @@
                 if (fromState.name != 'login') {
                     $state.go('login');                    
                 } else {
-                    $state.go('landingPage');
+                    $state.go('landingPage'); // TODO  possibe problem. fix it to retur to previous, not only 'landingPage'
                 }
             }
         });
@@ -83,10 +83,10 @@
         }
         
         $rootScope.$on('$locationChangeStart', function (ev, newUrl, oldUrl, newState, oldState) {
-            console.log(newUrl);
-            console.log(oldUrl);
-            console.log(newState);
-            console.log(oldState);
+            //console.log(newUrl);
+            //console.log(oldUrl);
+            //console.log(newState);
+            //console.log(oldState);
 
             //window.location.href = oldUrl;
         });
