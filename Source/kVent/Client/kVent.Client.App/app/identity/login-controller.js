@@ -11,10 +11,10 @@
                     .then(function () {
                         $location.path('/dashboard/home');
                         auth.getIdentity().then(function (identity) {
-                            notifier.success('Welcome back, ' + identity.data.userName + '!');
+                            notifier.success('Здравей, ' + identity.data.userName + '!');
                         });
                     }, function (reason) {
-                        notifier.error('Wrong credentials!');
+                        notifier.error('Грешни данни!');
                     });
             }
         }

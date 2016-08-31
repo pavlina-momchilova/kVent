@@ -44,7 +44,9 @@
             })
             .state('dashboard.users', {
                 url: '/users',
-                templateUrl: 'partials/dashboard/users-list.html',
+                templateUrl: 'partials/dashboard/users/users-list.html',
+                controller: 'UsersController',
+                controllerAs: CONTROLLER_VIEW_MODEL_NAME,
                 resolve: routeResolvers.authenticationRequired
             })
             .state('login', {
@@ -80,7 +82,7 @@
                 // TODO. if prev 'login' then no 'login' !
                 //event.preventDefault();
                 if (fromState.name != 'login') {
-                    $state.go('login');                    
+                    $state.go('login');
                 } else {
                     $state.go('landingPage'); // TODO  possibe problem. fix it to retur to previous, not only 'landingPage'
                 }
@@ -93,7 +95,7 @@
                 notifier.success('Welcome back, ' + identity.data.userName + '!');
             });
         }
-        
+
         $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams, options) {
             if (toState.url === '/dashboard') {
                 event.preventDefault();
@@ -102,12 +104,16 @@
         });
     }
 
+    angular.module('kVent.data', []);
     angular.module('kVent.services', []);
-    angular.module('kVent.controllers', ['kVent.services']);
+    angular.module('kVent.controllers', ['kVent.data', 'kVent.services']);
     angular.module('kVent.directives', []);
 
     angular.module('kVent', ['ui.router', 'ngCookies', 'kVent.controllers', 'kVent.directives'])
         .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', config])
         .run(['$http', '$cookies', '$rootScope', '$state', '$location', 'auth', 'notifier', run])
-        .value('toastr', toastr);
+        .value('toastr', toastr)
+        .constant('appSettings', {
+            serverPath: '/api/',
+        });
 }());

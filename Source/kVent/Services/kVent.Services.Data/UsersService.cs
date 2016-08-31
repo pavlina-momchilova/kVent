@@ -22,5 +22,10 @@
                    .All()
                    .Where(u => u.UserName == username);
         }
+
+        public IQueryable<User> AllUsers()
+        {
+            return this.users.All();
+        }
     }
 }

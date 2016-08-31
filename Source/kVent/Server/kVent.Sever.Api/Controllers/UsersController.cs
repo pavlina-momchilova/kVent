@@ -32,5 +32,16 @@
 
             return this.Data(model);
         }
+
+        [HttpGet]
+        public async Task<IHttpActionResult> AllUsers()
+        {
+            var users = await this.UsersService
+                .AllUsers()
+                .ProjectTo<IdentityResponseModel>()
+                .ToListAsync();
+
+            return this.Data(users);
+        }
     }
 }

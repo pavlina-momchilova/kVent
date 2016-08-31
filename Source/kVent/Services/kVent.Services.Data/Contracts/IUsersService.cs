@@ -8,5 +8,7 @@
     public interface IUsersService : IService
     {
         IQueryable<User> ByUsername(string username);
+
+        IQueryable<User> AllUsers();
     }
 }
