@@ -10,5 +10,7 @@
         IQueryable<User> ByUsername(string username);
 
         IQueryable<User> AllUsers();
+
+        IQueryable<User> GetByUserName(string username);
     }
 }

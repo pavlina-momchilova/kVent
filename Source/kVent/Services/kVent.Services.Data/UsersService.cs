@@ -27,5 +27,12 @@
         {
             return this.users.All();
         }
+
+        public IQueryable<User> GetByUserName(string username)
+        {
+            return this.users
+                .All()
+                .Where(u => u.UserName == username);
+        }
     }
 }

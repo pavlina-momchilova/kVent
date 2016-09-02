@@ -2,12 +2,14 @@
 
     'use strict';
 
-    var authService = function authService($http, $q, $cookies, identity) {
+    var authService = function authService($http, $q, $cookies, identity, data) {
         
         var TOKEN_KEY = 'authentication';
 
-        var register = function register() {
-
+        var registerUser = function register(user) {
+            return data.post('account/register',
+                user,
+                true);
         };
 
         var login = function login(user) {
@@ -51,7 +53,7 @@
         };
 
         return {
-            register: register,
+            registerUser: registerUser,
             login: login,
             getIdentity: getIdentity,
             isAuthenticated: function () {
@@ -67,5 +69,5 @@
 
     angular
         .module('kVent.services')
-        .factory('auth', ['$http', '$q', '$cookies', 'identity', authService]);
+        .factory('auth', ['$http', '$q', '$cookies', 'identity', 'data', authService]);
 }());

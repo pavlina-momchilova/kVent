@@ -10,6 +10,7 @@
 /// <reference path="../app/dashboard/dashboard-stats-directive.js" />
 /// <reference path="../app/dashboard/dashboard-timeline-directive.js" />
 /// <reference path="../app/dashboard/main-dashboard-controller.js" />
+/// <reference path="../app/dashboard/users/add-users-controller.js" />
 /// <reference path="../app/dashboard/users/users-controller.js" />
 /// <reference path="../app/dashboard/users/users-item-directive.js" />
 /// <reference path="../app/dashboard/users/users-page-data.js" />

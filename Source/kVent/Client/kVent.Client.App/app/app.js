@@ -49,6 +49,22 @@
                 controllerAs: CONTROLLER_VIEW_MODEL_NAME,
                 resolve: routeResolvers.authenticationRequired
             })
+            .state('dashboard.users.add', {
+                url: '/users/add',
+                parent: 'dashboard',
+                templateUrl: 'partials/dashboard/users/users-add.html',
+                controller: 'AddUsersController',
+                controllerAs: CONTROLLER_VIEW_MODEL_NAME,
+                resolve: routeResolvers.authenticationRequired
+            })
+            .state('dashboard.users.detail', {
+                url: '/users/{username:.*}',
+                parent: 'dashboard',
+                templateUrl: 'partials/dashboard/users/users-detail-view.html',
+                controller: 'UsersController',
+                controllerAs: CONTROLLER_VIEW_MODEL_NAME,
+                resolve: routeResolvers.authenticationRequired
+            })
             .state('login', {
                 url: '/identity/login',
                 templateUrl: 'partials/identity/login.html',

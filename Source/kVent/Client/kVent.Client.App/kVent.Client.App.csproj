@@ -251,6 +251,7 @@
     <Content Include="app\dashboard\dashboard-stats-directive.js" />
     <Content Include="app\dashboard\dashboard-timeline-directive.js" />
     <Content Include="app\dashboard\main-dashboard-controller.js" />
+    <Content Include="app\dashboard\users\add-users-controller.js" />
     <Content Include="app\dashboard\users\users-controller.js" />
     <Content Include="app\dashboard\users\users-item-directive.js" />
     <Content Include="app\dashboard\users\users-page-data.js" />
@@ -301,6 +302,8 @@
     <Content Include="partials\dashboard\styles\main.css" />
     <Content Include="partials\dashboard\styles\sb-admin-2.css" />
     <Content Include="partials\dashboard\styles\timeline.css" />
+    <Content Include="partials\dashboard\users\users-add.html" />
+    <Content Include="partials\dashboard\users\users-detail-view.html" />
     <Content Include="partials\dashboard\users\users-item-directive.html" />
     <Content Include="partials\dashboard\users\users-list.html" />
     <Content Include="partials\dashboard\views\chart.html" />

@@ -1,11 +1,12 @@
 ﻿namespace kVent.Sever.Api.Controllers
 {
+    using System.ComponentModel.DataAnnotations;
+    using System.Data.Entity;
     using System.Web.Http;
     using System.Threading.Tasks;
-    using AutoMapper.QueryableExtensions;
-    using System.Data.Entity;
     using Microsoft.AspNet.Identity;
 
+    using AutoMapper.QueryableExtensions;
     using kVent.Sever.Api.Controllers.Base;
     using kVent.Services.Data.Contracts;
     using Server.DataTransferModels.User;
@@ -18,6 +19,18 @@
         {
         }
 
+        [HttpGet]
+        public async Task<IHttpActionResult> Get([Required]string username)
+        {
+            var user = await this.UsersService
+                .GetByUserName(username)
+                .ProjectTo<UserDetailsResponseModel>()
+                .FirstOrDefaultAsync();
+
+            return this.Data(user);
+        }
+
+        [Route("api/Users/Identity")]
         [Authorize]
         [HttpGet]
         public async Task<IHttpActionResult> Identity()
@@ -33,6 +46,7 @@
             return this.Data(model);
         }
 
+        [Route("api/Users/AllUsers")]
         [HttpGet]
         public async Task<IHttpActionResult> AllUsers()
         {
