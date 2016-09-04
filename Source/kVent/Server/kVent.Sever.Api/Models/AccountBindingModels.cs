@@ -42,6 +42,20 @@
         public string Email { get; set; }
 
         [Required]
+        [MinLength(Server.Common.Constants.MinNameLength)]
+        [MaxLength(Server.Common.Constants.MaxNameLength)]
+        public string FirstName { get; set; }
+
+        [Required]
+        [MinLength(Server.Common.Constants.MinNameLength)]
+        [MaxLength(Server.Common.Constants.MaxNameLength)]
+        public string LastName { get; set; }
+
+        [MinLength(Server.Common.Constants.MinSpecialityLength)]
+        [MaxLength(Server.Common.Constants.MaxSpecialityLength)]
+        public string Speciality { get; set; }
+
+        [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]

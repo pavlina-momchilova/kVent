@@ -72,6 +72,12 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Server\kVent.Server.Common\kVent.Server.Common.csproj">
+      <Project>{b8e9aaf7-0fb7-4497-99ca-a353b652443c}</Project>
+      <Name>kVent.Server.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

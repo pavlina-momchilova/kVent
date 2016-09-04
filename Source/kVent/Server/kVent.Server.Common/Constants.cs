@@ -21,8 +21,10 @@
         public const string AdminRole = "Admin";
         public const string UserRole = "User";
 
-        //public const string CommentTextDisplayName = "Comment";
-        //public const string RepositoryUrlDisplayName = "Repository URL";
-        //public const string LiveDemoUrlDisplayName = "Live Demo URL";
+        public const int MinNameLength = 2;
+        public const int MaxNameLength = 20;
+
+        public const int MinSpecialityLength = 2;
+        public const int MaxSpecialityLength = 30;
     }
 }

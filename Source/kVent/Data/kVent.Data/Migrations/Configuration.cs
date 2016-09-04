@@ -40,7 +40,10 @@ namespace kVent.Data.Migrations
                 UserName = "Admin",
                 Email = "admin@admin.admin",
                 EmailConfirmed = true,
-                IsAdmin = true // TODO refactoring of user roles tables and IsAdmin
+                IsAdmin = true, // TODO refactoring of user roles tables and IsAdmin
+                FirstName = "Admin",
+                LastName = "Admin",
+                Speciality = "ventilation specialist",
             };
 
             userManager.Create(user, "admin12345");

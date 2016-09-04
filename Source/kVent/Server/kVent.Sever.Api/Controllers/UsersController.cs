@@ -59,7 +59,7 @@
         {
             var users = await this.UsersService
                 .AllUsers()
-                .ProjectTo<IdentityResponseModel>()
+                .ProjectTo<ListedUsersResponseModel>()
                 .ToListAsync();
 
             return this.Data(users);
@@ -95,7 +95,7 @@
         //[AuthorizeEdit]
         [HttpPost]
         [ValidateModel]
-        public async Task<IHttpActionResult> Delete(EditUserRequestModel user)
+        public async Task<IHttpActionResult> Delete(DeleteUserRequestModel user)
         {
             // TODO. CRITICAL - validate 'isAuthorized' to edit works properly.
             var isAuthorized =

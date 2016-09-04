@@ -22,6 +22,7 @@
                             vm.canEdit = vm.user.userName == loggedUser.userName || loggedUser.isAdmin;
                         });
 
+                    console.log(vm.user);
                     vm.updatedUser = angular.copy(vm.user);
                 }, function (reject) {
                     notifier.error('Грешка: ' + reason.Message);
@@ -39,14 +40,19 @@
 
         vm.editUser = function (updatedUser, editUserDetailsForm) {
             if (editUserDetailsForm.$valid) {
-                if (confirm("Ще трябва да влезете в системата отново, за да се отразят промените.")) {
-                    // TODO - extract in a service the part with logOut check.
-                    var logOut = false;
-                    identity.getUser()
-                        .then(function (result) {
-                            var loggedUser = result.data;
-                            logOut = vm.user.userName == loggedUser.userName;
+                // TODO - extract in a service the part with logOut check.
+                var logOut = false;
+                identity.getUser()
+                    .then(function (result) {
+                        var loggedUser = result.data;
+                        logOut = vm.user.userName == loggedUser.userName;
+                        var currentUserChangeConfirmText = " Ще трябва да влезете в системата отново, за да се отразят промените.";
+                        var textToConfirm = "Потвърдете промяната на '" + vm.user.userName + "'.";
+                        if (logOut) {
+                            textToConfirm += currentUserChangeConfirmText;
+                        }
 
+                        if (confirm(textToConfirm)) {
                             usersPageData.editUser(updatedUser)
                                 .then(function (user) {
                                     notifier.success("Успешно редактиран '" + user.UserName + "'");
@@ -61,8 +67,8 @@
                                 }, function (reason) {
                                     notifier.error('Грешка: ' + reason.Message);
                                 });
-                        });
-                }
+                        }
+                    });
             }
         }
 
