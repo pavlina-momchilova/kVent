@@ -11,12 +11,19 @@
     using kVent.Services.Data.Contracts;
     using Server.DataTransferModels.User;
     using Server.Infrastructure.Extensions;
+    using Server.Infrastructure.Validation;
+    using Services.Logic.Contracts;
 
     public class UsersController : BaseAuthorizationController
     {
-        public UsersController(IUsersService usersService) 
+        private readonly IMappingService mappingService;
+
+        public UsersController(
+            IUsersService usersService,
+            IMappingService mappingService) 
             : base(usersService)
         {
+            this.mappingService = mappingService;
         }
 
         [HttpGet]
@@ -56,6 +63,54 @@
                 .ToListAsync();
 
             return this.Data(users);
+        }
+
+        [Route("api/Users/Edit")]
+        [Authorize]
+        //[AuthorizeEdit]
+        [HttpPost]
+        [ValidateModel]
+        public async Task<IHttpActionResult> Edit(EditUserRequestModel newUser)
+        {
+            // TODO. CRITICAL - validate 'isAuthorized' to edit works properly.
+            var isAuthorized =
+                System.Web.HttpContext.Current.User.Identity.GetUserId() == newUser.Id ||
+                await this.UsersService.UserIsAdmin(System.Web.HttpContext.Current.User.Identity.Name);
+
+            if(!isAuthorized)
+            {
+                return this.BadRequest(Server.Common.Constants.NotAuthorized);
+            }
+
+            // TODO assert errors. /dublicate username etc.
+            var existingUser = await this.UsersService.UserById(newUser.Id);
+            await this.UsersService.Edit(this.mappingService.Map(newUser, existingUser));
+
+            return this.Ok(this.mappingService.Map<UserDetailsResponseModel>(existingUser));
+        }
+
+
+        [Route("api/Users/Delete")]
+        [Authorize]
+        //[AuthorizeEdit]
+        [HttpPost]
+        [ValidateModel]
+        public async Task<IHttpActionResult> Delete(EditUserRequestModel user)
+        {
+            // TODO. CRITICAL - validate 'isAuthorized' to edit works properly.
+            var isAuthorized =
+                System.Web.HttpContext.Current.User.Identity.GetUserId() == user.Id ||
+                await this.UsersService.UserIsAdmin(System.Web.HttpContext.Current.User.Identity.Name);
+
+            if (!isAuthorized)
+            {
+                return this.BadRequest(Server.Common.Constants.NotAuthorized);
+            }
+
+            var existingUser = await this.UsersService.UserById(user.Id);
+            await this.UsersService.Delete(this.mappingService.Map(user, existingUser));
+
+            return this.Ok();
         }
     }
 }

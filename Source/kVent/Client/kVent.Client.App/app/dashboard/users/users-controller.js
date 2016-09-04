@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    function UsersController($state, auth, usersPageData, notifier) {
+    function UsersController($state, auth, identity, usersPageData, notifier) {
         var vm = this;
         vm.users = null;
 
@@ -17,19 +17,11 @@
         }
 
         vm.getUsers();
-        //vm.addCat = function (cat, catForm) {
-        //    console.log('...Trying to add a cat...');
-        //    if (catForm.$valid) {
-        //        console.log('... Adding a cat...');
-        //        cats.addCat(cat)
-        //           .then(function (catId) {
-        //               $location.path('/cats/details/' + catId);
-        //           });
-        //    }
-        //}
+
+        vm.isAdmin = identity.isAdmin();
     }
 
     angular
         .module('kVent.controllers')
-        .controller('UsersController', ['$state', 'auth', 'usersPageData', 'notifier', UsersController]);
+        .controller('UsersController', ['$state', 'auth', 'identity', 'usersPageData', 'notifier', UsersController]);
 }());

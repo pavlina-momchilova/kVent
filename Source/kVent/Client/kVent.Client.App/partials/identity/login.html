@@ -1,56 +1,28 @@
-﻿<div class="row container">
-    <div class="col-md-6 col-md-offset-4">
-        <form class="form-horizontal" name="loginForm">
-            <fieldset>
-                <legend>Login User</legend>
-                <div class="form-group">
-                    <label for="inputEmail" class="col-lg-2 control-label">Username</label>
-                    <div class="col-lg-8">
-                        <input type="text" ng-model="user.username" class="form-control" id="username" required="required" placeholder="Username" autofocus>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="inputPassword" class="col-lg-2 control-label">Password</label>
-                    <div class="col-lg-8">
-                        <input type="password" ng-model="user.password" class="form-control" id="inputPassword" required="required" placeholder="Password">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <button class="btn btn-primary" ng-click="vm.login(user, loginForm)">Submit</button>
-                    </div>
-                </div>
-            </fieldset>
-        </form>
-    </div>
-</div>
-<!--<div class="container">
+﻿<div class="container-fluid">
     <div class="row">
-        <div class="col-md-4 col-md-offset-4">
-            <div class="login-panel panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Please Sign In</h3>
-                </div>
-                <div class="panel-body">
-                    <form role="form" name="loginForm">
-                        <fieldset>
-                            <div class="form-group">
-                                <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
-                            </div>
-                            <div class="form-group">
-                                <input class="form-control" placeholder="Password" name="password" type="password" value="">
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input name="remember" type="checkbox" value="Remember Me">Remember Me
-                                </label>
-                            </div>
-                            <!-- Change this to a button or input when using this as a form
-                            <a ui-sref="dashboard.home" class="btn btn-lg btn-success btn-block">Login</a>
-                        </fieldset>
-                    </form>
-                </div>
-            </div>
+        <div class="col-md-12">
+            <form class="form-horizontal" name="loginForm">
+                <fieldset>
+                    <legend class="text-center col-lg-8 col-lg-offset-2">Вход в системата</legend>
+                    <div class="form-group">
+                        <div class="col-lg-6 col-lg-offset-3 input-group">
+                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                            <input type="text" ng-model="user.username" class="form-control" id="username" required="required" placeholder="Username" autofocus>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-6 col-lg-offset-3 input-group">
+                            <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+                            <input type="password" ng-model="user.password" class="form-control" id="inputPassword" required="required" placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-6 col-lg-offset-3 text-center">
+                            <button class="btn btn-primary col-lg-12" ng-click="vm.login(user, loginForm)">Submit</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
         </div>
     </div>
-</div>-->
+</div>

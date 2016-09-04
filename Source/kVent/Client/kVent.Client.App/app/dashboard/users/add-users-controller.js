@@ -11,7 +11,7 @@
                     notifier.success("Успешно добавен '" + user.userName + "'");
                     $state.go('dashboard.users');
                 }, function (reason) {
-                    notifier.error('Грешка: ' + reason.message);
+                    notifier.error('Грешка: ' + reason.Message);
                 });
             }
         }

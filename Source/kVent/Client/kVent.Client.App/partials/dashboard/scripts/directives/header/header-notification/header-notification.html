@@ -1,4 +1,10 @@
-<ul class="nav navbar-top-links navbar-right">
+﻿<ul class="nav navbar-top-links navbar-right">
+    <li>
+        <p>
+            <i class="fa fa-code fa-fw"></i> 
+            {{vm.currentUser.userName}}
+        </p>
+    </li>
     <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown">
             <i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i>
@@ -194,13 +200,12 @@
             <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
         </a>
         <ul class="dropdown-menu dropdown-user">
-            <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+            <li><a role="button" ng-click="vm.goToProfile()"><i class="fa fa-user fa-fw"></i> Профил</a>
             </li>
-            <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+            <li><a role="button" ng-click="vm.goToProfile()"><i class="fa fa-gear fa-fw"></i> Настройки</a>
             </li>
-            <li><a href="http://www.strapui.com/"><i class="fa fa-eye fa-fw"></i> Premium Angular Themes</a></li>
             <li class="divider"></li>
-            <li><a role="button" ng-click="vm.logout()"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+            <li><a role="button" ng-click="vm.logout()"><i class="fa fa-sign-out fa-fw"></i> Изход</a>
             </li>
         </ul>
         <!-- /.dropdown-user -->

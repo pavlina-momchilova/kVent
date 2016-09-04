@@ -61,7 +61,7 @@
                 url: '/users/{username:.*}',
                 parent: 'dashboard',
                 templateUrl: 'partials/dashboard/users/users-detail-view.html',
-                controller: 'UsersController',
+                controller: 'UsersDetailController',
                 controllerAs: CONTROLLER_VIEW_MODEL_NAME,
                 resolve: routeResolvers.authenticationRequired
             })
@@ -108,7 +108,7 @@
         if (auth.isAuthenticated()) {
             $http.defaults.headers.common.Authorization = 'Bearer ' + $cookies.get('authentication');
             auth.getIdentity().then(function (identity) {
-                notifier.success('Welcome back, ' + identity.data.userName + '!');
+                notifier.success('Здравей, ' + identity.data.userName + '!');
             });
         }
 

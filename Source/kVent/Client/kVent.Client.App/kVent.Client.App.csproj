@@ -245,6 +245,7 @@
     <Content Include="app\common\main-controller.js" />
     <Content Include="app\common\notifier-service.js" />
     <Content Include="app\common\route-resolvers-provider.js" />
+    <Content Include="app\common\show-errors-directive.js" />
     <Content Include="app\dashboard\dashboard-header-directive.js" />
     <Content Include="app\dashboard\dashboard-header-notification-directive.js" />
     <Content Include="app\dashboard\dashboard-sidebar-directive.js" />
@@ -253,6 +254,7 @@
     <Content Include="app\dashboard\main-dashboard-controller.js" />
     <Content Include="app\dashboard\users\add-users-controller.js" />
     <Content Include="app\dashboard\users\users-controller.js" />
+    <Content Include="app\dashboard\users\users-detail-controller.js" />
     <Content Include="app\dashboard\users\users-item-directive.js" />
     <Content Include="app\dashboard\users\users-page-data.js" />
     <Content Include="app\identity\auth-service.js" />

@@ -133,6 +133,8 @@
     <Compile Include="Formatters\BrowserJsonFormatter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResultObject.cs" />
+    <Compile Include="Validation\AuthorizeEditAttribute.cs" />
+    <Compile Include="Validation\ValidateModelAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

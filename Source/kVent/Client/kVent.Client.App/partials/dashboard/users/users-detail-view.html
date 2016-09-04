@@ -1,3 +1,63 @@
-﻿<div>
-    {{vm.$stateProvider}}
+﻿<div class="row">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Детайли за {{vm.user.userName}}</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <div class="col-lg-12">
+        <div class="row">
+            <div class="col-xs-12 row text-center">
+                <i class="fa fa-user fa-5x huge"></i>
+            </div>
+        </div>
+        <div class="row">
+            <form class="form-horizontal" name="editUserDetailsForm">
+                <fieldset>
+                    <div class="text-center error" ng-show="addUserForm.$invalid && addUserForm.$dirty"> Формата не е валидна!</div>
+                    <div class="text-center error" ng-show="user.password != user.confirmPassword">Паролите не съвпадат!</div>
+                    <div class="form-group">
+                        <div class="col-lg-10 input-group col-lg-offset-1">
+                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                            <input type="text" ng-model="vm.updatedUser.userName" class="form-control" id="userName" required="required" placeholder="Потребителско име" autofocus ng-disabled="vm.isNotEditMode">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-10 input-group col-lg-offset-1">
+                            <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+                            <input type="text" ng-model="vm.updatedUser.email" class="form-control" id="inputEmail" required="required" placeholder="Е-мейл" ng-disabled="vm.isNotEditMode">
+                        </div>
+                    </div>
+                    <!--<div class="form-group">
+                        <label for="inputPassword" class="col-lg-2 control-label">Парола</label>
+                        <div class="col-lg-10">
+                            <input type="password" ng-model="user.password" class="form-control" id="inputPassword" required="required" placeholder="Парола">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword" class="col-lg-2 control-label">Потвърди паролата</label>
+                        <div class="col-lg-10">
+                            <input type="password" ng-model="user.confirmPassword" class="form-control" id="confirmPassword" required="required" placeholder="Потвърди паролата">
+                        </div>
+                    </div>-->
+                    <div class="form-group" ng-show="vm.isNotEditMode" ng-hide="!vm.canEdit">
+                        <div class="col-lg-10 col-lg-offset-1 top-buffer-pixels">
+                            <button ng-click="vm.toggleEditMode()" class="btn btn-outline btn-warning btn-lg btn-block"><i class="fa fa-pencil fa-fw"></i> Редактирай</button>
+                        </div>
+                        <div class="col-lg-10 col-lg-offset-1 top-buffer-pixels">
+                            <button ng-click="vm.deleteUser()" class="btn btn-outline btn-danger btn-lg btn-block"><i class="fa fa-trash-o fa-lg"></i>  Изтрий</button>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-hide="vm.isNotEditMode">
+                        <div class="col-lg-10 col-lg-offset-1 top-buffer-pixels">
+                            <button ng-click="vm.editUser(vm.updatedUser, editUserDetailsForm)" ng-disabled="editUserDetailsForm.$invalid || user.password != user.confirmPassword" class="btn btn-outline btn-success btn-lg btn-block"><i class="fa fa-check"></i> Запази</button>
+                        </div>
+                        <div class="col-lg-10 col-lg-offset-1 top-buffer-pixels">
+                            <button ng-click="vm.toggleEditMode()" class="btn btn-outline btn-danger btn-lg btn-block"><i class="fa fa-close"></i> Отказ</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
 </div>

@@ -325,12 +325,18 @@
         [Route("Register")]
         public async Task<IHttpActionResult> Register(RegisterBindingModel model)
         {
+            var isAuthorized = HttpContext.Current.User.IsInRole(Server.Common.Constants.AdminRole);
+            if(!isAuthorized)
+            {
+                return BadRequest(Server.Common.Constants.NotAuthorized);
+            }
+
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var user = new User() { UserName = model.Email, Email = model.Email };
+            var user = new User() { UserName = model.UserName, Email = model.Email };
 
             IdentityResult result = await UserManager.CreateAsync(user, model.Password);
 
