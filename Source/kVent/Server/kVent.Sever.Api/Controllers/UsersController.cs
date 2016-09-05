@@ -14,6 +14,7 @@
     using Server.Infrastructure.Validation;
     using Services.Logic.Contracts;
 
+    [Authorize]
     public class UsersController : BaseAuthorizationController
     {
         private readonly IMappingService mappingService;
@@ -25,7 +26,7 @@
         {
             this.mappingService = mappingService;
         }
-
+        
         [HttpGet]
         public async Task<IHttpActionResult> Get([Required]string username)
         {
@@ -38,7 +39,6 @@
         }
 
         [Route("api/Users/Identity")]
-        [Authorize]
         [HttpGet]
         public async Task<IHttpActionResult> Identity()
         {
@@ -66,13 +66,13 @@
         }
 
         [Route("api/Users/Edit")]
-        [Authorize]
         //[AuthorizeEdit]
         [HttpPost]
         [ValidateModel]
         public async Task<IHttpActionResult> Edit(EditUserRequestModel newUser)
         {
             // TODO. CRITICAL - validate 'isAuthorized' to edit works properly.
+            // TODO. When refactoring - try to limit the calls to the services.
             var isAuthorized =
                 System.Web.HttpContext.Current.User.Identity.GetUserId() == newUser.Id ||
                 await this.UsersService.UserIsAdmin(System.Web.HttpContext.Current.User.Identity.Name);
@@ -91,7 +91,6 @@
 
 
         [Route("api/Users/Delete")]
-        [Authorize]
         //[AuthorizeEdit]
         [HttpPost]
         [ValidateModel]

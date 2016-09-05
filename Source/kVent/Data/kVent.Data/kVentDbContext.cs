@@ -3,6 +3,7 @@
     using Microsoft.AspNet.Identity.EntityFramework;
 
     using kVent.Data.Models;
+    using System.Data.Entity;
 
     public class kVentDbContext : IdentityDbContext<User>, IkVentDbContext
     {
@@ -10,6 +11,8 @@
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
+
+        public virtual IDbSet<Client> Commits { get; set; }
 
         public static kVentDbContext Create()
         {

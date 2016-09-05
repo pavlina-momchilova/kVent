@@ -12,7 +12,7 @@
                         vm.users = response.data;
                     }
                 }, function (reason) {
-                    notifier.error('Грешка: ' + reason.message);
+                    notifier.error('Грешка: ' + reason.Message);
                 });
         }
 

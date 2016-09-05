@@ -255,6 +255,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Base\BaseAuthorizationController.cs" />
     <Compile Include="Controllers\Base\BaseController.cs" />
+    <Compile Include="Controllers\ClientsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />

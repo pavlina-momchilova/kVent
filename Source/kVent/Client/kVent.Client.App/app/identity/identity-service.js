@@ -54,7 +54,7 @@
             isAuthenticated: function () {
                 return Object.getOwnPropertyNames(currentUser).length !== 0;
             },
-            isAdmin: function() {
+            isAdmin: function () {
                 return currentUser.data.isAdmin;
             },
             setUser: function (user) {

@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Client\AddClientRequestModel.cs" />
+    <Compile Include="Client\AddClientResponseModel.cs" />
+    <Compile Include="Client\ClientDetailsResponseModel.cs" />
+    <Compile Include="Client\DeleteClientRequestModel.cs" />
+    <Compile Include="Client\EditClientRequestModel.cs" />
+    <Compile Include="Client\ListedClientsResponseModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User\DeleteUserRequestModel.cs" />
     <Compile Include="User\EditUserRequestModel.cs" />

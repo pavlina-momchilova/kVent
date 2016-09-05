@@ -16,6 +16,22 @@
 
                     return $q.reject('not authorized');
                 }]
+            },
+            adminAuthenticationRequired: {
+                authenticate: ['$q', 'auth', 'identity', function ($q, auth, identity) {
+                    var deferred = $q.defer();
+
+                    auth.getIdentity()
+                        .then(function () {
+                            if (auth.isAuthenticated() && identity.isAdmin()) {
+                                deferred.resolve(true);
+                            } else {
+                                deferred.reject('not admin');
+                            }
+                        });
+
+                    return deferred.promise;
+                }]
             }
         }
 
@@ -55,13 +71,36 @@
                 templateUrl: 'partials/dashboard/users/users-add.html',
                 controller: 'AddUsersController',
                 controllerAs: CONTROLLER_VIEW_MODEL_NAME,
-                resolve: routeResolvers.authenticationRequired
+                resolve: routeResolvers.adminAuthenticationRequired
             })
             .state('dashboard.users.detail', {
                 url: '/users/{username:.*}',
                 parent: 'dashboard',
                 templateUrl: 'partials/dashboard/users/users-detail-view.html',
                 controller: 'UsersDetailController',
+                controllerAs: CONTROLLER_VIEW_MODEL_NAME,
+                resolve: routeResolvers.authenticationRequired
+            })
+            .state('dashboard.clients', {
+                url: '/clients',
+                templateUrl: 'partials/dashboard/clients/clients-list.html',
+                controller: 'ClientsController',
+                controllerAs: CONTROLLER_VIEW_MODEL_NAME,
+                resolve: routeResolvers.authenticationRequired
+            })
+            .state('dashboard.clients.add', {
+                url: '/clients/add',
+                parent: 'dashboard',
+                templateUrl: 'partials/dashboard/clients/clients-add.html',
+                controller: 'AddClientsController',
+                controllerAs: CONTROLLER_VIEW_MODEL_NAME,
+                resolve: routeResolvers.adminAuthenticationRequired
+            })
+            .state('dashboard.clients.detail', {
+                url: '/clients/{id:.*}',
+                parent: 'dashboard',
+                templateUrl: 'partials/dashboard/clients/clients-detail-view.html',
+                controller: 'ClientsDetailController',
                 controllerAs: CONTROLLER_VIEW_MODEL_NAME,
                 resolve: routeResolvers.authenticationRequired
             })
@@ -92,7 +131,7 @@
         //    .otherwise({ redirectTo: '/' });
     };
 
-    function run($http, $cookies, $rootScope, $state, $location, auth, notifier) {
+    function run($http, $cookies, $rootScope, $state, $location, auth, identity, notifier) {
         $rootScope.$on('$stateChangeError', function (event, toState, toParams, fromState, fromParams, error) {
             if (error === 'not authorized') {
                 // TODO. if prev 'login' then no 'login' !
@@ -102,6 +141,9 @@
                 } else {
                     $state.go('landingPage'); // TODO  possibe problem. fix it to retur to previous, not only 'landingPage'
                 }
+            } else if (error === 'not admin') {
+                notifier.error('Нямате администраторски права!');
+                window.history.back(1)
             }
         });
 
@@ -127,7 +169,7 @@
 
     angular.module('kVent', ['ui.router', 'ngCookies', 'kVent.controllers', 'kVent.directives'])
         .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', config])
-        .run(['$http', '$cookies', '$rootScope', '$state', '$location', 'auth', 'notifier', run])
+        .run(['$http', '$cookies', '$rootScope', '$state', '$location', 'auth', 'identity', 'notifier', run])
         .value('toastr', toastr)
         .constant('appSettings', {
             serverPath: '/api/',

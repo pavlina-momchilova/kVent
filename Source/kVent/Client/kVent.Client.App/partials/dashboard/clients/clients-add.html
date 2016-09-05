@@ -1,0 +1,49 @@
+﻿<div class="row">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Добави клиент</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <div class="col-lg-12">
+        <form class="form-horizontal" name="addClientsForm" novalidate>
+            <fieldset>
+                <div class="form-group" show-errors-directive>
+                    <div class="col-lg-10 input-group col-lg-offset-1">
+                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                        <input type="text" ng-model="client.firstname" class="form-control" name="firstname" id="firstname" required="required" placeholder="Име">
+                    </div>
+                </div>
+                <div class="form-group" show-errors-directive>
+                    <div class="col-lg-10 input-group col-lg-offset-1">
+                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                        <input type="text" ng-model="client.lastname" class="form-control" name="lastname" id="lastname" required="required" placeholder="Фамилия">
+                    </div>
+                </div>
+                <div class="form-group" show-errors-directive>
+                    <div class="col-lg-10 input-group col-lg-offset-1">
+                        <span class="input-group-addon"><i class="fa fa-users fa-fw"></i></span>
+                        <input type="text" ng-model="client.companyname" class="form-control" name="companyname" id="companyname" required="required" pattern=".{2,}" placeholder="Име на фирмата" autofocus>
+                    </div>
+                </div>
+                <div class="form-group" show-errors-directive>
+                    <div class="col-lg-10 input-group col-lg-offset-1">
+                        <span class="input-group-addon"><i class="fa fa-phone fa-fw"></i></span>
+                        <input type="text" ng-model="client.phonenumber" class="form-control" name="phonenumber" id="phonenumber" placeholder="Телефон за връзка">
+                    </div>
+                </div>
+                <div class="form-group" show-errors-directive>
+                    <div class="col-lg-10 input-group col-lg-offset-1">
+                        <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+                        <input type="email" ng-model="client.email" class="form-control" name="inputEmail" id="inputEmail" placeholder="Е-мейл">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-10 col-lg-offset-1">
+                        <button ng-click="vm.addClient(client, addClientsForm)" ng-disabled="addClientsForm.$invalid" class="btn btn-outline btn-primary btn-lg btn-block"><i class="fa fa-database"></i> Готово</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
