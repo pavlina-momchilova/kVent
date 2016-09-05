@@ -12,7 +12,11 @@
         {
         }
 
-        public virtual IDbSet<Client> Commits { get; set; }
+        public virtual IDbSet<Client> Clients { get; set; }
+
+        public virtual IDbSet<ConstructionSite> ConstructionSites { get; set; }
+
+        public virtual IDbSet<Record> Records { get; set; }
 
         public static kVentDbContext Create()
         {

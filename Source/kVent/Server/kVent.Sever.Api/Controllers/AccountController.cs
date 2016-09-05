@@ -341,7 +341,8 @@
                 Email = model.Email,
                 FirstName = model.FirstName,
                 LastName = model.LastName,
-                Speciality = model.Speciality
+                Speciality = model.Speciality,
+                DateCreated = DateTime.Now
             };
 
             IdentityResult result = await UserManager.CreateAsync(user, model.Password);

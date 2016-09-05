@@ -44,6 +44,7 @@ namespace kVent.Data.Migrations
                 FirstName = "Admin",
                 LastName = "Admin",
                 Speciality = "ventilation specialist",
+                DateCreated = DateTime.Now
             };
 
             userManager.Create(user, "admin12345");

@@ -20,6 +20,7 @@
 
         public async Task<Client> AddNew(Client client)
         {
+            client.DateCreated = DateTime.Now;
             this.clients.Add(client);
             await this.clients.SaveChangesAsync();
             return client;
