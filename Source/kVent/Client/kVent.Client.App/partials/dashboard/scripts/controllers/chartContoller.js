@@ -6,8 +6,9 @@
  * # MainCtrl
  * Controller of the sbAdminApp
  */
-angular.module('sbAdminApp')
+angular.module('kVent.controllers')
   .controller('ChartCtrl', ['$scope', '$timeout', function ($scope, $timeout) {
+      console.log('asdasdsa');
     $scope.line = {
 	    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
 	    series: ['Series A', 'Series B'],

@@ -38,6 +38,7 @@
 /// <reference path="../partials/dashboard/scripts/directives/sidebar/sidebar-search/sidebar-search.js" />
 /// <reference path="../partials/dashboard/scripts/directives/timeline/timeline.js" />
 /// <reference path="angular.js" />
+/// <reference path="angular-chart.min.js" />
 /// <reference path="angular-mocks.js" />
 /// <reference path="angular-ui-router.min.js" />
 /// <reference path="bootstrap.js" />

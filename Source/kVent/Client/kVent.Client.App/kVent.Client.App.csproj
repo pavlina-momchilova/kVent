@@ -265,6 +265,7 @@
     <Content Include="app\identity\identity-service.js" />
     <Content Include="app\identity\login-controller.js" />
     <Content Include="app\landing-page\landing-page-controller.js" />
+    <Content Include="content\angular-chart.css" />
     <Content Include="content\css\bootstrap.css" />
     <Content Include="content\css\bootstrap.min.css" />
     <Content Include="content\css\landing-page.css" />
@@ -285,8 +286,11 @@
     <Content Include="partials\dashboard\clients\clients-add.html" />
     <Content Include="partials\dashboard\clients\clients-detail-view.html" />
     <Content Include="partials\dashboard\clients\clients-list.html" />
+    <Content Include="partials\dashboard\constructionSites\constructionSites-list.html" />
     <Content Include="partials\dashboard\favicon.ico" />
     <Content Include="partials\dashboard\js\sb-admin-2.js" />
+    <Content Include="partials\dashboard\myReports\myReports-list.html" />
+    <Content Include="partials\dashboard\reports\reports-list.html" />
     <Content Include="partials\dashboard\robots.txt" />
     <Content Include="partials\dashboard\scripts\app.js" />
     <Content Include="partials\dashboard\scripts\controllers\chartContoller.js" />
@@ -330,12 +334,15 @@
     <Content Include="partials\dashboard\views\ui-elements\typography.html" />
     <Content Include="partials\identity\login.html" />
     <Content Include="partials\landing-page\landing-page.html" />
+    <Content Include="scripts\angular-chart.min.js" />
     <Content Include="scripts\angular-mocks.js" />
     <Content Include="content\css\bootstrap.min.css.map" />
     <Content Include="content\toastr.scss" />
     <Content Include="content\toastr.less" />
     <Content Include="partials\dashboard\.buildignore" />
     <Content Include="partials\dashboard\.htaccess" />
+    <Content Include="content\angular-chart.css.map" />
+    <Content Include="scripts\angular-chart.min.js.map" />
     <None Include="scripts\angular.intellisense.js" />
     <Content Include="scripts\angular-ui-router.js" />
     <Content Include="scripts\angular-ui-router.min.js" />

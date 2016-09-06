@@ -104,6 +104,18 @@
                 controllerAs: CONTROLLER_VIEW_MODEL_NAME,
                 resolve: routeResolvers.authenticationRequired
             })
+            .state('dashboard.constructionSites', {
+                url: '/constructionSites',
+                templateUrl: 'partials/dashboard/constructionSites/constructionSites-list.html'
+            })
+            .state('dashboard.myReports', {
+                url: '/myReports',
+                templateUrl: 'partials/dashboard/myReports/myReports-list.html'
+            })
+            .state('dashboard.reports', {
+                url: '/reports',
+                templateUrl: 'partials/dashboard/reports/reports-list.html'
+            })
             .state('login', {
                 url: '/identity/login',
                 templateUrl: 'partials/identity/login.html',
