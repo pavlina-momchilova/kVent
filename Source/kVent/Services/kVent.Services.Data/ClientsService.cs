@@ -28,7 +28,9 @@
 
         public IQueryable<Client> AllClients()
         {
-            return this.clients.All();
+            return this.clients
+                .All()
+                .OrderByDescending(c => c.DateCreated);
         }
 
         public async Task<Client> ClientById(int id)

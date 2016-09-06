@@ -27,7 +27,9 @@
 
         public IQueryable<User> AllUsers()
         {
-            return this.users.All();
+            return this.users
+                .All()
+                .OrderByDescending(u => u.DateCreated);
         }
 
         public IQueryable<User> GetByUserName(string username)

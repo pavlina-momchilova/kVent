@@ -14,6 +14,7 @@
     using kVent.Server.Infrastructure.Validation;
     using Server.DataTransferModels.Client;
     using Server.Infrastructure.Extensions;
+
     [Authorize]
     public class ClientsController : BaseAuthorizationController
     {
