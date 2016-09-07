@@ -106,7 +106,18 @@
             })
             .state('dashboard.constructionSites', {
                 url: '/constructionSites',
-                templateUrl: 'partials/dashboard/constructionSites/constructionSites-list.html'
+                templateUrl: 'partials/dashboard/constructionSites/construction-sites-list.html',
+                controller: 'ConstructionSitesController',
+                controllerAs: CONTROLLER_VIEW_MODEL_NAME,
+                resolve: routeResolvers.authenticationRequired
+            })
+            .state('dashboard.constructionSites.add', {
+                url: '/constructionSites/add',
+                parent: 'dashboard',
+                templateUrl: 'partials/dashboard/constructionSites/construction-sites-add.html',
+                controller: 'AddConstructionSitesController',
+                controllerAs: CONTROLLER_VIEW_MODEL_NAME,
+                resolve: routeResolvers.adminAuthenticationRequired
             })
             .state('dashboard.myReports', {
                 url: '/myReports',

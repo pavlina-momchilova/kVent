@@ -250,6 +250,9 @@
     <Content Include="app\dashboard\clients\clients-controller.js" />
     <Content Include="app\dashboard\clients\clients-detail-controller.js" />
     <Content Include="app\dashboard\clients\clients-page-data.js" />
+    <Content Include="app\dashboard\constructionSites\add-construction-sites-controller.js" />
+    <Content Include="app\dashboard\constructionSites\construction-sites-controller.js" />
+    <Content Include="app\dashboard\constructionSites\construction-sites-page-data.js" />
     <Content Include="app\dashboard\dashboard-header-directive.js" />
     <Content Include="app\dashboard\dashboard-header-notification-directive.js" />
     <Content Include="app\dashboard\dashboard-sidebar-directive.js" />
@@ -286,7 +289,8 @@
     <Content Include="partials\dashboard\clients\clients-add.html" />
     <Content Include="partials\dashboard\clients\clients-detail-view.html" />
     <Content Include="partials\dashboard\clients\clients-list.html" />
-    <Content Include="partials\dashboard\constructionSites\constructionSites-list.html" />
+    <Content Include="partials\dashboard\constructionSites\construction-sites-add.html" />
+    <Content Include="partials\dashboard\constructionSites\construction-sites-list.html" />
     <Content Include="partials\dashboard\favicon.ico" />
     <Content Include="partials\dashboard\js\sb-admin-2.js" />
     <Content Include="partials\dashboard\myReports\myReports-list.html" />

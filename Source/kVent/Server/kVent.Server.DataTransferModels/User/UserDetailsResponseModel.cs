@@ -1,5 +1,6 @@
 ﻿namespace kVent.Server.DataTransferModels.User
 {
+    using System;
     using System.Collections.Generic;
 
     using AutoMapper;
@@ -8,6 +9,7 @@
     using kVent.Server.Common.Mapping;
     using ConstructionSites;
     using System.Linq;
+
     public class UserDetailsResponseModel : IMapFrom<User>, IHaveCustomMappings
     {
         public string Id { get; set; }
@@ -23,6 +25,8 @@
         public string LastName { get; set; }
 
         public string Speciality { get; set; }
+
+        public DateTime DateCreated { get; set; }
 
         public IEnumerable<ConstructionSiteResponseModel> ConstructionSites { get; set; }
 

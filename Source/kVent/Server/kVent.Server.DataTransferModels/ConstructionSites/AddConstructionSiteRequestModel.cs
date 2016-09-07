@@ -1,0 +1,28 @@
+﻿namespace kVent.Server.DataTransferModels.ConstructionSites
+{
+    using System;
+    using System.ComponentModel.DataAnnotations;
+
+    using kVent.Data.Models;
+    using Common.Mapping;
+
+    public class AddConstructionSiteRequestModel : IMapFrom<ConstructionSite>
+    {
+        [Required]
+        [MinLength(Server.Common.Constants.MinNameLength)]
+        [MaxLength(Server.Common.Constants.MaxNameLength)]
+        public string ConstructionSiteName { get; set; }
+
+        public string City { get; set; }
+
+        [Required]
+        [MinLength(Server.Common.Constants.MinNameLength)]
+        [MaxLength(Server.Common.Constants.MaxNameLength)]
+        public string Address { get; set; }
+
+        public bool PaymentPerHour { get; set; }
+        
+        [Required]
+        public int ClientId { get; set; }
+    }
+}

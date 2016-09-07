@@ -1,5 +1,6 @@
 ﻿namespace kVent.Server.DataTransferModels.Client
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
     using AutoMapper;
@@ -20,6 +21,8 @@
         public string PhoneNumber { get; set; }
 
         public string Email { get; set; }
+
+        public DateTime DateCreated { get; set; }
 
         public IEnumerable<ConstructionSiteResponseModel> ConstructionSites { get; set; }
 
