@@ -273,6 +273,7 @@
     <Content Include="content\css\bootstrap.min.css" />
     <Content Include="content\css\landing-page.css" />
     <Content Include="content\css\site.css" />
+    <Content Include="content\font-awesome\css\font-awesome.min.css" />
     <Content Include="content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="content\img\1%402x.jpg" />
     <Content Include="content\img\1.jpg" />
@@ -378,9 +379,7 @@
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="content\font-awesome\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="content\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="content\fonts\glyphicons-halflings-regular.ttf" />
