@@ -15,7 +15,7 @@
         public static void StartWebApi(IAppBuilder app)
         {
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<kVentDbContext, Configuration>());
-            DatabaseConfig.Initialize();
+            //DatabaseConfig.Initialize();
             // Automapper register mappings
             AutoMapperConfig.RegisterMappings(Constants.DataTransferModelsAssembly);
 
