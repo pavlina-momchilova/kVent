@@ -15,6 +15,7 @@
     using Server.DataTransferModels.ConstructionSites;
     using Server.Infrastructure.Extensions;
 
+    [Authorize]
     public class ConstructionSitesController : BaseAuthorizationController
     {
         private readonly IConstructionSitesService constructionSitesService;

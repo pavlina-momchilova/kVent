@@ -34,6 +34,8 @@
         public string Speciality { get; set; }
         
         public DateTime DateCreated { get; set; }
+        
+        public decimal TotalExperience { get; set; }
 
         public string LastEntry { get; set; }
 

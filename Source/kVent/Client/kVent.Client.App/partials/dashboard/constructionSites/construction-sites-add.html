@@ -29,8 +29,24 @@
                 <div class="form-group" show-errors-directive>
                     <div class="col-lg-10 input-group col-lg-offset-1">
                         <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
-                        <input type="text" ng-model="constructionSite.clientId" class="form-control" name="clientId" id="clientId" required="required" pattern=".{2,20}" placeholder="Клиент">
+                        <ui-select ng-model="constructionSite.clientId" ng-required="true">
+                            <ui-select-match placeholder="Клиент">
+                                <span ng-bind="$select.selected.companyName"></span>
+                            </ui-select-match>
+                            <ui-select-choices repeat="client in (vm.clientsArray | filter: $select.search) track by client.id">
+                                <div ng-bind-html="client.companyName | highlight: $select.search"></div>
+                                <small>
+                                    Представител: 
+                                    {{client.firstName}} {{client.lastName}}
+                                    Е-мейл: <span ng-bind-html="''+client.email | highlight: $select.search"></span>
+                                </small>
+                            </ui-select-choices>
+                        </ui-select>
                     </div>
+                    <!--<div class="col-lg-10 input-group col-lg-offset-1">
+                        <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
+                        <input type="text" ng-model="constructionSite.clientId" class="form-control" name="clientId" id="clientId" required="required" pattern=".{2,20}" placeholder="Клиент">
+                    </div>-->
                 </div>
                 <div class="form-group" show-errors-directive>
                     <div class="col-lg-10 input-group col-lg-offset-1">

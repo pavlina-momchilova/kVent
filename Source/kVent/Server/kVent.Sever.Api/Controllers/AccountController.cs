@@ -342,7 +342,8 @@
                 FirstName = model.FirstName,
                 LastName = model.LastName,
                 Speciality = model.Speciality,
-                DateCreated = DateTime.Now
+                DateCreated = DateTime.Now,
+                TotalExperience = 0
             };
 
             IdentityResult result = await UserManager.CreateAsync(user, model.Password);

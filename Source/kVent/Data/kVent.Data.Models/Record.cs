@@ -2,6 +2,7 @@
 {
     using System;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
 
     public class Record
     {
@@ -18,14 +19,16 @@
         public TimeSpan EndTime { get; set; }
 
         [Required]
-        public int TotalBreakMinutes { get; set; }
+        public TimeSpan TotalBreakMinutes { get; set; }
+
+        public DateTime DateCreated { get; set; }
 
         public string UserId { get; set; }
-
+        
         public virtual User User { get; set; }
 
         public int ConstructionSiteId { get; set; }
-
+        
         public virtual ConstructionSite ConstructionSite { get; set; }
     }
 }

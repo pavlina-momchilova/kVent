@@ -4,6 +4,7 @@
     using System.Collections;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
 
     public class ConstructionSite
     {
@@ -20,6 +21,7 @@
         [Required]
         [MinLength(Server.Common.Constants.MinNameLength)]
         [MaxLength(Server.Common.Constants.MaxNameLength)]
+        [Index(IsUnique = true)]
         public string ConstructionSiteName { get; set; }
 
         public string City { get; set; }

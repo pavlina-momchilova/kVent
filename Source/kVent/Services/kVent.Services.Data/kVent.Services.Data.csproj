@@ -61,8 +61,10 @@
     <Compile Include="ConstructionSitesService.cs" />
     <Compile Include="Contracts\IClientsService.cs" />
     <Compile Include="Contracts\IConstructionSitesService.cs" />
+    <Compile Include="Contracts\IRecordsService.cs" />
     <Compile Include="Contracts\IUsersService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecordsService.cs" />
     <Compile Include="UsersService.cs" />
   </ItemGroup>
   <ItemGroup>

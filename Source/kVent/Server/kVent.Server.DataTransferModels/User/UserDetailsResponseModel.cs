@@ -28,6 +28,8 @@
 
         public DateTime DateCreated { get; set; }
 
+        public decimal TotalExperience { get; set; }
+
         public IEnumerable<ConstructionSiteResponseModel> ConstructionSites { get; set; }
 
         public void CreateMappings(IConfiguration configuration)

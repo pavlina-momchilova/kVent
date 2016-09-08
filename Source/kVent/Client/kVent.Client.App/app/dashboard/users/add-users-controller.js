@@ -6,6 +6,7 @@
 
         vm.addUser = function (user, addUserForm) {
             if (addUserForm.$valid) {
+                debugger;
                 auth.registerUser(user)
                 .then(function (response) {
                     notifier.success("Успешно добавен '" + user.userName + "'");
