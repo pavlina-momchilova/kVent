@@ -22,10 +22,9 @@
                             vm.canEdit = vm.user.userName == loggedUser.userName || loggedUser.isAdmin;
                         });
 
-                    console.log(vm.user);
                     vm.updatedUser = angular.copy(vm.user);
                 }, function (reject) {
-                    notifier.error('Грешка: ' + reason.Message);
+                    notifier.error('Грешка: ' + reject.Message);
                 });
         }
 
@@ -55,7 +54,7 @@
                         if (confirm(textToConfirm)) {
                             usersPageData.editUser(updatedUser)
                                 .then(function (user) {
-                                    notifier.success("Успешно редактиран '" + user.UserName + "'");
+                                    notifier.warning("Успешно редактиран '" + user.UserName + "'");
 
                                     if (logOut) {
                                         auth.logout();
@@ -83,7 +82,7 @@
 
                         usersPageData.deleteUser(vm.user)
                             .then(function (response) {
-                                notifier.success("Успешно изтрит '" + vm.user.userName + "'");
+                                notifier.warning("Успешно изтрит '" + vm.user.userName + "'");
 
                                 if (logOut) {
                                     auth.logout();

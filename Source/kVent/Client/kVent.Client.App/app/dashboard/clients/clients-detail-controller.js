@@ -40,13 +40,12 @@
         }
 
         vm.editClient = function (updatedClient, editClientsDetailsForm) {
-            debugger;
             if (editClientsDetailsForm.$valid) {
                 // TODO - extract in a service the part with logOut check.
                 if (confirm("Потвърдете промяната на '" + vm.updatedClient.companyName + "'.")) {
                     clientsPageData.editClient(updatedClient)
                         .then(function (client) {
-                            notifier.success("Успешно редактиран '" + client.CompanyName + "'");
+                            notifier.warning("Успешно редактиран '" + client.CompanyName + "'");
                             $state.go('dashboard.clients.detail', { 'id': client.Id });
                             vm.isNotEditMode = !vm.isNotEditMode;
                         }, function (reason) {
@@ -61,7 +60,7 @@
                 // TODO - extract in a service the part with logOut check.
                 clientsPageData.deleteClient(vm.client)
                     .then(function (response) {
-                        notifier.success("Успешно изтрит '" + vm.client.companyName + "'");
+                        notifier.warning("Успешно изтрит '" + vm.client.companyName + "'");
                         $state.go('dashboard.clients');
 
                     }, function (reason) {

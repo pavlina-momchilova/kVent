@@ -12,7 +12,7 @@
 
         IQueryable<Record> AllRecords();
 
-        IQueryable<Record> GetById(int id);
+        IQueryable<Record> GetRecordsByUsername(string username);
 
         Task<Record> RecordById(int id);
 

@@ -13,37 +13,37 @@
                 <div class="form-group" show-errors-directive>
                     <div class="col-lg-10 input-group col-lg-offset-1">
                         <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                        <input type="text" ng-model="user.userName" class="form-control" name="userName" id="userName" required="required" pattern=".{2,}" placeholder="Потребителско име" autofocus>
+                        <input type="text" ng-model="user.userName" class="form-control" name="userName" id="userName" required="required" pattern=".{2,30}" placeholder="Потребителско име" autofocus>
                     </div>
                 </div>
                 <div class="form-group" show-errors-directive>
                     <div class="col-lg-10 input-group col-lg-offset-1">
                         <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
-                        <input type="email" ng-model="user.email" class="form-control" name="inputEmail" id="inputEmail" required="required" placeholder="Е-мейл">
+                        <input type="email" ng-model="user.email" class="form-control" name="inputEmail" id="inputEmail" required="required" pattern=".{2,30}" placeholder="Е-мейл">
                     </div>
                 </div>
                 <div class="form-group" show-errors-directive>
                     <div class="col-lg-10 input-group col-lg-offset-1">
                         <span class="input-group-addon"><i class="fa fa-plus fa-fw"></i></span>
-                        <input type="text" ng-model="user.firstname" class="form-control" name="firstname" id="firstname" required="required" placeholder="Име">
+                        <input type="text" ng-model="user.firstname" class="form-control" name="firstname" id="firstname" required="required" pattern=".{2,30}" placeholder="Име">
                     </div>
                 </div>
                 <div class="form-group" show-errors-directive>
                     <div class="col-lg-10 input-group col-lg-offset-1">
                         <span class="input-group-addon"><i class="fa fa-plus fa-fw"></i></span>
-                        <input type="text" ng-model="user.lastname" class="form-control" name="lastname" id="lastname" required="required" placeholder="Фамилия">
+                        <input type="text" ng-model="user.lastname" class="form-control" name="lastname" id="lastname" required="required" pattern=".{2,30}" placeholder="Фамилия">
                     </div>
                 </div>
                 <div class="form-group" show-errors-directive>
                     <div class="col-lg-10 input-group col-lg-offset-1">
                         <span class="input-group-addon"><i class="fa fa fa-cogs fa-fw"></i></span>
-                        <input type="text" ng-model="user.speciality" class="form-control" name="speciality" id="speciality" placeholder="Специализация">
+                        <input type="text" ng-model="user.speciality" class="form-control" name="speciality" id="speciality" pattern=".{2,30}" placeholder="Специализация">
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-lg-10 input-group col-lg-offset-1" show-errors-directive>
                         <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
-                        <input type="password" ng-model="user.password" class="form-control" name="inputPassword" id="inputPassword" required="required" pattern=".{6,}" placeholder="Парола">
+                        <input type="password" ng-model="user.password" class="form-control" name="inputPassword" id="inputPassword" required="required" pattern=".{2,30}" placeholder="Парола">
                     </div>
                 </div>
                 <div class="form-group">

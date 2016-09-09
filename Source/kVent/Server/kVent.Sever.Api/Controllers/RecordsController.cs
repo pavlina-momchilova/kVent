@@ -16,6 +16,7 @@
     using Server.DataTransferModels.Records;
     using Server.Infrastructure.Extensions;
 
+    [Authorize]
     public class RecordsController : BaseAuthorizationController
     {
         private readonly IRecordsService recordsService;
@@ -30,7 +31,29 @@
             this.recordsService = recordsService;
             this.mappingService = mappingService;
         }
-        
+
+        [HttpGet]
+        public async Task<IHttpActionResult> Get()
+        {
+            var records = await this.recordsService
+                .AllRecords()
+                .ProjectTo<ListedRecordsResponseModel>()
+                .ToListAsync();
+
+            return this.Data(records);
+        }
+
+        [HttpGet]
+        public async Task<IHttpActionResult> Get([Required]string username)
+        {
+            var records = await this.recordsService
+                .GetRecordsByUsername(username)
+                .ProjectTo<ListedRecordsPerUserResponseModel>()
+                .ToListAsync();
+
+            return this.Data(records);
+        }
+
         [Route("api/Records/Add")]
         //[AuthorizeEdit] // TODO add to 'AuthorizeEdit' -> isAdmin and rename to AuthorizeAdminOperation
         [HttpPost]
@@ -47,8 +70,7 @@
             {
                 return this.BadRequest(Server.Common.Constants.NotAuthorized);
             }
-
-            // TODO assert errors. /dublicate companyName etc.
+            
             var addedRecord = await this.recordsService
                 .AddNew(this.mappingService.Map<Record>(record));
 

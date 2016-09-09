@@ -16,11 +16,16 @@
 
         private readonly IRepository<Record> records;
         private readonly IRepository<User> users;
+        private readonly IRepository<ConstructionSite> constructionSites;
 
-        public RecordsService(IRepository<Record> records, IRepository<User> users)
+        public RecordsService(
+            IRepository<Record> records, 
+            IRepository<User> users,
+            IRepository<ConstructionSite> constructionSites)
         {
             this.records = records;
             this.users = users;
+            this.constructionSites = constructionSites;
         }
 
         public async Task<Record> AddNew(Record record)
@@ -30,15 +35,18 @@
 
             // TODO - refactoring in to separate table with userId an total experience hours!
             var user = this.users.GetById(record.UserId);
-            var experience = record.EndTime - 
-                record.StartTime - 
+            var experience = record.EndTime -
+                record.StartTime -
                 record.TotalBreakMinutes;
             user.TotalExperience += (decimal)experience.TotalHours;
             this.users.Update(user);
             await this.users.SaveChangesAsync();
 
+            this.constructionSites.All().ToList(); // to 'invoke' constructionSites. Find solution later.
+
             this.records.Add(record);
             await this.records.SaveChangesAsync();
+
             return record;
         }
 
@@ -47,7 +55,8 @@
             return this.records
                 .All()
                 .OrderByDescending(r => r.Date)
-                .ThenByDescending(r => r.StartTime);
+                .ThenByDescending(r => r.StartTime)
+                .ThenByDescending(r => r.DateCreated);
         }
 
         public async Task Delete(Record record)
@@ -62,11 +71,14 @@
             await this.records.SaveChangesAsync();
         }
 
-        public IQueryable<Record> GetById(int id)
+        public IQueryable<Record> GetRecordsByUsername(string username)
         {
             return this.records
                 .All()
-                .Where(r => r.Id == id);
+                .Where(r => r.User.UserName == username)
+                .OrderByDescending(r => r.Date)
+                .ThenByDescending(r => r.StartTime)
+                .ThenByDescending(r => r.DateCreated);
         }
 
         public async Task<Record> RecordById(int id)

@@ -121,11 +121,26 @@
             })
             .state('dashboard.myReports', {
                 url: '/myReports',
-                templateUrl: 'partials/dashboard/myReports/myReports-list.html'
+                parent: 'dashboard',
+                templateUrl: 'partials/dashboard/my-reports/my-reports-list.html',
+                controller: 'MyReportsController',
+                controllerAs: CONTROLLER_VIEW_MODEL_NAME,
+                resolve: routeResolvers.authenticationRequired
+            })
+            .state('dashboard.myReports.add', {
+                url: '/myReports/add',
+                parent: 'dashboard',
+                templateUrl: 'partials/dashboard/my-reports/my-reports-add.html',
+                controller: 'AddMyReportsController',
+                controllerAs: CONTROLLER_VIEW_MODEL_NAME,
+                resolve: routeResolvers.authenticationRequired
             })
             .state('dashboard.reports', {
                 url: '/reports',
-                templateUrl: 'partials/dashboard/reports/reports-list.html'
+                templateUrl: 'partials/dashboard/reports/reports-list.html',
+                controller: 'ReportsController',
+                controllerAs: CONTROLLER_VIEW_MODEL_NAME,
+                resolve: routeResolvers.authenticationRequired
             })
             .state('login', {
                 url: '/identity/login',

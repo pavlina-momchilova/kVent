@@ -8,7 +8,6 @@
         }
 
         function addConstructionSite(constructionSite) {
-            console.log(constructionSite);
             return data.post('constructionSites/add', constructionSite, true)
         }
 

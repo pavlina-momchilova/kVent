@@ -13,7 +13,7 @@
 
         public string UserName { get; set; }
 
-        public ConstructionSites.ConstructionSiteResponseModel ConstructionSiteName { get; set; }
+        public string ConstructionSiteName { get; set; }
 
         public TimeSpan WorkedHours { get; set; }
 
@@ -21,7 +21,7 @@
         {
             configuration.CreateMap<Record, AddRecordResponseModel>()
                 .ForMember(c => c.UserName, opt => opt.MapFrom(r => r.User.UserName))
-                .ForMember(c => c.ConstructionSiteName, opt => opt.MapFrom(r => r.ConstructionSite))
+                .ForMember(c => c.ConstructionSiteName, opt => opt.MapFrom(r => r.ConstructionSite.ConstructionSiteName))
                 .ForMember(c => c.WorkedHours, opt => opt.MapFrom(r => r.EndTime - r.StartTime - r.TotalBreakMinutes));
         }
     }

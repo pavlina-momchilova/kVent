@@ -10,7 +10,6 @@
                 .then(function (response) {
                     if (vm.constructionSites === null) {
                         vm.constructionSites = response.data;
-                        console.log(vm.constructionSites);
                     }
                 }, function (reason) {
                     notifier.error('Грешка: ' + reason.Message);
