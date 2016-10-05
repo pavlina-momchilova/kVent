@@ -5,7 +5,7 @@
     function LandingPageController() {
         var vm = this;
 
-        vm.title = "kVent";
+        vm.title = "Aventa";
     }
 
     angular
