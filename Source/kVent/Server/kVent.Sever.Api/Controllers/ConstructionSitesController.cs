@@ -31,6 +31,16 @@
             this.mappingService = mappingService;
         }
 
+        [HttpGet]
+        public async Task<IHttpActionResult> Get([Required]int id)
+        {
+            var constructionSite = await this.constructionSitesService
+                .GetById(id)
+                .ProjectTo<ConstructionSitesDetailsResponseModel>()
+                .FirstOrDefaultAsync();
+
+            return this.Data(constructionSite);
+        }
 
         [Route("api/ConstructionSites/AllConstructionSites")]
         [HttpGet]
@@ -64,6 +74,49 @@
                 .AddNew(this.mappingService.Map<ConstructionSite>(constructionSite));
 
             return this.Ok(this.mappingService.Map<AddConstructionSiteResponseModel>(addedClient));
+        }
+
+        [Route("api/ConstructionSites/Delete")]
+        //[AuthorizeEdit]
+        [HttpPost]
+        [ValidateModel]
+        public async Task<IHttpActionResult> Delete(DeleteConstructionSiteRequestModel constructionSite)
+        {
+            // TODO. CRITICAL - validate 'isAuthorized' to edit works properly.
+            var isAuthorized = await this.UsersService
+                .UserIsAdmin(System.Web.HttpContext.Current.User.Identity.Name);
+
+            if (!isAuthorized)
+            {
+                return this.BadRequest(Server.Common.Constants.NotAuthorized);
+            }
+
+            var existingConstructionSite = await this.constructionSitesService.ConstructionSiteById(constructionSite.Id);
+            await this.constructionSitesService.Delete(this.mappingService.Map(constructionSite, existingConstructionSite));
+
+            return this.Ok();
+        }
+
+        [Route("api/ConstructionSites/Edit")]
+        //[AuthorizeEdit]
+        [HttpPost]
+        [ValidateModel]
+        public async Task<IHttpActionResult> Edit(EditConstructionSiteRequestModel updatedConstructionSite)
+        {
+            // TODO. CRITICAL - validate 'isAuthorized' to edit works properly.
+            // TODO. When refactoring - try to limit the calls to the services.
+            var isAuthorized = await this.UsersService.UserIsAdmin(System.Web.HttpContext.Current.User.Identity.Name);
+
+            if (!isAuthorized)
+            {
+                return this.BadRequest(Server.Common.Constants.NotAuthorized);
+            }
+
+            // TODO assert errors. /dublicate username etc.
+            var existingConstructionSite = await this.constructionSitesService.ConstructionSiteById(updatedConstructionSite.Id);
+            await this.constructionSitesService.Edit(this.mappingService.Map(updatedConstructionSite, existingConstructionSite));
+
+            return this.Ok(this.mappingService.Map<ConstructionSitesDetailsResponseModel>(existingConstructionSite));
         }
     }
 }

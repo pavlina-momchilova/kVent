@@ -20,7 +20,6 @@
         [MaxLength(Server.Common.Constants.MaxNameLength)]
         public string LastName { get; set; }
 
-
         [Required]
         [MinLength(Server.Common.Constants.MinNameLength)]
         [MaxLength(Server.Common.Constants.MaxNameLength)]

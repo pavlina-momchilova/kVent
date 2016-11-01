@@ -11,6 +11,7 @@
 /// <reference path="../app/dashboard/clients/clients-page-data.js" />
 /// <reference path="../app/dashboard/constructionsites/add-construction-sites-controller.js" />
 /// <reference path="../app/dashboard/constructionsites/construction-sites-controller.js" />
+/// <reference path="../app/dashboard/constructionsites/construction-sites-details-controller.js" />
 /// <reference path="../app/dashboard/constructionsites/construction-sites-page-data.js" />
 /// <reference path="../app/dashboard/dashboard-header-directive.js" />
 /// <reference path="../app/dashboard/dashboard-header-notification-directive.js" />

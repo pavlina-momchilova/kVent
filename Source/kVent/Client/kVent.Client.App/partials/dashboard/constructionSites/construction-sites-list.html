@@ -15,7 +15,7 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-lg-2 col-md-12 text-center">
-                                <i class="fa fa-user fa-5x"></i>
+                                <i class="fa fa-building fa-5x"></i>
                             </div>
                             <div class="col-lg-6 col-md-12 text-center">
                                 <div class="huge">{{constructionSite.constructionSiteName}}</div>
@@ -27,7 +27,7 @@
                         </div>
                     </div>
                 </div>
-                <a ui-sref="dashboard.users.detail({username: '{{user.userName}}'})">
+                <a ui-sref="dashboard.constructionSites.detail({id: '{{constructionSite.id}}'})">
                     <div class="panel-footer">
                         <span class="pull-left">Детайли</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>

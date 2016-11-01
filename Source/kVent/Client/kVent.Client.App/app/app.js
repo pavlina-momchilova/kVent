@@ -119,6 +119,14 @@
                 controllerAs: CONTROLLER_VIEW_MODEL_NAME,
                 resolve: routeResolvers.adminAuthenticationRequired
             })
+            .state('dashboard.constructionSites.detail', {
+                url: '/constructionSites/{id:.*}',
+                parent: 'dashboard',
+                templateUrl: 'partials/dashboard/constructionSites/construction-sites-detail-view.html',
+                controller: 'ConstructionSitesDetailsController',
+                controllerAs: CONTROLLER_VIEW_MODEL_NAME,
+                resolve: routeResolvers.authenticationRequired
+            })
             .state('dashboard.myReports', {
                 url: '/myReports',
                 parent: 'dashboard',

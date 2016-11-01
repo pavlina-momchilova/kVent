@@ -70,6 +70,9 @@
     <Compile Include="ConstructionSites\AddConstructionSiteRequestModel.cs" />
     <Compile Include="ConstructionSites\AddConstructionSiteResponseModel.cs" />
     <Compile Include="ConstructionSites\ConstructionSiteResponseModel.cs" />
+    <Compile Include="ConstructionSites\ConstructionSitesDetailsResponseModel.cs" />
+    <Compile Include="ConstructionSites\DeleteConstructionSiteRequestModel.cs" />
+    <Compile Include="ConstructionSites\EditConstructionSiteRequestModel.cs" />
     <Compile Include="ConstructionSites\ListedConstructionSitesResponseModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Records\AddRecordRequestModel.cs" />

@@ -11,24 +11,24 @@
             return data.post('constructionSites/add', constructionSite, true)
         }
 
-        function getClientById(id) {
-            return data.get('clients?id=' + id, true)
+        function getConstructionSiteById(id) {
+            return data.get('constructionSites?id=' + id, true)
         }
 
-        function deleteClient(client) {
-            return data.post('clients/delete', client, true);
+        function deleteConstructionSite(constructionSite) {
+            return data.post('constructionSites/delete', constructionSite, true);
         }
 
-        function editClient(client) {
-            return data.post('clients/edit', client, true);
+        function editConstructionSite(constructionSite) {
+            return data.post('constructionSites/edit', constructionSite, true);
         }
 
         return {
             getConstructionSites: getConstructionSites,
             addConstructionSite: addConstructionSite,
-            getClientById: getClientById,
-            deleteClient: deleteClient,
-            editClient: editClient
+            getConstructionSiteById: getConstructionSiteById,
+            deleteConstructionSite: deleteConstructionSite,
+            editConstructionSite: editConstructionSite
         };
     };
 
