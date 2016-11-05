@@ -281,13 +281,17 @@
     <Content Include="content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="content\img\1%402x.jpg" />
     <Content Include="content\img\1.jpg" />
+    <Content Include="content\img\airCond.jpg" />
     <Content Include="content\img\banner-bg.jpg" />
     <Content Include="content\img\banner-vent.jpg" />
+    <Content Include="content\img\boutUs.png" />
     <Content Include="content\img\dog.png" />
     <Content Include="content\img\home.jpg" />
+    <Content Include="content\img\industr.jpg" />
     <Content Include="content\img\intro-bg.jpg" />
     <Content Include="content\img\intro.jpg" />
     <Content Include="content\img\ipad.png" />
+    <Content Include="content\img\mvhr.png" />
     <Content Include="content\img\phones.png" />
     <Content Include="content\toastr.css" />
     <Content Include="content\toastr.min.css" />
