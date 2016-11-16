@@ -31,7 +31,7 @@ namespace kVent.Data.Migrations
             //    );
             //
 
-            var userManager = new UserManager<User>(new UserStore<User>(new kVentDbContext()));
+            //var userManager = new UserManager<User>(new UserStore<User>(new kVentDbContext()));
 
             var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(new kVentDbContext()));
 
@@ -47,7 +47,7 @@ namespace kVent.Data.Migrations
                 DateCreated = DateTime.Now
             };
 
-            userManager.Create(user, "admin12345");
+            //userManager.Create(user, "admin12345");
 
             if (roleManager.Roles.Count() == 0)
             {
@@ -55,8 +55,8 @@ namespace kVent.Data.Migrations
                 roleManager.Create(new IdentityRole { Name = kVent.Server.Common.Constants.UserRole });
             }
 
-            var admin = userManager.FindByName("Admin");
-            userManager.AddToRoles(admin.Id, new string[] { "Admin" });
+            //var admin = userManager.FindByName("Admin");
+            //userManager.AddToRoles(admin.Id, new string[] { "Admin" });
         }
     }
 }
