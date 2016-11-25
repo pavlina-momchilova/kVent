@@ -1,7 +1,9 @@
 ﻿namespace kVent.Sever.Api.Controllers
 {
+    using System;
     using System.Data.Entity;
     using System.ComponentModel.DataAnnotations;
+    using System.Linq;
     using System.Threading.Tasks;
     using System.Web.Http;
     using Microsoft.AspNet.Identity;
@@ -51,6 +53,30 @@
                 .ProjectTo<ListedRecordsPerUserResponseModel>()
                 .ToListAsync();
 
+            return this.Data(records);
+        }
+
+        [HttpGet]
+        public async Task<IHttpActionResult> Get(string fromDate, string toDate, string constructionSiteName)
+        {
+            DateTime fromDateData = DateTime.MinValue;
+            DateTime toDateData = DateTime.Today;
+
+            if(!string.IsNullOrEmpty(fromDate))
+            {
+                fromDateData = Convert.ToDateTime(fromDate);
+            }
+
+            if (!string.IsNullOrEmpty(toDate))
+            {
+                toDateData = Convert.ToDateTime(toDate);
+            }
+
+            var records = await this.recordsService
+                .AllRecords()
+                .ProjectTo<ListedRecordsResponseModel>()
+                .ToListAsync();
+            
             return this.Data(records);
         }
 

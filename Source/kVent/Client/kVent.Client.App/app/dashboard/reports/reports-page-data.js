@@ -14,10 +14,21 @@
             return data.post('/records/add', report, true);
         }
 
+        function filterRecords(filter) {
+            console.log("filter from data.js");
+            console.log(filter);
+            var query = "?fromDate=" + filter.fromDate
+                + "&toDate=" + filter.toDate
+                + "&constructionSiteName=" + filter.constructionSiteName;
+            console.log("query " + query);
+            return data.get('/records' + query, true)
+        }
+
         return {
             getReportsForUser: getReportsForUser,
             getReports: getReports,
-            addReport: addReport
+            addReport: addReport,
+            filterRecords: filterRecords
         };
     };
 
