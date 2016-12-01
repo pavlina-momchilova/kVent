@@ -15,6 +15,7 @@
         }
 
         function filterRecords(filter) {
+            debugger;
             console.log("filter from data.js");
             console.log(filter);
             var query = "?fromDate=" + filter.fromDate

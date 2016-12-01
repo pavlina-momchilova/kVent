@@ -59,15 +59,25 @@
         [HttpGet]
         public async Task<IHttpActionResult> Get(string fromDate, string toDate, string constructionSiteName)
         {
+            /*
+             * Could be done with method 'Filter' with FilterRecords poco as parameter.
+             * */
+
             DateTime fromDateData = DateTime.MinValue;
             DateTime toDateData = DateTime.Today;
+            string nullString = "null";
 
-            if(!string.IsNullOrEmpty(fromDate))
+            if(constructionSiteName == "null")
+            {
+                constructionSiteName = "";
+            }
+
+            if(!string.IsNullOrEmpty(fromDate) && fromDate != nullString)
             {
                 fromDateData = Convert.ToDateTime(fromDate);
             }
 
-            if (!string.IsNullOrEmpty(toDate))
+            if (!string.IsNullOrEmpty(toDate) && toDate != nullString)
             {
                 toDateData = Convert.ToDateTime(toDate);
             }
@@ -75,6 +85,10 @@
             var records = await this.recordsService
                 .AllRecords()
                 .ProjectTo<ListedRecordsResponseModel>()
+                .Where(i => fromDateData <= i.Date && 
+                    i.Date <= toDateData &&
+                    (i.ConstructionSiteName == constructionSiteName || 
+                        i.ConstructionSiteName.Contains(constructionSiteName)))
                 .ToListAsync();
             
             return this.Data(records);

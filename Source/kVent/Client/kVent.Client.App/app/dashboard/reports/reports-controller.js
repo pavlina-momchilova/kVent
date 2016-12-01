@@ -6,6 +6,7 @@
         vm.reportEntries = null;
         vm.index = 0;
         vm.constructionSitesArray = null;
+        vm.filter = {};
 
         vm.getReports = function () {
 
@@ -46,17 +47,39 @@
         vm.filterTable = function (filter, filterTableForm) {
             //debugger;
             var refactoredFilter = {};
-            refactoredFilter.fromDate = filter.fromDate.getFullYear() + "-" +
-                (filter.fromDate.getMonth() + 1) + "-" +
-                filter.fromDate.getDate();
 
-            refactoredFilter.toDate = filter.toDate.getFullYear() + "-" +
-                (filter.toDate.getMonth() + 1) + "-" +
-                filter.toDate.getDate();
+            if (filter != undefined) {
 
-            refactoredFilter.constructionSiteName = filter.constructionSiteId.constructionSiteName;
-            console.log(refactoredFilter);
-            reportsPageData.filterRecords(refactoredFilter);
+                refactoredFilter.fromDate = null;
+                refactoredFilter.toDate = null;
+                refactoredFilter.constructionSiteName = null;
+
+                if (filter.fromDate) {
+                    refactoredFilter.fromDate = filter.fromDate.getFullYear() + "-" +
+                        (filter.fromDate.getMonth() + 1) + "-" +
+                        filter.fromDate.getDate();
+                }
+
+                if (filter.toDate) {
+                    refactoredFilter.toDate = filter.toDate.getFullYear() + "-" +
+                        (filter.toDate.getMonth() + 1) + "-" +
+                        filter.toDate.getDate();
+                }
+
+                if (filter.constructionSiteId) {
+                    refactoredFilter.constructionSiteName = filter.constructionSiteId.constructionSiteName;
+                }
+
+                reportsPageData.filterRecords(refactoredFilter)
+                    .then(function (response) {
+                        vm.index = 0;
+                        vm.reportEntries = response.data;
+                        vm.index += vm.reportEntries.length;
+                        console.log(response);
+                    }, function (reason) {
+                        notifier.error('Грешка: ' + reason.Message);
+                    });
+            }
         }
     }
 
