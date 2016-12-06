@@ -23,7 +23,7 @@
                     //        vm.canEdit = loggedUser.isAdmin;
                     //    });
 
-                    console.log(vm.client);
+                    //console.log(vm.client);
                     vm.updatedClient = angular.copy(vm.client);
                 }, function (reject) {
                     notifier.error('Грешка: ' + reason.Message);

@@ -16,12 +16,12 @@
 
         function filterRecords(filter) {
             debugger;
-            console.log("filter from data.js");
-            console.log(filter);
+            //console.log("filter from data.js");
+            //console.log(filter);
             var query = "?fromDate=" + filter.fromDate
                 + "&toDate=" + filter.toDate
                 + "&constructionSiteName=" + filter.constructionSiteName;
-            console.log("query " + query);
+            //console.log("query " + query);
             return data.get('/records' + query, true)
         }
 

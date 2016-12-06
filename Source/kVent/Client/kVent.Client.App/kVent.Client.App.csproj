@@ -263,6 +263,7 @@
     <Content Include="app\dashboard\my-reports\add-my-reports-controller.js" />
     <Content Include="app\dashboard\my-reports\my-reports-controller.js" />
     <Content Include="app\dashboard\reports\reports-controller.js" />
+    <Content Include="app\dashboard\reports\reports-excel-exporter.js" />
     <Content Include="app\dashboard\reports\reports-page-data.js" />
     <Content Include="app\dashboard\users\add-users-controller.js" />
     <Content Include="app\dashboard\users\users-controller.js" />

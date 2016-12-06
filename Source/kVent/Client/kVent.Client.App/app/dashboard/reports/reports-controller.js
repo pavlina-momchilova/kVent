@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    function ReportsController($state, auth, identity, reportsPageData, constructionSitesPageData, notifier) {
+    function ReportsController($state, $timeout, auth, identity, reportsPageData, constructionSitesPageData, notifier, reportsExcelExporter) {
         var vm = this;
         vm.reportEntries = null;
         vm.index = 0;
@@ -39,7 +39,7 @@
                }, function (reason) {
                    notifier.error('Грешка: ' + reason.Message);
                });
-            console.log(vm.constructionSitesArray);
+            //console.log(vm.constructionSitesArray);
         }
 
         getConstructionSites();
@@ -75,15 +75,21 @@
                         vm.index = 0;
                         vm.reportEntries = response.data;
                         vm.index += vm.reportEntries.length;
-                        console.log(response);
+                        //console.log(response);
                     }, function (reason) {
                         notifier.error('Грешка: ' + reason.Message);
                     });
             }
         }
+
+        vm.exportToExel = function (tableId) {
+            debugger;
+            var exportHref = reportsExcelExporter.tableToExcel(tableId, 'sheet name');
+            $timeout(function () { location.href = exportHref; }, 100); // trigger download 
+        }
     }
 
     angular
         .module('kVent.controllers')
-        .controller('ReportsController', ['$state', 'auth', 'identity', 'reportsPageData', 'constructionSitesPageData', 'notifier', ReportsController]);
+        .controller('ReportsController', ['$state', '$timeout', 'auth', 'identity', 'reportsPageData', 'constructionSitesPageData', 'notifier', 'reportsExcelExporter', ReportsController]);
 }());

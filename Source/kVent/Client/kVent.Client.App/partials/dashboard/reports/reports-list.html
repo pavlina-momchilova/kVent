@@ -51,7 +51,7 @@
                             </button>
                         </div>
                         <div class="col-lg-6 text-center">
-                            <button ng-click="vm.addRecord(record, addRecordForm)" class="btn btn-success btn-block">
+                            <button ng-click="vm.exportToExel('#myTable')" class="btn btn-success btn-block">
                                 <span><i class="fa fa-table fa-fw"></i>Excel</span>
                             </button>
                         </div>
@@ -61,22 +61,22 @@
             <!-- /.panel-heading -->
             <div class="panel-body">
                 <div class="table-responsive">
-                    <table class="table table-hover">
+                    <table class="table table-hover" id="myTable">
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Име</th>
-                                <th>Строителен обект</th>
-                                <th>Дата</th>
-                                <th>Начален час</th>
-                                <th>Краен час</th>
-                                <th>Почивка (мин.)</th>
+                                <th>Name<!--Име--></th>
+                                <th>Construction Site<!--Строителен обект--></th>
+                                <th>Date<!--Дата--></th>
+                                <th>Start time<!--Начален час--></th>
+                                <th>End time<!--Краен час--></th>
+                                <th>Lunch break (min.)<!--Почивка (мин.)--></th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr ng-repeat="report in vm.reportEntries">
                                 <td>{{vm.index - $index}}</td>
-                                <td>{{report.userName}}</td>
+                                <td>{{report.name}}</td>
                                 <td>{{report.constructionSiteName}}</td>
                                 <td>{{report.date | date:'yyyy-MM-dd'}}</td>
                                 <td>{{report.startTime}}</td>

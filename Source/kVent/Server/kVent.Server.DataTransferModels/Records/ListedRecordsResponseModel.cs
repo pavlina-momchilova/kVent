@@ -11,7 +11,7 @@
     {
         public int Id { get; set; }
 
-        public string UserName { get; set; }
+        public string Name { get; set; }
 
         public string ConstructionSiteName { get; set; }
 
@@ -24,7 +24,7 @@
         public void CreateMappings(IConfiguration configuration)
         {
             configuration.CreateMap<Record, ListedRecordsResponseModel>()
-                .ForMember(c => c.UserName, opt => opt.MapFrom(r => r.User.UserName))
+                .ForMember(c => c.Name, opt => opt.MapFrom(r => r.User.FirstName + " " + r.User.LastName))
                 .ForMember(c => c.ConstructionSiteName, opt => opt.MapFrom(r => r.ConstructionSite.ConstructionSiteName));
         }
     }

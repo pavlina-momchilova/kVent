@@ -8,7 +8,6 @@
  */
 angular.module('kVent.controllers')
   .controller('ChartCtrl', ['$scope', '$timeout', function ($scope, $timeout) {
-      console.log('asdasdsa');
     $scope.line = {
 	    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
 	    series: ['Series A', 'Series B'],
@@ -17,7 +16,7 @@ angular.module('kVent.controllers')
 	      [28, 48, 40, 19, 86, 27, 90]
 	    ],
 	    onClick: function (points, evt) {
-	      console.log(points, evt);
+	      //console.log(points, evt);
 	    }
     };
 

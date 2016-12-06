@@ -22,6 +22,7 @@
 /// <reference path="../app/dashboard/my-reports/add-my-reports-controller.js" />
 /// <reference path="../app/dashboard/my-reports/my-reports-controller.js" />
 /// <reference path="../app/dashboard/reports/reports-controller.js" />
+/// <reference path="../app/dashboard/reports/reports-excel-exporter.js" />
 /// <reference path="../app/dashboard/reports/reports-page-data.js" />
 /// <reference path="../app/dashboard/users/add-users-controller.js" />
 /// <reference path="../app/dashboard/users/users-controller.js" />
