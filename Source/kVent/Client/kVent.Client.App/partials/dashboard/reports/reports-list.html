@@ -66,7 +66,7 @@
                             <tr>
                                 <th>#</th>
                                 <th>Name<!--Име--></th>
-                                <th>Construction Site<!--Строителен обект--></th>
+                                <th>Construction Site Address<!--Строителен обект--></th>
                                 <th>Date<!--Дата--></th>
                                 <th>Start time<!--Начален час--></th>
                                 <th>End time<!--Краен час--></th>
@@ -77,7 +77,7 @@
                             <tr ng-repeat="report in vm.reportEntries">
                                 <td>{{vm.index - $index}}</td>
                                 <td>{{report.name}}</td>
-                                <td>{{report.constructionSiteName}}</td>
+                                <td>{{report.constructionSiteAddress}}</td>
                                 <td>{{report.date | date:'yyyy-MM-dd'}}</td>
                                 <td>{{report.startTime}}</td>
                                 <td>{{report.endTime}}</td>

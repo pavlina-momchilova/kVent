@@ -13,7 +13,7 @@
 
         public string Name { get; set; }
 
-        public string ConstructionSiteName { get; set; }
+        public string ConstructionSiteAddress { get; set; }
 
         public DateTime Date { get; set; }
 
@@ -25,7 +25,7 @@
         {
             configuration.CreateMap<Record, ListedRecordsResponseModel>()
                 .ForMember(c => c.Name, opt => opt.MapFrom(r => r.User.FirstName + " " + r.User.LastName))
-                .ForMember(c => c.ConstructionSiteName, opt => opt.MapFrom(r => r.ConstructionSite.ConstructionSiteName));
+                .ForMember(c => c.ConstructionSiteAddress, opt => opt.MapFrom(r =>r.ConstructionSite.City + ", " + r.ConstructionSite.Address));
         }
     }
 }

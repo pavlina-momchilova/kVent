@@ -84,7 +84,6 @@
 
                     constructionSitesPageData.editConstructionSite(updatedConstructionSite)
                         .then(function (constructionSite) {
-                            debugger;
                             notifier.warning("Успешно редактиран '" + vm.constructionSite.constructionSiteName + "'");
                             $state.go('dashboard.constructionSites.detail', { 'id': vm.constructionSite.id });
                             vm.getConstructionSiteById(vm.constructionSiteId);
@@ -97,7 +96,6 @@
         }
 
         vm.deleteConstructionSite = function () {
-            debugger;
             if (confirm("Потвърдете изтриването на '" + vm.constructionSite.constructionSiteName + "'.")) {
                 // TODO - extract in a service the part with logOut check.
                 constructionSitesPageData.deleteConstructionSite(vm.constructionSite)

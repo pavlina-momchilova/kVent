@@ -87,8 +87,8 @@
                 .ProjectTo<ListedRecordsResponseModel>()
                 .Where(i => fromDateData <= i.Date && 
                     i.Date <= toDateData &&
-                    (i.ConstructionSiteName == constructionSiteName || 
-                        i.ConstructionSiteName.Contains(constructionSiteName)))
+                    (i.ConstructionSiteAddress == constructionSiteName || 
+                        i.ConstructionSiteAddress.Contains(constructionSiteName)))
                 .ToListAsync();
             
             return this.Data(records);

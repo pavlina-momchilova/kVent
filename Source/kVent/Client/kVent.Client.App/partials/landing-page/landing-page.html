@@ -117,6 +117,101 @@
                 </div>
             </div>
         </div>
+
+        <div class="container">
+            <script>
+                jQuery(document).ready(function ($) {
+
+                    $('#myCarousel').carousel({
+                        interval: 5000
+                    });
+
+                    //Handles the carousel thumbnails
+                    $('[id^=carousel-selector-]').click(function () {
+                        var id_selector = $(this).attr("id");
+                        try {
+                            var id = /-(\d+)$/.exec(id_selector)[1];
+                            //console.log(id_selector, id);
+                            jQuery('#myCarousel').carousel(parseInt(id));
+                        } catch (e) {
+                            //console.log('Regex failed!', e);
+                        }
+                    });
+                    // When the carousel slides, auto update the text
+                    $('#myCarousel').on('slid.bs.carousel', function (e) {
+                        var id = $('.item.active').data('slide-number');
+                        $('#carousel-text').html($('#slide-content-' + id).html());
+                    });
+                });
+            </script>
+            <div id="main_area">
+                <!-- Slider -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2 class="section-heading">Some of our work.</h2>
+                        <div class="col-lg-12" id="slider">
+                            <!-- Top part of the slider -->
+                            <div class="row">
+                                <div class="col-lg-12" id="carousel-bounding-box">
+                                    <div class="carousel slide" id="myCarousel">
+                                        <!-- Carousel items -->
+                                        <div class="carousel-inner">
+                                            <div class="active item" data-slide-number="0">
+                                                <img src="../../content/gallery/constructionSite16.jpg" />
+                                            </div>
+                                            <div class="item" data-slide-number="1">
+                                                <img src="../../content/gallery/constructionSite18.jpg" />
+                                            </div>
+                                            <div class="item" data-slide-number="2">
+                                                <img src="../../content/gallery/constructionSite23.jpg" />
+                                            </div>
+                                            <div class="item" data-slide-number="3">
+                                                <img src="../../content/gallery/constructionSite25.jpg" />
+                                            </div>
+                                            <div class="item" data-slide-number="4">
+                                                <img src="../../content/gallery/constructionSite28.jpg" />
+                                            </div>
+                                            
+                                            <div class="item" data-slide-number="6">
+                                                <img src="../../content/gallery/constructionSite37.jpg" />
+                                            </div>
+
+                                            <div class="item" data-slide-number="7">
+                                                <img src="../../content/gallery/constructionSite4.jpg" />
+                                            </div>
+
+                                            <div class="item" data-slide-number="8">
+                                                <img src="../../content/gallery/constructionSite5.jpg" />
+                                            </div>
+
+                                            <div class="item" data-slide-number="9">
+                                                <img src="../../content/gallery/constructionSite6.jpg" />
+                                            </div>
+
+                                            <div class="item" data-slide-number="10">
+                                                <img src="../../content/gallery/constructionSite8.jpg" />
+                                            </div>
+
+                                            <div class="item" data-slide-number="11">
+                                                <img src="../../content/gallery/constructionSite9.jpg" />
+                                            </div>
+                                        </div>
+                                        <!-- Carousel nav -->
+                                        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                                            <span class="glyphicon glyphicon-chevron-left"></span>
+                                        </a>
+                                        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                                            <span class="glyphicon glyphicon-chevron-right"></span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/Slider-->
+                </div>
+            </div>
+        </div>
         <!-- /.container -->
     </div>
     <!-- /.content-section-b -->

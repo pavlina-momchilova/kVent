@@ -280,6 +280,17 @@
     <Content Include="content\css\landing-page.css" />
     <Content Include="content\css\site.css" />
     <Content Include="content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="content\gallery\constructionSite16.jpg" />
+    <Content Include="content\gallery\constructionSite18.jpg" />
+    <Content Include="content\gallery\constructionSite23.jpg" />
+    <Content Include="content\gallery\constructionSite25.jpg" />
+    <Content Include="content\gallery\constructionSite28.jpg" />
+    <Content Include="content\gallery\constructionSite37.jpg" />
+    <Content Include="content\gallery\constructionSite4.jpg" />
+    <Content Include="content\gallery\constructionSite5.jpg" />
+    <Content Include="content\gallery\constructionSite6.jpg" />
+    <Content Include="content\gallery\constructionSite8.jpg" />
+    <Content Include="content\gallery\constructionSite9.jpg" />
     <Content Include="content\img\1%402x.jpg" />
     <Content Include="content\img\1.jpg" />
     <Content Include="content\img\airCond.jpg" />

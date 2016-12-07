@@ -84,7 +84,7 @@
 
         vm.exportToExel = function (tableId) {
             debugger;
-            var exportHref = reportsExcelExporter.tableToExcel(tableId, 'sheet name');
+            var exportHref = reportsExcelExporter.tableToExcel(tableId, 'title.xlsx');
             $timeout(function () { location.href = exportHref; }, 100); // trigger download 
         }
     }
