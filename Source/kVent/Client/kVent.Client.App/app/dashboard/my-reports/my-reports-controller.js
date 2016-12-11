@@ -11,6 +11,7 @@
             identity.getUser()
                 .then(function (result) {
                     vm.username = result.data.userName;
+                    vm.userId = result.data.id
                     reportsPageData.getReportsForUser(vm.username)
                         .then(function (response) {
                             vm.reportEntries = response.data;
@@ -34,6 +35,16 @@
         }
 
         vm.getReports();
+
+        vm.delete = function (userId, recordId) {
+            reportsPageData.deleteRecord(userId, recordId)
+                .then(function (response) {
+                    notifier.success('Записът е изтрит!');
+                    vm.getReports();
+                }, function (reason) {
+                    notifier.error('Грешка: ' + reason.Message);
+                });
+        }
     }
 
     angular

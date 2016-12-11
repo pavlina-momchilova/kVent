@@ -15,21 +15,26 @@
         }
 
         function filterRecords(filter) {
-            debugger;
-            //console.log("filter from data.js");
-            //console.log(filter);
             var query = "?fromDate=" + filter.fromDate
                 + "&toDate=" + filter.toDate
                 + "&constructionSiteName=" + filter.constructionSiteName;
-            //console.log("query " + query);
+
             return data.get('/records' + query, true)
+        }
+
+        function deleteRecord(userId, recordId) {
+            var query = "?userId=" + userId
+                + "&recordId=" + recordId;
+
+            return data.post('/records/delete' + query, true);
         }
 
         return {
             getReportsForUser: getReportsForUser,
             getReports: getReports,
             addReport: addReport,
-            filterRecords: filterRecords
+            filterRecords: filterRecords,
+            deleteRecord: deleteRecord
         };
     };
 

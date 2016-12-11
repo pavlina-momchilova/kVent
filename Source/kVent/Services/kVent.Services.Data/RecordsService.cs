@@ -12,7 +12,7 @@
     public class RecordsService : IRecordsService
     {
 
-        private const int TotalBreakMinutes = 60; // TODO; decimal hours in user and timespan must work propperly.
+        private const int TotalBreakMinutes = 30; // TODO; decimal hours in user and timespan must work propperly.
 
         private readonly IRepository<Record> records;
         private readonly IRepository<User> users;
