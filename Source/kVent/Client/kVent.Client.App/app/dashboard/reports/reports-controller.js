@@ -45,7 +45,6 @@
         getConstructionSites();
 
         vm.filterTable = function (filter, filterTableForm) {
-            //debugger;
             var refactoredFilter = {};
 
             if (filter != undefined) {
@@ -83,7 +82,6 @@
         }
 
         vm.exportToExel = function (tableId) {
-            debugger;
             var exportHref = reportsExcelExporter.tableToExcel(tableId, 'title.xlsx');
             $timeout(function () { location.href = exportHref; }, 100); // trigger download 
         }

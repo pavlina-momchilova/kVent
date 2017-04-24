@@ -17,6 +17,7 @@
     using kVent.Server.Infrastructure.Validation;
     using Server.DataTransferModels.Records;
     using Server.Infrastructure.Extensions;
+    using Server.Common;
 
     [Authorize]
     public class RecordsController : BaseAuthorizationController
@@ -54,7 +55,34 @@
                 .ProjectTo<ListedRecordsPerUserResponseModel>()
                 .ToListAsync();
 
+            foreach(var record in records)
+            {
+                record.CanBeModified = kVentExtensions.CanModifyRecord(record.DateCreated);
+            }
+
             return this.Data(records);
+        }
+
+        public async Task<IHttpActionResult> Get(string userId, int id)
+        {
+            // TODO. CRITICAL - validate 'isAuthorized' to edit works properly.
+            // TODO. When refactoring - try to limit the calls to the services
+            var isAuthorized =
+                System.Web.HttpContext.Current.User.Identity.GetUserId() == userId ||
+                await this.UsersService.UserIsAdmin(System.Web.HttpContext.Current.User.Identity.Name);
+
+            if (!isAuthorized)
+            {
+                return this.BadRequest(Server.Common.Constants.NotAuthorized);
+            }
+
+            // TODO: Logic for admin users can be implemented here.
+            var record = await this.recordsService
+                .RecordById(userId, id)
+                .ProjectTo<RecordDetailsResponseModel>()
+                .FirstOrDefaultAsync();
+
+            return this.Data(record);
         }
 
         [HttpGet]
@@ -136,11 +164,17 @@
             }
 
             var record = await this.recordsService.
-                RecordById(recordId);
+                RecordById(userId, recordId).FirstOrDefaultAsync();
 
-            await this.recordsService.Delete(record);
-
-            return this.Ok();
+            if (record != null && kVentExtensions.CanModifyRecord(record.DateCreated))
+            {
+                await this.recordsService.Delete(record);
+                return this.Ok();
+            }
+            else
+            {
+                return this.BadRequest(Server.Common.Constants.RecordCantBeDeleted);
+            }
         }
     }
 }

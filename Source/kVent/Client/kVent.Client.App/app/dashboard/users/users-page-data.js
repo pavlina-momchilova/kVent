@@ -3,19 +3,19 @@
 
     var usersPageData = function usersPageData(data) {
         function getUsers() {
-            return data.get('/users/allUsers');
+            return data.get('users/allUsers');
         }
 
         function getUserByUsername(username) {
-            return data.get('/users?username=' + username, true);
+            return data.get('users?username=' + username, true);
         }
 
         function editUser(user) {
-            return data.post('/users/edit', user, true);
+            return data.post('users/edit', user, true);
         }
 
         function deleteUser(user) {
-            return data.post('/users/delete', user, true);
+            return data.post('users/delete', user, true);
         }
 
         return {

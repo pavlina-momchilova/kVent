@@ -8,7 +8,6 @@
         format = function (s, c) { return s.replace(/{(\w+)}/g, function (m, p) { return c[p]; }) };
 
         var tableToExcel = function tableToExcel(tableId, worksheetName) {
-            debugger;
             var table = $(tableId),
                 ctx = { worksheet: worksheetName, table: table.html() },
                 href = uri + base64(format(template, ctx));

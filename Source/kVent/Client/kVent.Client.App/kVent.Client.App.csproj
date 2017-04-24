@@ -262,6 +262,7 @@
     <Content Include="app\dashboard\main-dashboard-controller.js" />
     <Content Include="app\dashboard\my-reports\add-my-reports-controller.js" />
     <Content Include="app\dashboard\my-reports\my-reports-controller.js" />
+    <Content Include="app\dashboard\my-reports\my-reports-detail-controller.js" />
     <Content Include="app\dashboard\reports\reports-controller.js" />
     <Content Include="app\dashboard\reports\reports-excel-exporter.js" />
     <Content Include="app\dashboard\reports\reports-page-data.js" />
@@ -319,6 +320,7 @@
     <Content Include="partials\dashboard\favicon.ico" />
     <Content Include="partials\dashboard\js\sb-admin-2.js" />
     <Content Include="partials\dashboard\my-reports\my-reports-add.html" />
+    <Content Include="partials\dashboard\my-reports\my-reports-detail-view.html" />
     <Content Include="partials\dashboard\my-reports\my-reports-list.html" />
     <Content Include="partials\dashboard\reports\reports-list.html" />
     <Content Include="partials\dashboard\robots.txt" />

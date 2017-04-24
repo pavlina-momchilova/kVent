@@ -80,6 +80,7 @@
     <Compile Include="Records\FilterRecords.cs" />
     <Compile Include="Records\ListedRecordsPerUserResponseModel.cs" />
     <Compile Include="Records\ListedRecordsResponseModel.cs" />
+    <Compile Include="Records\RecordDetailsResponseModel.cs" />
     <Compile Include="User\DeleteUserRequestModel.cs" />
     <Compile Include="User\EditUserRequestModel.cs" />
     <Compile Include="User\IdentityResponseModel.cs" />
@@ -100,6 +101,7 @@
       <Name>kVent.Server.Common</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

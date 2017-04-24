@@ -143,6 +143,14 @@
                 controllerAs: CONTROLLER_VIEW_MODEL_NAME,
                 resolve: routeResolvers.authenticationRequired
             })
+            .state('dashboard.myReports.detail', {
+                url: '/myReports/{reportId:.*}',
+                parent: 'dashboard',
+                templateUrl: 'partials/dashboard/my-reports/my-reports-detail-view.html',
+                controller: 'MyReportsDetailController',
+                controllerAs: CONTROLLER_VIEW_MODEL_NAME,
+                resolve: routeResolvers.authenticationRequired
+            })
             .state('dashboard.reports', {
                 url: '/reports',
                 templateUrl: 'partials/dashboard/reports/reports-list.html',

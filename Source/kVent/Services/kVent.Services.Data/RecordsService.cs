@@ -28,6 +28,14 @@
             this.constructionSites = constructionSites;
         }
 
+        //public Record ById(string id)
+        //{
+        //    return this.records
+        //           .All()
+        //           .Where(u => u.Id.Equals(id))
+        //           .FirstOrDefault();
+        //}
+
         public async Task<Record> AddNew(Record record)
         {
             record.DateCreated = DateTime.Now;
@@ -59,6 +67,13 @@
                 .ThenByDescending(r => r.DateCreated);
         }
 
+        public IQueryable<Record> RecordById(string userId, int id)
+        {
+            return this.records
+                .All()
+                .Where(r => r.Id == id && r.UserId == userId);
+        }
+
         public async Task Delete(Record record)
         {
             this.records.Delete(record);
@@ -79,14 +94,6 @@
                 .OrderByDescending(r => r.Date)
                 .ThenByDescending(r => r.StartTime)
                 .ThenByDescending(r => r.DateCreated);
-        }
-
-        public async Task<Record> RecordById(int id)
-        {
-            return await this.records
-                .All()
-                .Where(r => r.Id == id)
-                .FirstOrDefaultAsync();
         }
     }
 }

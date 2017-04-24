@@ -4,7 +4,7 @@
     var clientsPageData = function clientsPageData(data) {
 
         function getClients() {
-            return data.get('/clients/allClients', true);
+            return data.get('clients/allClients', true);
         }
 
         function addClient(client) {

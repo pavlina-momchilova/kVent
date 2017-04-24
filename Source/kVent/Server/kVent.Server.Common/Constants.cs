@@ -17,6 +17,7 @@
         public const string EditingProjectIsNotAllowed = "You are not allowed to edit this project";
         public const string NotAuthorized = "You are not authorized for this operation";
         public const string InvalidPageNumber = "Invalid page number";
+        public const string RecordCantBeDeleted = "Record can not be deleted";
 
         public const string AdminRole = "Admin";
         public const string UserRole = "User";
@@ -26,5 +27,7 @@
 
         public const int MinSpecialityLength = 2;
         public const int MaxSpecialityLength = 30;
+
+        public const int DaysAvailableForRecordModification = 2;
     }
 }

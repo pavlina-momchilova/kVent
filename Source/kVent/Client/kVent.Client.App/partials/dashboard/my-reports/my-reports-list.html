@@ -28,6 +28,7 @@
                                 <th>Начален час</th>
                                 <th>Краен час</th>
                                 <th>Почивка (мин.)</th>
+                                <th>Редактирай / Изтрий</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -38,22 +39,17 @@
                                 <td>{{report.startTime}}</td>
                                 <td>{{report.endTime}}</td>
                                 <td>
-                                    <div class="container-fluid">
-                                        <div class="row">
-                                            <div class="col-xs-3">
-                                                30
-                                            </div>
-                                            <div class="col-xs-3">
-                                                <button type="button" class="btn btn-warning btn-circle">
-                                                    <i class="fa fa-pencil"></i>
-                                                </button>
-                                            </div>
-                                            <div class="col-xs-3 col-xs-ofset-3">
-                                                <button type="button" ng-click="vm.delete(vm.userId, report.id)" class="btn btn-danger btn-circle">
-                                                <i class="fa fa-times">
-                                                    </i></button>
-                                            </div>
-                                        </div>
+                                        <p>30</p>
+                                </td>
+                                <td>
+                                    <div class="btn-group" role="group">
+                                        <button type="button" class="btn btn-warning btn-circle" ng-disabled="!report.canBeModified" ui-sref="dashboard.myReports.detail({reportId: '{{report.id}}'})">
+                                            <i class="fa fa-pencil"></i>
+                                        </button>
+
+                                        <button type="button" ng-click="vm.delete(vm.userId, report.id)" ng-disabled="!report.canBeModified" class="btn btn-danger btn-circle">
+                                            <i class="fa fa-times"></i>
+                                        </button>
                                     </div>
                                 </td>
                             </tr>

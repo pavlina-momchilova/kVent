@@ -12,5 +12,9 @@
         public string Speciality { get; set; }
 
         public decimal TotalExperience { get; set; }
+
+        public string FirstName { get; set; }
+
+        public string LastName { get; set; }
     }
 }

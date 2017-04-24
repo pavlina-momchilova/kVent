@@ -14,7 +14,7 @@
 
         IQueryable<Record> GetRecordsByUsername(string username);
 
-        Task<Record> RecordById(int id);
+        IQueryable<Record> RecordById(string userId, int id);
 
         Task Edit(Record updatedRecord);
 

@@ -35,7 +35,6 @@
             constructionSitesPageData.getConstructionSiteById(id)
                 .then(function (result) {
                     vm.constructionSite = result.data;
-                    debugger;
                     vm.canEdit = identity.isAdmin();
                     // TODO - extract in a service
                     //var loggedUser;
@@ -77,8 +76,6 @@
             if (editConstructionSitesDetailsForm.$valid) {
                 // TODO - extract in a service the part with logOut check.
                 if (confirm("Потвърдете промяната на '" + vm.updatedConstructionSite.constructionSiteName + "'.")) {
-                    debugger;
-
                     vm.updatedConstructionSite.clientId = vm.updatedConstructionSite.clientId.id;
                     vm.updatedConstructionSite.paymentPerHour = vm.updatedConstructionSite.paymentPerHour.id;
 
