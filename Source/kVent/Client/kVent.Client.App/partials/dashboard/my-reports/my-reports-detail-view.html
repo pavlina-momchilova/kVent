@@ -51,7 +51,7 @@
                 </div>
                 <div class="form-group">
                     <div class="col-lg-10 col-lg-offset-1">
-                        <button ng-click="vm.editReport(updatedReport, editRecordForm)" ng-disabled="editRecordForm.$invalid || record.startTime > record.endTime" class="btn btn-outline btn-success btn-lg btn-block"><i class="fa fa-check"></i> Запази</button>
+                        <button ng-click="vm.editReport(vm.updatedReport, editRecordForm)" ng-disabled="editRecordForm.$invalid || record.startTime > record.endTime" class="btn btn-outline btn-success btn-lg btn-block"><i class="fa fa-check"></i> Запази</button>
                     </div>
                     <div class="col-lg-10 col-lg-offset-1 top-buffer-pixels">
                         <a ui-sref="dashboard.myReports" class="btn btn-outline btn-danger btn-lg btn-block"><i class="fa fa-close"></i> Отказ</a>

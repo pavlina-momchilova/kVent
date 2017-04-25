@@ -22,9 +22,10 @@
         }
 
         function filterRecords(filter) {
-            var query = "?fromDate=" + filter.fromDate
-                + "&toDate=" + filter.toDate
-                + "&constructionSiteName=" + filter.constructionSiteName;
+            var query = "?fromDate=" + filter.fromDate +
+                "&toDate=" + filter.toDate +
+                "&constructionSiteName=" + filter.constructionSiteName +
+                "&userName=" + filter.userName;
 
             return data.get('records' + query, true)
         }
@@ -36,8 +37,8 @@
             return data.post('records/delete' + query, true);
         }
 
-        function editRecord(userId, record) {
-            console.log(record);
+        function editRecord(record) {
+            return data.post('records/edit', record, true);
         }
 
         return {

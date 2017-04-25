@@ -43,7 +43,6 @@
 
                    vm.updatedReport.startTime = new Date(0, 0, 0, startTime[0], startTime[1]);
                    vm.updatedReport.endTime = new Date(0, 0, 0, endTime[0], endTime[1]);
-                   console.log(vm.updatedReport);
                }, function (reason) {
                    notifier.error('Грешка: ' + reason.Message);
                });
@@ -70,36 +69,31 @@
                 });
         }
 
-        vm.editUser = function (updatedUser, editUserDetailsForm) {
-            if (editUserDetailsForm.$valid) {
-                // TODO - extract in a service the part with logOut check.
-                var logOut = false;
-                identity.getUser()
-                    .then(function (result) {
-                        var loggedUser = result.data;
-                        logOut = vm.user.userName == loggedUser.userName;
-                        var currentUserChangeConfirmText = " Ще трябва да влезете в системата отново, за да се отразят промените.";
-                        var textToConfirm = "Потвърдете промяната на '" + vm.user.userName + "'.";
-                        if (logOut) {
-                            textToConfirm += currentUserChangeConfirmText;
-                        }
+        vm.editReport = function (updatedReport, editRecordForm) {
+            if (editRecordForm.$valid) {
+                var mappedUpdatedReport = {};
+                mappedUpdatedReport.id = updatedReport.id;
+                mappedUpdatedReport.userId = updatedReport.userId;
+                mappedUpdatedReport.constructionSiteId = updatedReport.constructionSiteId.id;
 
-                        if (confirm(textToConfirm)) {
-                            usersPageData.editUser(updatedUser)
-                                .then(function (user) {
-                                    notifier.warning("Успешно редактиран '" + user.UserName + "'");
+                mappedUpdatedReport.date = updatedReport.date.getFullYear() + "-" +
+                    (updatedReport.date.getMonth() + 1) + "-" +
+                    updatedReport.date.getDate();
 
-                                    if (logOut) {
-                                        auth.logout();
-                                        $state.go('landingPage');
-                                    } else {
-                                        $state.go('dashboard.users.detail', { 'username': user.UserName });
-                                    }
+                mappedUpdatedReport.startTime = updatedReport.startTime.getHours() + ":" +
+                    updatedReport.startTime.getMinutes() + ":" +
+                    updatedReport.startTime.getSeconds();
 
-                                }, function (reason) {
-                                    notifier.error('Грешка: ' + reason.Message);
-                                });
-                        }
+                mappedUpdatedReport.endTime = updatedReport.endTime.getHours() + ":" +
+                    updatedReport.endTime.getMinutes() + ":" +
+                    updatedReport.endTime.getSeconds();
+
+                reportsPageData.editRecord(mappedUpdatedReport)
+                    .then(function (report) {
+                        notifier.warning("Успешно редактиран отчет");
+                        $state.go('dashboard.myReports');
+                    }, function (reason) {
+                        notifier.error('Грешка: ' + reason.Message);
                     });
             }
         }

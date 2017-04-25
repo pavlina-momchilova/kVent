@@ -55,7 +55,7 @@
                     //vm.clientsArray.forEach(getClientForBinding);
                     setClientsDropdown();
                     updateConstructionSite();
-                    //console.log(vm.updatedConstructionSite);
+
                 }, function (reject) {
                     notifier.error('Грешка: ' + reason.Message);
                 });
@@ -135,7 +135,6 @@
                    }
 
                    vm.clientsArray.forEach(getClientForBinding);
-                   //console.log(vm.clientsArray);
                }, function (reason) {
                    notifier.error('Грешка: ' + reason.Message);
                });

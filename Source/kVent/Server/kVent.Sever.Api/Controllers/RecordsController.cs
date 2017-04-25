@@ -29,7 +29,7 @@
             IUsersService usersService,
             IRecordsService recordsService,
             IMappingService mappingService)
-            : base (usersService)
+            : base(usersService)
         {
             this.recordsService = recordsService;
             this.mappingService = mappingService;
@@ -55,7 +55,7 @@
                 .ProjectTo<ListedRecordsPerUserResponseModel>()
                 .ToListAsync();
 
-            foreach(var record in records)
+            foreach (var record in records)
             {
                 record.CanBeModified = kVentExtensions.CanModifyRecord(record.DateCreated);
             }
@@ -86,7 +86,8 @@
         }
 
         [HttpGet]
-        public async Task<IHttpActionResult> Get(string fromDate, string toDate, string constructionSiteName)
+        public async Task<IHttpActionResult> Get(
+            string fromDate, string toDate, string constructionSiteName, string userName)
         {
             /*
              * Could be done with method 'Filter' with FilterRecords poco as parameter.
@@ -96,12 +97,17 @@
             DateTime toDateData = DateTime.Today;
             string nullString = "null";
 
-            if(constructionSiteName == "null")
+            if (constructionSiteName == "null")
             {
                 constructionSiteName = "";
             }
 
-            if(!string.IsNullOrEmpty(fromDate) && fromDate != nullString)
+            if (userName == "undefined")
+            {
+                userName = "";
+            }
+
+            if (!string.IsNullOrEmpty(fromDate) && fromDate != nullString)
             {
                 fromDateData = Convert.ToDateTime(fromDate);
             }
@@ -113,13 +119,14 @@
 
             var records = await this.recordsService
                 .AllRecords()
+                .Where(r => r.User.UserName == userName || r.User.UserName.Contains(userName))
                 .ProjectTo<ListedRecordsResponseModel>()
-                .Where(i => fromDateData <= i.Date && 
+                .Where(i => fromDateData <= i.Date &&
                     i.Date <= toDateData &&
-                    (i.ConstructionSiteName == constructionSiteName || 
+                    (i.ConstructionSiteName == constructionSiteName ||
                         i.ConstructionSiteName.Contains(constructionSiteName)))
                 .ToListAsync();
-            
+
             return this.Data(records);
         }
 
@@ -139,7 +146,7 @@
             {
                 return this.BadRequest(Server.Common.Constants.NotAuthorized);
             }
-            
+
             var addedRecord = await this.recordsService
                 .AddNew(this.mappingService.Map<Record>(record));
 
@@ -175,6 +182,27 @@
             {
                 return this.BadRequest(Server.Common.Constants.RecordCantBeDeleted);
             }
+        }
+
+        [Route("api/Records/Edit")]
+        //[AuthorizeEdit] // TODO add to 'AuthorizeEdit' -> isAdmin and rename to AuthorizeAdminOperation
+        [HttpPost]
+        [ValidateModel]
+        public async Task<IHttpActionResult> Edit(EditRecordRequestModel newRecord)
+        {
+            var isAuthorized =
+                System.Web.HttpContext.Current.User.Identity.GetUserId() == newRecord.UserId ||
+                await this.UsersService.UserIsAdmin(System.Web.HttpContext.Current.User.Identity.Name);
+
+            if (!isAuthorized)
+            {
+                return this.BadRequest(Server.Common.Constants.NotAuthorized);
+            }
+
+            var existingRecord = this.recordsService.RecordById(newRecord.UserId, newRecord.Id).FirstOrDefault();
+            await this.recordsService.Edit(this.mappingService.Map(newRecord, existingRecord));
+            
+            return this.Ok(this.mappingService.Map<RecordDetailsResponseModel>(existingRecord));
         }
     }
 }

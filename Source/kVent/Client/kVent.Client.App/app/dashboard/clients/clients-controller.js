@@ -10,7 +10,6 @@
                 .then(function (response) {
                     if (vm.clients === null) {
                         vm.clients = response.data;
-                        //console.log(vm.clients);
                     }
                 }, function (reason) {
                     notifier.error('Грешка: ' + reason.Message);

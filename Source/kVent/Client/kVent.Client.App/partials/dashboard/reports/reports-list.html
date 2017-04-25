@@ -45,6 +45,21 @@
                         </div>
                     </div>
                     <div class="row">
+                        <div class="col-lg-12 text-center">
+                            <ui-select ng-model="vm.filter.user" ng-required="true">
+                                <ui-select-match placeholder="Потребител">
+                                    <span ng-bind="$select.selected.fullName"></span>
+                                </ui-select-match>
+                                <ui-select-choices repeat="user in (vm.usersArray | filter: $select.search) track by user.userName">
+                                    <div ng-bind-html="user.fullName | highlight: $select.search"></div>
+                                    <small>
+                                        Username: <span ng-bind-html="''+user.userName | highlight: $select.search"></span>
+                                    </small>
+                                </ui-select-choices>
+                            </ui-select>
+                        </div>
+                    </div>
+                    <div class="row">
                         <div class="col-lg-6 text-center">
                             <button ng-click="vm.filterTable(vm.filter, filterTableForm)" class="btn btn-primary btn-block">
                                 <span><i class="fa fa-search fa-fw"></i>Филтрирай</span>

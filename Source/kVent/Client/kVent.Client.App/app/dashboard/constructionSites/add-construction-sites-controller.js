@@ -16,7 +16,7 @@
             if (addConstructionSitesForm.$valid) {
                 constructionSite.paymentPerHour = constructionSite.paymentPerHour.value;
                 constructionSite.clientId = constructionSite.clientId.id;
-                //console.log(constructionSite);
+
                 constructionSitesPageData.addConstructionSite(constructionSite)
                     .then(function (response) {
                         notifier.success("Успешно добавен '" + constructionSite.constructionSiteName + "'");
@@ -33,7 +33,7 @@
                    if (vm.clientsArray === null) {
                        vm.clientsArray = response.data;
                    }
-                   //console.log(vm.clientsArray);
+
                }, function (reason) {
                    notifier.error('Грешка: ' + reason.Message);
                });
