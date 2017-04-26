@@ -36,7 +36,6 @@
                .then(function (response) {
                    if (vm.constructionSitesArray === null) {
                        vm.constructionSitesArray = response.data;
-                       console.log(vm.constructionSitesArray);
                    }
                }, function (reason) {
                    notifier.error('Грешка: ' + reason.Message);
