@@ -28,6 +28,6 @@
         public const int MinSpecialityLength = 2;
         public const int MaxSpecialityLength = 30;
 
-        public const int DaysAvailableForRecordModification = 2;
+        public const int DaysAvailableForRecordModification = 14; // The original value is 2
     }
 }
