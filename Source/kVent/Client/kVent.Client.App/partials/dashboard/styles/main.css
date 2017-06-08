@@ -31,9 +31,17 @@ body {
 }
 
 /* Customize container */
-@media (min-width: 768px) {
+@media (min-width: 1200px) {
   .container {
-    max-width: 730px;
+    max-width: 1200px;
+  }
+
+  .header-container {
+      max-width: 730px !important;
+  }
+
+  .some-work-gallery {
+      max-width: 1000px !important;
   }
 }
 .container-narrow > hr {

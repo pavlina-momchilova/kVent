@@ -169,3 +169,20 @@ footer {
 p.copyright {
     margin: 15px 0 0;
 }
+
+.image-center {
+  margin-top: 2em;
+}
+
+.tab {
+    margin-left: 2em;
+}
+
+.weoffer {
+    font-size: 26px;
+}
+
+.contactinfobanner {
+    background-color: rgba(84, 84, 84, 0.7);
+    border-radius: 20px;
+}
