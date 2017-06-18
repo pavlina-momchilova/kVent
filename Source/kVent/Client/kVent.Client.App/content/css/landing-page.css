@@ -186,3 +186,12 @@ p.copyright {
     background-color: rgba(84, 84, 84, 0.7);
     border-radius: 20px;
 }
+
+.caption { 
+    max-height: 175px;
+    text-align: center;
+}
+
+@media(min-width: 300px) {
+.caption { max-height: 100px;}
+}

@@ -221,7 +221,7 @@
     angular.module('kVent.controllers', ['kVent.data', 'kVent.services']);
     angular.module('kVent.directives', []);
 
-    angular.module('kVent', ['ui.router', 'ngCookies', 'kVent.controllers', 'kVent.directives', 'ui.select', 'ngSanitize', 'angular-loading-bar'])
+    angular.module('kVent', ['ui.router', 'ngCookies', 'kVent.controllers', 'kVent.directives', 'ui.select', 'ngSanitize', 'angular-loading-bar', 'ngPhotoswipe'])
         .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', config])
         .run(['$http', '$cookies', '$rootScope', '$state', '$location', 'auth', 'identity', 'notifier', run])
         .value('toastr', toastr)

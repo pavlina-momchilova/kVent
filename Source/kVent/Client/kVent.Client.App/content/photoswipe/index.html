@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Angular JS</title>
+    <link rel="stylesheet" href="photoswipe.css">
+    <link rel="stylesheet" href="default-skin.css">
+
+<style>
+
+    button {
+        margin-bottom: 20px;
+        padding: 5px 10px;
+    }
+
+    .slide-list {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .slide-list > li {
+        display: inline;
+    }
+
+    .slide-list > li:hover {
+        cursor: pointer;
+    }
+
+    .slide-list > li > img {
+        width: 100px;
+        height: 100px;
+    }
+
+</style>
+</head>
+<body ng-app="mygallery">
+  <div ng-controller="GalleryController as vm">
+    <h1> {{ vm.title }} </h1>
+
+        <button ng-click="vm.showGallery()"> Show Gallery (external btn) </button>
+
+        <ul class="slide-list">
+           <li ng-repeat="s in vm.slides track by $index" ng-click="vm.showGallery($index)">
+               <img ng-src="{{ s.src }}" alt="slide number {{ $index }}" />
+           </li>
+        </ul>
+
+        <div ng-photoswipe 
+            slides="vm.slides" 
+            open="vm.open" 
+            slide-selector=".slide-list > li > img"
+            on-close="vm.closeGallery()" 
+            options="vm.opts"></div>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.min.js"></script>
+  <script type="text/javascript" src="photoswipe.js"></script>
+  <script type="text/javascript" src="photoswipe-ui-default.min.js"></script>
+  <script src="angular-photoswipe.min.js"></script>
+  <script src="gallery-controller.js"></script>
+  <!--
+    Not necessary for jsbin...
+    
+  <script src="main.js"></script>
+  -->
+</body>
+</html>

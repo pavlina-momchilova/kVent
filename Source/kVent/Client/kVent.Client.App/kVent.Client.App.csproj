@@ -361,6 +361,17 @@
     <Content Include="content\img\ipad.png" />
     <Content Include="content\img\mvhr.png" />
     <Content Include="content\img\phones.png" />
+    <Content Include="content\photoswipe\angular-photoswipe.min.js" />
+    <Content Include="content\photoswipe\default-skin.css" />
+    <Content Include="content\photoswipe\default-skin.png" />
+    <Content Include="content\photoswipe\default-skin.svg" />
+    <Content Include="content\photoswipe\gallery-controller.js" />
+    <Content Include="content\photoswipe\index.html" />
+    <Content Include="content\photoswipe\photoswipe-ui-default.min.js" />
+    <Content Include="content\photoswipe\photoswipe.css" />
+    <Content Include="content\photoswipe\photoswipe.js" />
+    <Content Include="content\photoswipe\photoswipe.min.js" />
+    <Content Include="content\photoswipe\preloader.gif" />
     <Content Include="content\toastr.css" />
     <Content Include="content\toastr.min.css" />
     <Content Include="favicon.ico" />

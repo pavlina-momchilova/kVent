@@ -103,3 +103,27 @@ background-color: #eee;
 .carousel-inner>.item>img, .carousel-inner>.item>a>img {
     width: 100%;
 }
+
+/*button {
+        margin-bottom: 20px;
+        padding: 5px 10px;
+    }*/
+
+    #slide-list {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    #slide-list > li {
+        display: inline;
+    }
+
+    #slide-list > li:hover {
+        cursor: pointer;
+    }
+
+    #slide-list > li > img {
+        width: 100px;
+        height: 100px;
+    }
