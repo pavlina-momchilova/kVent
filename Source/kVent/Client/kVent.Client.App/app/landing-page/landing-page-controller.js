@@ -15,79 +15,223 @@
         };
 
         vm.gallery = [{
-            name: "lidl2",
-            picture: '../../content/gallery/lidl_evere/lidlevere3.jpg',
+            name: "lidlevere",
+            title: "LIDL Evere",
+            picture: '../../content/gallery/lidl_evere/lidlevere8.jpg',
             options: opts,
             hide: true,
-            slides: [{
+            slides: [/*{
+                src: '../../content/gallery/lidl_evere/lidlevere0.jpg',
+                w: 500, h: 500
+            }, {
+                src: '../../content/gallery/lidl_evere/lidlevere1.jpg',
+                w: 500, h: 500
+            }, {
+                src: '../../content/gallery/lidl_evere/lidlevere2.jpg',
+                w: 500, h: 500
+            }, {
                 src: '../../content/gallery/lidl_evere/lidlevere3.jpg',
                 w: 500, h: 500
             }, {
                 src: '../../content/gallery/lidl_evere/lidlevere4.jpg',
                 w: 500, h: 500
-            }, {
+            },*/ {
                 src: '../../content/gallery/lidl_evere/lidlevere5.jpg',
-                w: 500, h: 500
-            }]
-        }, {
-            name: "lidl3",
-            picture: '../../content/gallery/lidl_evere/lidlevere6.jpg',
-            options: opts,
-            hide: true,
-            slides: [{
+                w: 4032, h: 3024
+            },/* {
                 src: '../../content/gallery/lidl_evere/lidlevere6.jpg',
                 w: 500, h: 500
-            }, {
+            }, */{
                 src: '../../content/gallery/lidl_evere/lidlevere7.jpg',
-                w: 500, h: 500
+                w: 4032, h: 3024
             }, {
                 src: '../../content/gallery/lidl_evere/lidlevere8.jpg',
-                w: 500, h: 500
-            }]
-        }, {
-            name: "lidl4",
-            picture: '../../content/gallery/lidl_evere/lidlevere9.jpg',
-            options: opts,
-            hide: true,
-            slides: [{
+                w: 4032, h: 3024
+            }, {
                 src: '../../content/gallery/lidl_evere/lidlevere9.jpg',
-                w: 500, h: 500
+                w: 4032, h: 3024
             }, {
                 src: '../../content/gallery/lidl_evere/lidlevere10.jpg',
-                w: 500, h: 500
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/lidl_evere/lidlevere11.jpg',
+                w: 4032, h: 3024
             }, {
                 src: '../../content/gallery/lidl_evere/lidlevere12.jpg',
-                w: 500, h: 500
-            }]
-        }, {
-            name: "lidl5",
-            picture: '../../content/gallery/lidl_evere/lidlevere13.jpg',
-            options: opts,
-            hide: true,
-            slides: [{
+                w: 4032, h: 3024
+            }, {
                 src: '../../content/gallery/lidl_evere/lidlevere13.jpg',
-                w: 500, h: 500
+                w: 4032, h: 3024
             }, {
                 src: '../../content/gallery/lidl_evere/lidlevere14.jpg',
-                w: 500, h: 500
+                w: 4032, h: 3024
             }, {
                 src: '../../content/gallery/lidl_evere/lidlevere15.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/lidl_evere/lidlevere16.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/lidl_evere/lidlevere17.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/lidl_evere/lidlevere18.jpg',
+                w: 4032, h: 3024
+            }/*, {
+                src: '../../content/gallery/lidl_evere/lidlevere19.jpg',
                 w: 500, h: 500
-            }]
+            }, {
+                src: '../../content/gallery/lidl_evere/lidlevere20.jpg',
+                w: 500, h: 500
+            }, {
+                src: '../../content/gallery/lidl_evere/lidlevere21.jpg',
+                w: 500, h: 500
+            }, {
+                src: '../../content/gallery/lidl_evere/lidlevere22.jpg',
+                w: 500, h: 500
+            }, {
+                src: '../../content/gallery/lidl_evere/lidlevere23.jpg',
+                w: 500, h: 500
+            }, {
+                src: '../../content/gallery/lidl_evere/lidlevere24.jpg',
+                w: 500, h: 500
+            }, {
+                src: '../../content/gallery/lidl_evere/lidlevere25.jpg',
+                w: 500, h: 500
+            }, {
+                src: '../../content/gallery/lidl_evere/lidlevere26.jpg',
+                w: 500, h: 500
+            }, {
+                src: '../../content/gallery/lidl_evere/lidlevere27.jpg',
+                w: 500, h: 500
+            }, {
+                src: '../../content/gallery/lidl_evere/lidlevere28.jpg',
+                w: 500, h: 500
+            }, {
+                src: '../../content/gallery/lidl_evere/lidlevere29.jpg',
+                w: 500, h: 500
+            }, {
+                src: '../../content/gallery/lidl_evere/lidlevere30.jpg',
+                w: 500, h: 500
+            }, {
+                src: '../../content/gallery/lidl_evere/lidlevere31.jpg',
+                w: 500, h: 500
+            }, {
+                src: '../../content/gallery/lidl_evere/lidlevere32.jpg',
+                w: 500, h: 500
+            }, {
+                src: '../../content/gallery/lidl_evere/lidlevere33.jpg',
+                w: 500, h: 500
+            }, {
+                src: '../../content/gallery/lidl_evere/lidlevere34.jpg',
+                w: 500, h: 500
+            }, {
+                src: '../../content/gallery/lidl_evere/lidlevere35.jpg',
+                w: 500, h: 500
+            }, {
+                src: '../../content/gallery/lidl_evere/lidlevere36.jpg',
+                w: 500, h: 500
+            }, {
+                src: '../../content/gallery/lidl_evere/lidlevere37.jpg',
+                w: 500, h: 500
+            }, {
+                src: '../../content/gallery/lidl_evere/lidlevere38.jpg',
+                w: 500, h: 500
+            }, {
+                src: '../../content/gallery/lidl_evere/lidlevere39.jpg',
+                w: 500, h: 500
+            }, {
+                src: '../../content/gallery/lidl_evere/lidlevere40.jpg',
+                w: 500, h: 500
+            }, {
+                src: '../../content/gallery/lidl_evere/lidlevere41.jpg',
+                w: 500, h: 500
+            }, {
+                src: '../../content/gallery/lidl_evere/lidlevere42.jpg',
+                w: 500, h: 500
+            }*/]
         }, {
-            name: "lidl6",
-            picture: '../../content/gallery/lidl_evere/lidlevere16.jpg',
+            name: "lidlhasselt",
+            title: "LIDL Hasselt",
+            picture: '../../content/gallery/lidl_hasselt/lidlhasselt0.jpg',
             options: opts,
             hide: true,
             slides: [{
-                src: '../../content/gallery/lidl_evere/lidlevere16.jpg',
-                w: 500, h: 500
+                src: '../../content/gallery/lidl_hasselt/lidlhasselt0.jpg',
+                w: 4032, h: 3024
             }, {
-                src: '../../content/gallery/lidl_evere/lidlevere17.jpg',
-                w: 500, h: 500
+                src: '../../content/gallery/lidl_hasselt/lidlhasselt1.jpg',
+                w: 4032, h: 3024
             }, {
-                src: '../../content/gallery/lidl_evere/lidlevere18.jpg',
+                src: '../../content/gallery/lidl_hasselt/lidlhasselt2.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/lidl_hasselt/lidlhasselt3.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/lidl_hasselt/lidlhasselt4.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/lidl_hasselt/lidlhasselt5.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/lidl_hasselt/lidlhasselt6.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/lidl_hasselt/lidlhasselt7.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/lidl_hasselt/lidlhasselt8.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/lidl_hasselt/lidlhasselt9.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/lidl_hasselt/lidlhasselt10.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/lidl_hasselt/lidlhasselt11.jpg',
+                w: 4032, h: 3024
+            }]
+        }, {
+            name: "other",
+            title: "Other",
+            picture: '../../content/gallery/constructionSite25.jpg',
+            options: opts,
+            hide: true,
+            slides: [/*{
+                src: '../../content/gallery/constructionSite16.jpg',
                 w: 500, h: 500
+            }, */{
+                src: '../../content/gallery/constructionSite18.jpg',
+                w: 1280, h: 720
+            }, {
+                src: '../../content/gallery/constructionSite23.jpg',
+                w: 1280, h: 720
+            }, {
+                src: '../../content/gallery/constructionSite25.jpg',
+                w: 1280, h: 720
+            }, {
+                src: '../../content/gallery/constructionSite28.jpg',
+                w: 1280, h: 720
+            }, {
+                src: '../../content/gallery/constructionSite37.jpg',
+                w: 1280, h: 720
+            }, {
+                src: '../../content/gallery/constructionSite4.jpg',
+                w: 1280, h: 720
+            }, {
+                src: '../../content/gallery/constructionSite5.jpg',
+                w: 1280, h: 720
+            }, {
+                src: '../../content/gallery/constructionSite6.jpg',
+                w: 1280, h: 720
+            }, {
+                src: '../../content/gallery/constructionSite8.jpg',
+                w: 1280, h: 720
+            }, {
+                src: '../../content/gallery/constructionSite9.jpg',
+                w: 1280, h: 720
             }]
         }];
 

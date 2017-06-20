@@ -148,7 +148,7 @@
             </div>
         </div>
 
-        <div class="container some-work-gallery">
+        <!--<div class="container some-work-gallery">
             <script>
                 jQuery(document).ready(function ($) {
 
@@ -175,16 +175,13 @@
                 });
             </script>
             <div id="main_area">
-                <!-- Slider -->
                 <div class="row">
                     <div class="col-lg-12">
                         <h2 class="section-heading">Some of our work</h2>
                         <div class="col-lg-12" id="slider">
-                            <!-- Top part of the slider -->
                             <div class="row">
                                 <div class="col-lg-12" id="carousel-bounding-box">
                                     <div class="carousel slide" id="myCarousel">
-                                        <!-- Carousel items -->
                                         <div class="carousel-inner">
                                             <div class="active item" data-slide-number="0">
                                                 <img src="../../content/gallery/constructionSite16.jpg" />
@@ -226,7 +223,6 @@
                                                 <img src="../../content/gallery/constructionSite9.jpg" />
                                             </div>
                                         </div>
-                                        <!-- Carousel nav -->
                                         <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
                                             <span class="glyphicon glyphicon-chevron-left"></span>
                                         </a>
@@ -238,11 +234,9 @@
                             </div>
                         </div>
                     </div>
-                    <!--/Slider-->
                 </div>
             </div>
-        </div>
-        <!-- /.container -->
+        </div>-->
     </div>
     <!-- /.content-section-b -->
     <!--<div class="content-section-a">
@@ -276,7 +270,7 @@
                                     </a>
 
                                     <div class="caption">
-                                        <a href="#" ng-click="vm.showGallery(folder.name)"><h4 class="h4 black">{{folder.name}} </h4></a>
+                                        <a href="#" ng-click="vm.showGallery(folder.name)"><h4 class="h4 black">{{folder.title}} </h4></a>
                                     </div>
                                 </div>
                             </div>
@@ -287,10 +281,13 @@
             <div class="row">
                 <div ng-repeat="folder in vm.gallery track by folder.name">
                     <ul class="slide-list{{folder.name}}" id="slide-list" ng-hide="vm.galleryFolderByName(folder.name).hide">
-                        <li ng-repeat="s in vm.galleryFolderByIndex($index) track by $index" ng-click="vm.openGallery(folder.name, $index)">
-                            <img ng-src="{{ s.src }}" alt="slide number {{ $index }}" />
+                        <li class="col-xs-6 col-sm-4 col-md-3 thumbnail" 
+                            ng-repeat="s in vm.galleryFolderByIndex($index) track by $index" 
+                            ng-click="vm.openGallery(folder.name, $index)">
+                            <img ng-src="{{ s.src }}" alt="slide number {{ $index }}" class="adaptive-img img-responsive"/>
                         </li>
                     </ul>
+
                     <div ng-photoswipe
                          slides="vm.galleryFolderByName(folder.name).slides"
                          open="vm.galleryFolderByName(folder.name).isOpen"

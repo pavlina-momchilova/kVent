@@ -195,3 +195,7 @@ p.copyright {
 @media(min-width: 300px) {
 .caption { max-height: 100px;}
 }
+
+.longimage {
+    max-height: 186px;
+}
