@@ -15,6 +15,7 @@
                 .then(function (response) {
                     vm.reportEntries = response.data;
                     vm.index += vm.reportEntries.length;
+                    debugger;
                 }, function (reason) {
                     notifier.error('Грешка: ' + reason.Message);
                 });

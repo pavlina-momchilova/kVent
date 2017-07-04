@@ -4,6 +4,7 @@
 
     using AutoMapper;
 
+    using Common;
     using kVent.Data.Models;
     using kVent.Server.Common.Mapping;
 
@@ -22,6 +23,22 @@
         public TimeSpan StartTime { get; set; }
 
         public TimeSpan EndTime { get; set; }
+
+        public TimeSpan LunchBreak
+        {
+            get
+            {
+                return new Constants().LunchBreak;
+            }
+        }
+
+        public TimeSpan TotalHours
+        {
+            get
+            {
+                return (this.EndTime - this.StartTime) - this.LunchBreak;
+            }
+        }
 
         public void CreateMappings(IConfiguration configuration)
         {

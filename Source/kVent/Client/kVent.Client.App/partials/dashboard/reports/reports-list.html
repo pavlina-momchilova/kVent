@@ -86,6 +86,7 @@
                                 <th>Start time<!--Начален час--></th>
                                 <th>End time<!--Краен час--></th>
                                 <th>Lunch break (min.)<!--Почивка (мин.)--></th>
+                                <th>Total <!--Почивка (мин.)--></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -100,7 +101,7 @@
                                     <div class="container-fluid">
                                         <div class="row">
                                             <div class="col-xs-3">
-                                                30
+                                                {{report.lunchBreak}}
                                             </div>
                                             <!--<div class="col-xs-3">
                                                 <button type="button" class="btn btn-warning btn-circle">
@@ -116,6 +117,7 @@
                                         </div>
                                     </div>
                                 </td>
+                                <td>{{report.totalHours}}</td>
                             </tr>
                         </tbody>
                     </table>

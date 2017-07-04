@@ -1,5 +1,7 @@
 ﻿namespace kVent.Server.Common
 {
+    using System;
+
     public class Constants
     {
         public const string DataTransferModelsAssembly = "kVent.Server.DataTransferModels";
@@ -29,5 +31,12 @@
         public const int MaxSpecialityLength = 30;
 
         public const int DaysAvailableForRecordModification = 31; // The original value is 2
+        public TimeSpan LunchBreak
+        {
+            get
+            {
+                return new TimeSpan(0, 30, 0);
+            }
+        }
     }
 }
