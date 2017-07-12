@@ -6,7 +6,6 @@
         var vm = this;
         vm.title = "taxt";
         vm.press = function () {
-            //console.log("Clicked md fk");
         }
     }
 

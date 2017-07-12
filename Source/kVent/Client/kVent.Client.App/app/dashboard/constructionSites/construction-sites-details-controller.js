@@ -25,7 +25,6 @@
         //               vm.clientsArray = response.data;
         //           }
 
-        //           console.log(vm.clientsArray);
         //       }, function (reason) {
         //           notifier.error('Грешка: ' + reason.Message);
         //       });
