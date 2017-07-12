@@ -2,13 +2,13 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
 
     using AutoMapper;
 
     using kVent.Data.Models;
     using kVent.Server.Common.Mapping;
     using ConstructionSites;
-    using System.Linq;
 
     public class UserDetailsResponseModel : IMapFrom<User>, IHaveCustomMappings
     {

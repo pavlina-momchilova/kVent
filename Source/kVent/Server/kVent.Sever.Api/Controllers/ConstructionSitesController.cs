@@ -1,5 +1,6 @@
 ﻿namespace kVent.Sever.Api.Controllers
 {
+    using System;
     using System.Data.Entity;
     using System.ComponentModel.DataAnnotations;
     using System.Threading.Tasks;
@@ -19,15 +20,18 @@
     public class ConstructionSitesController : BaseAuthorizationController
     {
         private readonly IConstructionSitesService constructionSitesService;
+        private readonly IRecordsService recordsService;
         private readonly IMappingService mappingService;
 
         public ConstructionSitesController(
             IUsersService usersService,
             IConstructionSitesService constructionSitesService,
+            IRecordsService recordsService,
             IMappingService mappingService)
-            : base (usersService)
+            : base(usersService)
         {
             this.constructionSitesService = constructionSitesService;
+            this.recordsService = recordsService;
             this.mappingService = mappingService;
         }
 
@@ -50,6 +54,26 @@
                 .AllConstructionSites()
                 .ProjectTo<ListedConstructionSitesResponseModel>()
                 .ToListAsync();
+
+            foreach (var constructioniSite in constructionSites)
+            {
+                var records = await this.recordsService
+                    .GetRecordsByConstructionSiteId(constructioniSite.Id)
+                    .ToListAsync();
+
+                TimeSpan totalWorkedHours = new TimeSpan();
+                foreach(var record in records)
+                {
+                    var workedHours = (record.EndTime - record.StartTime) - record.TotalBreakMinutes;
+                    totalWorkedHours += workedHours;
+                }
+
+                string totalWorkedHoursResult = string.Concat(
+                    (totalWorkedHours.Days * 24 + totalWorkedHours.Hours).ToString(),
+                    ":",
+                    totalWorkedHours.Minutes);
+                constructioniSite.TotalWorkedHours = totalWorkedHoursResult;
+            }
 
             return this.Data(constructionSites);
         }

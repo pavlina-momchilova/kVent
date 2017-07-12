@@ -95,5 +95,12 @@
                 .ThenByDescending(r => r.StartTime)
                 .ThenByDescending(r => r.DateCreated);
         }
+
+        public IQueryable<Record> GetRecordsByConstructionSiteId(int constructionSiteId)
+        {
+            return this.records
+                .All()
+                .Where(r => r.ConstructionSiteId == constructionSiteId);
+        }
     }
 }

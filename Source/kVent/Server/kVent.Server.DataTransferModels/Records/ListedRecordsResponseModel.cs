@@ -24,19 +24,13 @@
 
         public TimeSpan EndTime { get; set; }
 
-        public TimeSpan LunchBreak
-        {
-            get
-            {
-                return new Constants().LunchBreak;
-            }
-        }
+        public TimeSpan TotalBreakMinutes { get; set; }
 
         public TimeSpan TotalHours
         {
             get
             {
-                return (this.EndTime - this.StartTime) - this.LunchBreak;
+                return (this.EndTime - this.StartTime) - this.TotalBreakMinutes;
             }
         }
 
