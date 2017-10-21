@@ -5,7 +5,7 @@
     function LandingPageController() {
         var vm = this;
 
-        vm.title = "Aventa";
+        vm.title = "Am-vent";
 
         vm.name = 'ngPhotoswipe';
 
