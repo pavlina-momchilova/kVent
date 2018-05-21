@@ -36,48 +36,48 @@
                 src: '../../content/gallery/lidl_evere/lidlevere4.jpg',
                 w: 500, h: 500
             },*/ {
-                src: '../../content/gallery/lidl_evere/lidlevere5.jpg',
-                w: 4032, h: 3024
-            },/* {
+                    src: '../../content/gallery/lidl_evere/lidlevere5.jpg',
+                    w: 4032, h: 3024
+                },/* {
                 src: '../../content/gallery/lidl_evere/lidlevere6.jpg',
                 w: 500, h: 500
             }, */{
-                src: '../../content/gallery/lidl_evere/lidlevere7.jpg',
-                w: 4032, h: 3024
-            }, {
-                src: '../../content/gallery/lidl_evere/lidlevere8.jpg',
-                w: 4032, h: 3024
-            }, {
-                src: '../../content/gallery/lidl_evere/lidlevere9.jpg',
-                w: 4032, h: 3024
-            }, {
-                src: '../../content/gallery/lidl_evere/lidlevere10.jpg',
-                w: 4032, h: 3024
-            }, {
-                src: '../../content/gallery/lidl_evere/lidlevere11.jpg',
-                w: 4032, h: 3024
-            }, {
-                src: '../../content/gallery/lidl_evere/lidlevere12.jpg',
-                w: 4032, h: 3024
-            }, {
-                src: '../../content/gallery/lidl_evere/lidlevere13.jpg',
-                w: 4032, h: 3024
-            }, {
-                src: '../../content/gallery/lidl_evere/lidlevere14.jpg',
-                w: 4032, h: 3024
-            }, {
-                src: '../../content/gallery/lidl_evere/lidlevere15.jpg',
-                w: 4032, h: 3024
-            }, {
-                src: '../../content/gallery/lidl_evere/lidlevere16.jpg',
-                w: 4032, h: 3024
-            }, {
-                src: '../../content/gallery/lidl_evere/lidlevere17.jpg',
-                w: 4032, h: 3024
-            }, {
-                src: '../../content/gallery/lidl_evere/lidlevere18.jpg',
-                w: 4032, h: 3024
-            }/*, {
+                    src: '../../content/gallery/lidl_evere/lidlevere7.jpg',
+                    w: 4032, h: 3024
+                }, {
+                    src: '../../content/gallery/lidl_evere/lidlevere8.jpg',
+                    w: 4032, h: 3024
+                }, {
+                    src: '../../content/gallery/lidl_evere/lidlevere9.jpg',
+                    w: 4032, h: 3024
+                }, {
+                    src: '../../content/gallery/lidl_evere/lidlevere10.jpg',
+                    w: 4032, h: 3024
+                }, {
+                    src: '../../content/gallery/lidl_evere/lidlevere11.jpg',
+                    w: 4032, h: 3024
+                }, {
+                    src: '../../content/gallery/lidl_evere/lidlevere12.jpg',
+                    w: 4032, h: 3024
+                }, {
+                    src: '../../content/gallery/lidl_evere/lidlevere13.jpg',
+                    w: 4032, h: 3024
+                }, {
+                    src: '../../content/gallery/lidl_evere/lidlevere14.jpg',
+                    w: 4032, h: 3024
+                }, {
+                    src: '../../content/gallery/lidl_evere/lidlevere15.jpg',
+                    w: 4032, h: 3024
+                }, {
+                    src: '../../content/gallery/lidl_evere/lidlevere16.jpg',
+                    w: 4032, h: 3024
+                }, {
+                    src: '../../content/gallery/lidl_evere/lidlevere17.jpg',
+                    w: 4032, h: 3024
+                }, {
+                    src: '../../content/gallery/lidl_evere/lidlevere18.jpg',
+                    w: 4032, h: 3024
+                }/*, {
                 src: '../../content/gallery/lidl_evere/lidlevere19.jpg',
                 w: 500, h: 500
             }, {
@@ -194,6 +194,37 @@
                 w: 4032, h: 3024
             }]
         }, {
+            name: "aartselaarsportal",
+            title: "Aartselaar Sportal",
+            picture: '../../content/gallery/aartselaar_sporthal/image1.jpg',
+            options: opts,
+            hide: true,
+            slides: [{
+                src: '../../content/gallery/aartselaar_sporthal/image1.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/aartselaar_sporthal/image2.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/aartselaar_sporthal/image3.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/aartselaar_sporthal/image4.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/aartselaar_sporthal/image5.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/aartselaar_sporthal/image6.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/aartselaar_sporthal/image7.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/aartselaar_sporthal/image8.jpg',
+                w: 4032, h: 3024
+            }]
+        }, {
             name: "other",
             title: "Other",
             picture: '../../content/gallery/constructionSite25.jpg',
@@ -203,36 +234,36 @@
                 src: '../../content/gallery/constructionSite16.jpg',
                 w: 500, h: 500
             }, */{
-                src: '../../content/gallery/constructionSite18.jpg',
-                w: 1280, h: 720
-            }, {
-                src: '../../content/gallery/constructionSite23.jpg',
-                w: 1280, h: 720
-            }, {
-                src: '../../content/gallery/constructionSite25.jpg',
-                w: 1280, h: 720
-            }, {
-                src: '../../content/gallery/constructionSite28.jpg',
-                w: 1280, h: 720
-            }, {
-                src: '../../content/gallery/constructionSite37.jpg',
-                w: 1280, h: 720
-            }, {
-                src: '../../content/gallery/constructionSite4.jpg',
-                w: 1280, h: 720
-            }, {
-                src: '../../content/gallery/constructionSite5.jpg',
-                w: 1280, h: 720
-            }, {
-                src: '../../content/gallery/constructionSite6.jpg',
-                w: 1280, h: 720
-            }, {
-                src: '../../content/gallery/constructionSite8.jpg',
-                w: 1280, h: 720
-            }, {
-                src: '../../content/gallery/constructionSite9.jpg',
-                w: 1280, h: 720
-            }]
+                    src: '../../content/gallery/constructionSite18.jpg',
+                    w: 1280, h: 720
+                }, {
+                    src: '../../content/gallery/constructionSite23.jpg',
+                    w: 1280, h: 720
+                }, {
+                    src: '../../content/gallery/constructionSite25.jpg',
+                    w: 1280, h: 720
+                }, {
+                    src: '../../content/gallery/constructionSite28.jpg',
+                    w: 1280, h: 720
+                }, {
+                    src: '../../content/gallery/constructionSite37.jpg',
+                    w: 1280, h: 720
+                }, {
+                    src: '../../content/gallery/constructionSite4.jpg',
+                    w: 1280, h: 720
+                }, {
+                    src: '../../content/gallery/constructionSite5.jpg',
+                    w: 1280, h: 720
+                }, {
+                    src: '../../content/gallery/constructionSite6.jpg',
+                    w: 1280, h: 720
+                }, {
+                    src: '../../content/gallery/constructionSite8.jpg',
+                    w: 1280, h: 720
+                }, {
+                    src: '../../content/gallery/constructionSite9.jpg',
+                    w: 1280, h: 720
+                }]
         }];
 
         vm.showGallery = function (name) {
@@ -243,7 +274,7 @@
             }
 
             var folder = vm.galleryFolderByName(name);
-            folder.hide = !folder.hide;            
+            folder.hide = !folder.hide;
         };
 
         vm.openGallery = function (name, i) {
@@ -271,7 +302,7 @@
                     return true;
                 }
             });
-            
+
             return folder[0];
         }
     }

@@ -27,6 +27,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -281,6 +282,20 @@
     <Content Include="content\css\landing-page.css" />
     <Content Include="content\css\site.css" />
     <Content Include="content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="content\gallery\aartselaar_sporthal\image1.jpg" />
+    <Content Include="content\gallery\aartselaar_sporthal\image2.jpg" />
+    <Content Include="content\gallery\aartselaar_sporthal\image3.jpg" />
+    <Content Include="content\gallery\aartselaar_sporthal\image4.jpg" />
+    <Content Include="content\gallery\aartselaar_sporthal\image5.jpg" />
+    <Content Include="content\gallery\aartselaar_sporthal\image6.jpg" />
+    <Content Include="content\gallery\aartselaar_sporthal\image7.jpg" />
+    <Content Include="content\gallery\aartselaar_sporthal\image8.jpg" />
+    <Content Include="content\gallery\apartments\image1.jpg" />
+    <Content Include="content\gallery\apartments\image2.jpg" />
+    <Content Include="content\gallery\apartments\image3.jpg" />
+    <Content Include="content\gallery\apartments\image4.jpg" />
+    <Content Include="content\gallery\apartments\image5.jpg" />
+    <Content Include="content\gallery\apartments\image6.jpg" />
     <Content Include="content\gallery\constructionSite16.jpg" />
     <Content Include="content\gallery\constructionSite18.jpg" />
     <Content Include="content\gallery\constructionSite23.jpg" />
@@ -292,6 +307,27 @@
     <Content Include="content\gallery\constructionSite6.jpg" />
     <Content Include="content\gallery\constructionSite8.jpg" />
     <Content Include="content\gallery\constructionSite9.jpg" />
+    <Content Include="content\gallery\drukkerij\image1.jpg" />
+    <Content Include="content\gallery\drukkerij\image2.jpg" />
+    <Content Include="content\gallery\drukkerij\image3.jpg" />
+    <Content Include="content\gallery\drukkerij\image4.jpg" />
+    <Content Include="content\gallery\drukkerij\image5.jpg" />
+    <Content Include="content\gallery\lidl-Sint-Agatha-Berchem-Brussels\20170925_153401-min.jpg" />
+    <Content Include="content\gallery\lidl-Sint-Agatha-Berchem-Brussels\20170925_153421-min.jpg" />
+    <Content Include="content\gallery\lidl-Sint-Agatha-Berchem-Brussels\20170925_153454-min.jpg" />
+    <Content Include="content\gallery\lidl-Sint-Agatha-Berchem-Brussels\20170925_153505-min.jpg" />
+    <Content Include="content\gallery\lidl-Sint-Agatha-Berchem-Brussels\20170925_153516-min.jpg" />
+    <Content Include="content\gallery\lidl-Sint-Agatha-Berchem-Brussels\20170925_153518-min.jpg" />
+    <Content Include="content\gallery\lidl-Sint-Agatha-Berchem-Brussels\20170925_153537-min.jpg" />
+    <Content Include="content\gallery\lidl-Sint-Agatha-Berchem-Brussels\20170925_153542-min.jpg" />
+    <Content Include="content\gallery\lidl-Sint-Agatha-Berchem-Brussels\20170925_153606-min.jpg" />
+    <Content Include="content\gallery\lidl-Sint-Agatha-Berchem-Brussels\20170925_153618-min.jpg" />
+    <Content Include="content\gallery\lidl-Sint-Agatha-Berchem-Brussels\20170925_153651-min.jpg" />
+    <Content Include="content\gallery\lidl-Sint-Agatha-Berchem-Brussels\20171027_141546-min.jpg" />
+    <Content Include="content\gallery\lidl-Sint-Agatha-Berchem-Brussels\20171027_141549-min.jpg" />
+    <Content Include="content\gallery\lidl-Sint-Agatha-Berchem-Brussels\20171027_141555-min.jpg" />
+    <Content Include="content\gallery\lidl-Sint-Agatha-Berchem-Brussels\20171110_165513-min.jpg" />
+    <Content Include="content\gallery\lidl-Sint-Agatha-Berchem-Brussels\20171110_165528-min.jpg" />
     <Content Include="content\gallery\lidl_evere\lidlevere0.jpg" />
     <Content Include="content\gallery\lidl_evere\lidlevere1.jpg" />
     <Content Include="content\gallery\lidl_evere\lidlevere10.jpg" />
@@ -347,6 +383,35 @@
     <Content Include="content\gallery\lidl_hasselt\lidlhasselt7.jpg" />
     <Content Include="content\gallery\lidl_hasselt\lidlhasselt8.jpg" />
     <Content Include="content\gallery\lidl_hasselt\lidlhasselt9.jpg" />
+    <Content Include="content\gallery\lidl_torhout\image1.jpg" />
+    <Content Include="content\gallery\lidl_torhout\image10.jpg" />
+    <Content Include="content\gallery\lidl_torhout\image11.jpg" />
+    <Content Include="content\gallery\lidl_torhout\image12.jpg" />
+    <Content Include="content\gallery\lidl_torhout\image13.jpg" />
+    <Content Include="content\gallery\lidl_torhout\image14.jpg" />
+    <Content Include="content\gallery\lidl_torhout\image15.jpg" />
+    <Content Include="content\gallery\lidl_torhout\image16.jpg" />
+    <Content Include="content\gallery\lidl_torhout\image17.jpg" />
+    <Content Include="content\gallery\lidl_torhout\image18.jpg" />
+    <Content Include="content\gallery\lidl_torhout\image19.jpg" />
+    <Content Include="content\gallery\lidl_torhout\image2.jpg" />
+    <Content Include="content\gallery\lidl_torhout\image3.jpg" />
+    <Content Include="content\gallery\lidl_torhout\image4.jpg" />
+    <Content Include="content\gallery\lidl_torhout\image5.jpg" />
+    <Content Include="content\gallery\lidl_torhout\image6.jpg" />
+    <Content Include="content\gallery\lidl_torhout\image7.jpg" />
+    <Content Include="content\gallery\lidl_torhout\image8.jpg" />
+    <Content Include="content\gallery\lidl_torhout\image9.jpg" />
+    <Content Include="content\gallery\VDAB-Oudenaarde\20170713_150448_001-min.jpg" />
+    <Content Include="content\gallery\VDAB-Oudenaarde\20170713_150452_001-min.jpg" />
+    <Content Include="content\gallery\VDAB-Oudenaarde\20170713_150502-min.jpg" />
+    <Content Include="content\gallery\VDAB-Oudenaarde\20170713_150514-min.jpg" />
+    <Content Include="content\gallery\VDAB-Oudenaarde\20170713_150530-min.jpg" />
+    <Content Include="content\gallery\VDAB-Oudenaarde\20170713_150534-min.jpg" />
+    <Content Include="content\gallery\VDAB-Oudenaarde\20170713_150539-min.jpg" />
+    <Content Include="content\gallery\VDAB-Oudenaarde\20170713_150546-min.jpg" />
+    <Content Include="content\gallery\VDAB-Oudenaarde\20170713_153333-min.jpg" />
+    <Content Include="content\gallery\VDAB-Oudenaarde\20170911_103631-min.jpg" />
     <Content Include="content\img\1%402x.jpg" />
     <Content Include="content\img\1.jpg" />
     <Content Include="content\img\airCond.jpg" />
