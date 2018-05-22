@@ -1,4 +1,4 @@
-﻿(function () {
+﻿(function ($) {
 
     'use strict';
 
@@ -196,7 +196,7 @@
         }, {
             name: "aartselaarsportal",
             title: "Aartselaar Sportal",
-            picture: '../../content/gallery/aartselaar_sporthal/image1.jpg',
+            picture: '../../content/gallery/aartselaar_sporthal/image6.jpg',
             options: opts,
             hide: true,
             slides: [{
@@ -222,6 +222,206 @@
                 w: 4032, h: 3024
             }, {
                 src: '../../content/gallery/aartselaar_sporthal/image8.jpg',
+                w: 4032, h: 3024
+            }]
+        }, {
+            name: "apartments",
+            title: "Apartments",
+            picture: '../../content/gallery/apartments/image1.jpg',
+            options: opts,
+            hide: true,
+            slides: [{
+                src: '../../content/gallery/apartments/image1.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/apartments/image2.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/apartments/image3.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/apartments/image4.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/apartments/image5.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/apartments/image6.jpg',
+                w: 4032, h: 3024
+            }]
+        }, {
+            name: "drukkerij",
+            title: "Drukkerij",
+            picture: '../../content/gallery/drukkerij/image1.jpg',
+            options: opts,
+            hide: true,
+            slides: [{
+                src: '../../content/gallery/drukkerij/image1.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/drukkerij/image2.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/drukkerij/image3.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/drukkerij/image4.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/drukkerij/image5.jpg',
+                w: 4032, h: 3024
+            }]
+        }, {
+            name: "lidl-Sint-Agatha-Berchem-Brussels",
+            title: "LIDL Sint Agatha Berchem, Brussels",
+            picture: '../../content/gallery/lidl-Sint-Agatha-Berchem-Brussels/image1.jpg',
+            options: opts,
+            hide: true,
+            slides: [{
+                src: '../../content/gallery/lidl-Sint-Agatha-Berchem-Brussels/image1.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/lidl-Sint-Agatha-Berchem-Brussels/image2.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/lidl-Sint-Agatha-Berchem-Brussels/image3.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/lidl-Sint-Agatha-Berchem-Brussels/image4.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/lidl-Sint-Agatha-Berchem-Brussels/image5.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/lidl-Sint-Agatha-Berchem-Brussels/image6.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/lidl-Sint-Agatha-Berchem-Brussels/image7.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/lidl-Sint-Agatha-Berchem-Brussels/image8.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/lidl-Sint-Agatha-Berchem-Brussels/image9.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/lidl-Sint-Agatha-Berchem-Brussels/image10.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/lidl-Sint-Agatha-Berchem-Brussels/image11.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/lidl-Sint-Agatha-Berchem-Brussels/image12.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/lidl-Sint-Agatha-Berchem-Brussels/image13.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/lidl-Sint-Agatha-Berchem-Brussels/image14.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/lidl-Sint-Agatha-Berchem-Brussels/image15.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/lidl-Sint-Agatha-Berchem-Brussels/image16.jpg',
+                w: 4032, h: 3024
+            }]
+        }, {
+            name: "lidl_torhout",
+            title: "LIDL Torhout",
+            picture: '../../content/gallery/lidl_torhout/image1.jpg',
+            options: opts,
+            hide: true,
+            slides: [{
+                src: '../../content/gallery/lidl_torhout/image1.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/lidl_torhout/image2.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/lidl_torhout/image3.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/lidl_torhout/image4.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/lidl_torhout/image5.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/lidl_torhout/image6.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/lidl_torhout/image7.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/lidl_torhout/image8.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/lidl_torhout/image9.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/lidl_torhout/image10.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/lidl_torhout/image11.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/lidl_torhout/image12.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/lidl_torhout/image13.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/lidl_torhout/image14.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/lidl_torhout/image15.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/lidl_torhout/image16.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/lidl_torhout/image17.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/lidl_torhout/image18.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/lidl_torhout/image19.jpg',
+                w: 4032, h: 3024
+            }]
+        }, {
+            name: "VDAB-Oudenaarde",
+            title: "VDAB Oudenaarde",
+            picture: '../../content/gallery/VDAB-Oudenaarde/image1.jpg',
+            options: opts,
+            hide: true,
+            slides: [{
+                src: '../../content/gallery/VDAB-Oudenaarde/image1.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/VDAB-Oudenaarde/image2.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/VDAB-Oudenaarde/image3.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/VDAB-Oudenaarde/image4.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/VDAB-Oudenaarde/image5.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/VDAB-Oudenaarde/image6.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/VDAB-Oudenaarde/image7.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/VDAB-Oudenaarde/image8.jpg',
+                w: 4032, h: 3024
+            }, {
+                src: '../../content/gallery/VDAB-Oudenaarde/image9.jpg',
                 w: 4032, h: 3024
             }]
         }, {
@@ -275,6 +475,11 @@
 
             var folder = vm.galleryFolderByName(name);
             folder.hide = !folder.hide;
+
+            console.log("asdad");
+            $('html, body').animate({
+                scrollTop: $("#imageList").offset().top
+            }, 2500);
         };
 
         vm.openGallery = function (name, i) {
@@ -310,4 +515,4 @@
     angular
         .module('kVent.controllers')
         .controller('LandingPageController', [LandingPageController]);
-}());
+}(jQuery));
