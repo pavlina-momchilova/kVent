@@ -129,3 +129,13 @@ body {
         #slide-list > li > img {
             max-height: 217px;
         }
+
+@media only screen and (max-width: 600px) {
+    div.caption {
+        color: darkred !important;
+        text-overflow: ellipsis !important;
+        max-height: 57px;
+        word-wrap: break-word !important;
+        overflow: hidden;
+    }
+}
