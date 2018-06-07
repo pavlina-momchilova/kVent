@@ -278,7 +278,7 @@
                     </div>
                 </div>
             </section>
-            <div class="row">
+            <div id="imageList" class="row">
                 <div ng-repeat="folder in vm.gallery track by folder.name">
                     <ul class="slide-list{{folder.name}}" id="slide-list" ng-hide="vm.galleryFolderByName(folder.name).hide">
                         <li class="col-xs-6 col-sm-4 col-md-3 thumbnail" 
