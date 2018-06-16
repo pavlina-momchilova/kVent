@@ -9,7 +9,7 @@
         <form class="form-horizontal" name="addRecordForm" novalidate>
             <fieldset>
                 <div class="text-center error" ng-show="record.startTime > record.endTime">'До' е преди 'От'.</div>
-                
+
                 <div class="form-group" show-errors-directive>
                     <div class="col-lg-10 input-group col-lg-offset-1">
                         <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
@@ -47,6 +47,13 @@
 
                         <input class="form-control" type="time" id="endTime" name="endTime" ng-model="record.endTime"
                                placeholder="HH:mm:ss" required />
+                    </div>
+                </div>
+                <div class="form-group" show-errors-directive>
+                    <div class="col-lg-10 input-group col-lg-offset-1">
+                        <span class="input-group-addon"><i class="fa fa-clock-o"></i> Почивка (минути) </span>
+
+                        <input class="form-control" type="number" id="totalBreakMinutes" name="totalBreakMinutes" ng-model="record.totalBreakMinutes" required />
                     </div>
                 </div>
                 <div class="form-group">

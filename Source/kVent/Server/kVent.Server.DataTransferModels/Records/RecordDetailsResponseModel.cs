@@ -7,7 +7,7 @@
     using kVent.Data.Models;
     using kVent.Server.Common.Mapping;
 
-    public class RecordDetailsResponseModel : IMapFrom<Record>
+    public class RecordDetailsResponseModel : IMapFrom<Record>, IHaveCustomMappings
     {
         public int Id { get; set; }
 
@@ -22,5 +22,13 @@
         public string UserId { get; set; }
 
         public int ConstructionSiteId { get; set; }
+
+        public int TotalBreakMinutes { get; set; }
+        
+        public void CreateMappings(IConfiguration configuration)
+        {
+            configuration.CreateMap<Record, RecordDetailsResponseModel>()
+                   .ForMember(c => c.TotalBreakMinutes, opt => opt.MapFrom(r => (r.TotalBreakMinutes.Minutes + (r.TotalBreakMinutes.Hours * 60))));
+        }
     }
 }

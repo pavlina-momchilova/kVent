@@ -9,7 +9,6 @@
         <form class="form-horizontal" name="editRecordForm" novalidate>
             <fieldset>
                 <div class="text-center error" ng-show="record.startTime > record.endTime">'До' е преди 'От'.</div>
-
                 <div class="form-group" show-errors-directive>
                     <div class="col-lg-10 input-group col-lg-offset-1">
                         <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
@@ -36,7 +35,6 @@
                 <div class="form-group" show-errors-directive>
                     <div class="col-lg-10 input-group col-lg-offset-1">
                         <span class="input-group-addon"><i class="fa fa-clock-o"></i> От </span>
-
                         <input class="form-control" type="time" id="startTime" name="startTime" ng-model="vm.updatedReport.startTime"
                                placeholder="HH:mm:ss" required />
                     </div>
@@ -44,9 +42,15 @@
                 <div class="form-group" show-errors-directive>
                     <div class="col-lg-10 input-group col-lg-offset-1">
                         <span class="input-group-addon"><i class="fa fa-clock-o"></i> До </span>
-
                         <input class="form-control" type="time" id="endTime" name="endTime" ng-model="vm.updatedReport.endTime"
                                placeholder="HH:mm:ss" required />
+                    </div>
+                </div>
+                <div class="form-group" show-errors-directive>
+                    <div class="col-lg-10 input-group col-lg-offset-1">
+                        <span class="input-group-addon"><i class="fa fa-clock-o"></i> Почивка (минути) </span>
+
+                        <input class="form-control" type="number" id="totalBreakMinutes" name="totalBreakMinutes" ng-model="vm.updatedReport.totalBreakMinutes" required />
                     </div>
                 </div>
                 <div class="form-group">

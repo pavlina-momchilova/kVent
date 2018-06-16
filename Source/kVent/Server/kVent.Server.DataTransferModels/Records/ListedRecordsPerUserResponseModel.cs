@@ -24,6 +24,8 @@
 
         public DateTime DateCreated { get; set; }
 
+        public TimeSpan TotalBreakMinutes { get; set; }
+
         public void CreateMappings(IConfiguration configuration)
         {
             configuration.CreateMap<Record, ListedRecordsPerUserResponseModel>()

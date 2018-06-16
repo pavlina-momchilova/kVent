@@ -39,7 +39,6 @@
         public async Task<Record> AddNew(Record record)
         {
             record.DateCreated = DateTime.Now;
-            record.TotalBreakMinutes = new TimeSpan(0, TotalBreakMinutes, 0);
 
             // TODO - refactoring in to separate table with userId an total experience hours!
             var user = this.users.GetById(record.UserId);

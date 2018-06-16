@@ -36,6 +36,8 @@
             refactoredRecord.endTime = record.endTime.getHours() + ":" +
                 record.endTime.getMinutes() + ":" +
                 record.endTime.getSeconds();
+
+            refactoredRecord.totalBreakMinutes = record.totalBreakMinutes;
             
             if (addRecordForm.$valid) {
                 reportsPageData.addReport(refactoredRecord)

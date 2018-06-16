@@ -88,6 +88,8 @@
                     updatedReport.endTime.getMinutes() + ":" +
                     updatedReport.endTime.getSeconds();
 
+                mappedUpdatedReport.totalBreakMinutes = updatedReport.totalBreakMinutes;
+
                 reportsPageData.editRecord(mappedUpdatedReport)
                     .then(function (report) {
                         notifier.warning("Успешно редактиран отчет");
