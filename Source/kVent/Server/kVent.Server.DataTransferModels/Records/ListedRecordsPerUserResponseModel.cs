@@ -15,6 +15,14 @@
         public string ConstructionSiteName { get; set; }
 
         public DateTime Date { get; set; }
+
+        public string DateAsText
+        {
+            get
+            {
+                return string.Format("{0}/{1}/{2}", this.Date.Day, this.Date.Month, this.Date.Year);
+            }
+        }
         
         public TimeSpan StartTime { get; set; }
 
